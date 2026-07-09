@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="프로젝트 케이스 스터디 - 문제 정의부터 해결까지의 디자인 프로세스">
+    <meta name="keywords" content="UI/UX 디자이너, 케이스 스터디, 포트폴리오, 디자인 프로세스">
+    <meta name="author" content="Designer Name">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Case Study | UI/UX 디자이너 포트폴리오">
+    <meta property="og:description" content="문제 정의부터 해결까지, 디자인 사고 과정을 보여드립니다.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/case-study.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <title>Case Study | UI/UX 디자이너 포트폴리오</title>
+</head>
+
+<body class="case-study-page">
+    <!-- Noise Overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Back Navigation -->
+    <nav class="case-nav">
+        <a href="../index.html" class="case-nav__back">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>Back to Works</span>
+        </a>
+        <div class="case-nav__progress">
+            <div class="case-nav__progress-bar"></div>
+        </div>
+    </nav>
+
+    <main class="case-study">
+        <!-- ========================================
+             1. Case Hero
+             ======================================== -->
+        <section class="case-hero" id="case-hero">
+            <div class="case-hero__container">
+                <!-- 카테고리 & 연도 -->
+                <div class="case-hero__meta">
+                    <span class="case-hero__category">Mobile App Redesign</span>
+                    <span class="case-hero__divider"></span>
+                    <span class="case-hero__year">2024</span>
+                </div>
+
+                <!-- 프로젝트 타이틀 -->
+                <h1 class="case-hero__title">
+                    <span class="case-hero__title-line">사용자 이탈률 40% 감소를 위한</span>
+                    <span class="case-hero__title-line case-hero__title-highlight">온보딩 UX 혁신</span>
+                </h1>
+
+                <!-- 한 줄 설명 -->
+                <p class="case-hero__description">
+                    복잡한 가입 절차로 인한 사용자 이탈 문제를 해결하고,
+                    직관적인 온보딩 경험을 설계한 프로젝트입니다.
+                </p>
+
+                <!-- Role / Duration / Tools -->
+                <div class="case-hero__info">
+                    <div class="case-hero__info-item">
+                        <span class="case-hero__info-label">Role</span>
+                        <span class="case-hero__info-value">Lead UX Designer</span>
+                    </div>
+                    <div class="case-hero__info-item">
+                        <span class="case-hero__info-label">Duration</span>
+                        <span class="case-hero__info-value">3 Months</span>
+                    </div>
+                    <div class="case-hero__info-item">
+                        <span class="case-hero__info-label">Tools</span>
+                        <span class="case-hero__info-value">Figma, Maze, Hotjar</span>
+                    </div>
+                </div>
+
+                <!-- 메인 비주얼 -->
+                <div class="case-hero__visual">
+                    <div class="case-hero__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop" 
+                             alt="프로젝트 메인 비주얼" 
+                             class="case-hero__image"
+                             loading="eager">
+                        <div class="case-hero__image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             2. Project Overview
+             ======================================== -->
+        <section class="case-section case-overview" id="case-overview">
+            <div class="case-section__container">
+                <div class="case-section__header">
+                    <span class="case-section__number">01</span>
+                    <h2 class="case-section__title">Project Overview</h2>
+                </div>
+
+                <div class="case-overview__grid">
+                    <!-- 프로젝트 배경 -->
+                    <div class="case-overview__item">
+                        <h3 class="case-overview__subtitle">프로젝트 배경</h3>
+                        <p class="case-overview__text">
+                            핀테크 스타트업 A사는 출시 6개월 만에 MAU 50만을 달성했지만,
+                            <strong class="text-highlight">온보딩 단계에서 67%의 사용자가 이탈</strong>하는 
+                            심각한 문제에 직면했습니다. 경쟁사 대비 2배 높은 이탈률은 
+                            비즈니스 성장의 주요 병목이었습니다.
+                        </p>
+                    </div>
+
+                    <!-- 타겟 사용자 -->
+                    <div class="case-overview__item">
+                        <h3 class="case-overview__subtitle">타겟 사용자</h3>
+                        <p class="case-overview__text">
+                            20-35세의 디지털 네이티브 세대로, 간편하고 빠른 서비스를 선호합니다.
+                            복잡한 절차에 대한 인내심이 낮고, 
+                            <strong class="text-highlight">3분 이내에 핵심 기능을 경험</strong>하지 못하면 
+                            앱을 삭제하는 경향이 있습니다.
+                        </p>
+                    </div>
+
+                    <!-- 프로젝트 목표 -->
+                    <div class="case-overview__item">
+                        <h3 class="case-overview__subtitle">프로젝트 목표</h3>
+                        <ul class="case-overview__list">
+                            <li>온보딩 완료율 67% → 85% 달성</li>
+                            <li>가입 소요 시간 5분 → 2분 이내 단축</li>
+                            <li>첫 주 리텐션 30% → 45% 향상</li>
+                        </ul>
+                    </div>
+
+                    <!-- 나의 역할 -->
+                    <div class="case-overview__item">
+                        <h3 class="case-overview__subtitle">나의 역할</h3>
+                        <div class="case-overview__roles">
+                            <span class="case-overview__role case-overview__role--primary">UX Research</span>
+                            <span class="case-overview__role case-overview__role--primary">UI Design</span>
+                            <span class="case-overview__role">Prototyping</span>
+                            <span class="case-overview__role">Usability Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             3. Problem Definition
+             ======================================== -->
+        <section class="case-section case-problem" id="case-problem">
+            <div class="case-section__container">
+                <div class="case-section__header">
+                    <span class="case-section__number">02</span>
+                    <h2 class="case-section__title">Problem Definition</h2>
+                    <p class="case-section__subtitle">
+                        데이터와 사용자 인터뷰를 통해 핵심 문제를 정의했습니다.
+                    </p>
+                </div>
+
+                <!-- 핵심 문제 카드 -->
+                <div class="case-problem__cards">
+                    <article class="case-problem__card">
+                        <div class="case-problem__card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="case-problem__card-title">과도한 정보 요청</h3>
+                        <p class="case-problem__card-text">
+                            가입 시 12개 항목의 정보를 요구하며, 사용자는 
+                            "왜 이 정보가 필요한지" 이해하지 못했습니다.
+                        </p>
+                        <div class="case-problem__card-stat">
+                            <span class="case-problem__stat-number">73%</span>
+                            <span class="case-problem__stat-label">3단계에서 이탈</span>
+                        </div>
+                    </article>
+
+                    <article class="case-problem__card">
+                        <div class="case-problem__card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="case-problem__card-title">진행 상태 불명확</h3>
+                        <p class="case-problem__card-text">
+                            사용자가 현재 몇 단계에 있는지, 얼마나 남았는지 
+                            파악할 수 없어 불안감을 느꼈습니다.
+                        </p>
+                        <div class="case-problem__card-stat">
+                            <span class="case-problem__stat-number">4.2분</span>
+                            <span class="case-problem__stat-label">평균 이탈 시점</span>
+                        </div>
+                    </article>
+
+                    <article class="case-problem__card">
+                        <div class="case-problem__card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="case-problem__card-title">에러 처리 부재</h3>
+                        <p class="case-problem__card-text">
+                            입력 오류 시 구체적인 안내 없이 "다시 시도하세요"만 
+                            표시되어 사용자 좌절감이 컸습니다.
+                        </p>
+                        <div class="case-problem__card-stat">
+                            <span class="case-problem__stat-number">58%</span>
+                            <span class="case-problem__stat-label">에러 후 이탈</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 사용자 인사이트 인용 -->
+                <blockquote class="case-problem__quote">
+                    <p>"가입하는 데 왜 이렇게 많은 정보를 요구하는지 모르겠어요. 
+                    그냥 빨리 앱을 써보고 싶은데..."</p>
+                    <cite>— 사용자 인터뷰 참가자 (28세, 직장인)</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- ========================================
+             4. Process & Approach
+             ======================================== -->
+        <section class="case-section case-process" id="case-process">
+            <div class="case-section__container">
+                <div class="case-section__header">
+                    <span class="case-section__number">03</span>
+                    <h2 class="case-section__title">Process & Approach</h2>
+                    <p class="case-section__subtitle">
+                        더블 다이아몬드 프레임워크를 기반으로 체계적으로 접근했습니다.
+                    </p>
+                </div>
+
+                <!-- 프로세스 타임라인 -->
+                <div class="case-process__timeline">
+                    <div class="case-process__step">
+                        <div class="case-process__step-marker">
+                            <span class="case-process__step-number">1</span>
+                        </div>
+                        <div class="case-process__step-content">
+                            <h3 class="case-process__step-title">Discover</h3>
+                            <p class="case-process__step-duration">Week 1-2</p>
+                            <ul class="case-process__step-list">
+                                <li>기존 유저 플로우 분석</li>
+                                <li>Hotjar 히트맵 & 세션 리코딩 분석</li>
+                                <li>경쟁사 온보딩 벤치마킹 (8개 앱)</li>
+                                <li>사용자 인터뷰 12명 진행</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="case-process__step">
+                        <div class="case-process__step-marker">
+                            <span class="case-process__step-number">2</span>
+                        </div>
+                        <div class="case-process__step-content">
+                            <h3 class="case-process__step-title">Define</h3>
+                            <p class="case-process__step-duration">Week 3</p>
+                            <ul class="case-process__step-list">
+                                <li>퍼소나 3개 유형 정의</li>
+                                <li>사용자 여정 맵 작성</li>
+                                <li>핵심 Pain Point 우선순위화</li>
+                                <li>디자인 원칙 수립</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="case-process__step">
+                        <div class="case-process__step-marker">
+                            <span class="case-process__step-number">3</span>
+                        </div>
+                        <div class="case-process__step-content">
+                            <h3 class="case-process__step-title">Develop</h3>
+                            <p class="case-process__step-duration">Week 4-8</p>
+                            <ul class="case-process__step-list">
+                                <li>아이디어 워크샵 (HMW)</li>
+                                <li>와이어프레임 3가지 방향 설계</li>
+                                <li>프로토타입 제작 (Figma)</li>
+                                <li>내부 리뷰 3회 진행</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="case-process__step">
+                        <div class="case-process__step-marker">
+                            <span class="case-process__step-number">4</span>
+                        </div>
+                        <div class="case-process__step-content">
+                            <h3 class="case-process__step-title">Deliver</h3>
+                            <p class="case-process__step-duration">Week 9-12</p>
+                            <ul class="case-process__step-list">
+                                <li>사용성 테스트 2라운드 (15명)</li>
+                                <li>피드백 기반 이터레이션</li>
+                                <li>개발팀 핸드오프</li>
+                                <li>A/B 테스트 설계 및 런칭</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 디자인 원칙 -->
+                <div class="case-process__principles">
+                    <h3 class="case-process__principles-title">Design Principles</h3>
+                    <div class="case-process__principles-grid">
+                        <div class="case-process__principle">
+                            <span class="case-process__principle-number">01</span>
+                            <h4>Progressive Disclosure</h4>
+                            <p>필요한 순간에 필요한 정보만 요청하여 인지 부하 최소화</p>
+                        </div>
+                        <div class="case-process__principle">
+                            <span class="case-process__principle-number">02</span>
+                            <h4>Immediate Value</h4>
+                            <p>가입 완료 전에도 앱의 핵심 가치를 미리 경험할 수 있도록 설계</p>
+                        </div>
+                        <div class="case-process__principle">
+                            <span class="case-process__principle-number">03</span>
+                            <h4>Trust Building</h4>
+                            <p>정보 요청 이유를 명확히 설명하여 신뢰 구축</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             5. Solution
+             ======================================== -->
+        <section class="case-section case-solution" id="case-solution">
+            <div class="case-section__container">
+                <div class="case-section__header">
+                    <span class="case-section__number">04</span>
+                    <h2 class="case-section__title">Solution</h2>
+                    <p class="case-section__subtitle">
+                        핵심 문제를 해결하는 3가지 디자인 솔루션을 도출했습니다.
+                    </p>
+                </div>
+
+                <!-- 솔루션 카드 -->
+                <div class="case-solution__items">
+                    <!-- 솔루션 1 -->
+                    <article class="case-solution__item">
+                        <div class="case-solution__item-content">
+                            <span class="case-solution__item-label">Solution 01</span>
+                            <h3 class="case-solution__item-title">스텝 프로그레스 인디케이터</h3>
+                            <p class="case-solution__item-text">
+                                현재 진행 상황과 남은 단계를 시각적으로 명확하게 표시합니다. 
+                                각 단계별 예상 소요 시간을 함께 보여주어 사용자의 불안감을 해소합니다.
+                            </p>
+                            <ul class="case-solution__features">
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    동적 프로그레스 바 (완료율 실시간 반영)
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    단계별 예상 시간 표시 ("약 30초 소요")
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    건너뛰기 가능한 선택 항목 구분
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="case-solution__item-visual">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" 
+                                 alt="스텝 프로그레스 UI" 
+                                 loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- 솔루션 2 -->
+                    <article class="case-solution__item case-solution__item--reverse">
+                        <div class="case-solution__item-content">
+                            <span class="case-solution__item-label">Solution 02</span>
+                            <h3 class="case-solution__item-title">점진적 정보 수집</h3>
+                            <p class="case-solution__item-text">
+                                12개 항목을 4개 필수 + 8개 선택으로 재구성했습니다.
+                                핵심 기능 사용 후 자연스럽게 추가 정보를 요청하는 방식으로 전환했습니다.
+                            </p>
+                            <ul class="case-solution__features">
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    필수 정보 12개 → 4개로 축소
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    "나중에 입력" 옵션 제공
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    정보 요청 이유 툴팁 추가
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="case-solution__item-visual">
+                            <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=600&h=400&fit=crop" 
+                                 alt="점진적 정보 수집 UI" 
+                                 loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- 솔루션 3 -->
+                    <article class="case-solution__item">
+                        <div class="case-solution__item-content">
+                            <span class="case-solution__item-label">Solution 03</span>
+                            <h3 class="case-solution__item-title">인라인 밸리데이션 & 가이드</h3>
+                            <p class="case-solution__item-text">
+                                실시간 입력 검증과 구체적인 오류 메시지로 사용자가 
+                                문제를 즉시 인지하고 수정할 수 있도록 했습니다.
+                            </p>
+                            <ul class="case-solution__features">
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    실시간 입력 검증 (타이핑 중 피드백)
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    구체적 오류 메시지 ("@ 뒤에 도메인을 입력하세요")
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    성공 상태 시각적 피드백 (체크 아이콘)
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="case-solution__item-visual">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" 
+                                 alt="인라인 밸리데이션 UI" 
+                                 loading="lazy">
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Before / After 비교 -->
+                <div class="case-solution__comparison">
+                    <h3 class="case-solution__comparison-title">Before & After</h3>
+                    <div class="case-solution__comparison-slider">
+                        <div class="case-solution__comparison-item">
+                            <span class="case-solution__comparison-label case-solution__comparison-label--before">Before</span>
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=600&fit=crop" 
+                                 alt="기존 온보딩 화면" 
+                                 loading="lazy">
+                            <ul class="case-solution__comparison-points">
+                                <li>12개 필수 입력 항목</li>
+                                <li>진행 상황 불명확</li>
+                                <li>일괄 에러 표시</li>
+                            </ul>
+                        </div>
+                        <div class="case-solution__comparison-item">
+                            <span class="case-solution__comparison-label case-solution__comparison-label--after">After</span>
+                            <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=400&h=600&fit=crop" 
+                                 alt="개선된 온보딩 화면" 
+                                 loading="lazy">
+                            <ul class="case-solution__comparison-points">
+                                <li>4개 필수 + 8개 선택</li>
+                                <li>명확한 프로그레스 바</li>
+                                <li>실시간 인라인 가이드</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             6. Result & Impact
+             ======================================== -->
+        <section class="case-section case-result" id="case-result">
+            <div class="case-section__container">
+                <div class="case-section__header">
+                    <span class="case-section__number">05</span>
+                    <h2 class="case-section__title">Result & Impact</h2>
+                    <p class="case-section__subtitle">
+                        A/B 테스트 4주 후 측정된 정량적 성과입니다.
+                    </p>
+                </div>
+
+                <!-- 성과 지표 -->
+                <div class="case-result__metrics">
+                    <div class="case-result__metric">
+                        <div class="case-result__metric-value">
+                            <span class="case-result__number" data-target="87">0</span>
+                            <span class="case-result__unit">%</span>
+                        </div>
+                        <div class="case-result__metric-info">
+                            <span class="case-result__metric-label">온보딩 완료율</span>
+                            <span class="case-result__metric-change positive">+20%p 상승</span>
+                        </div>
+                        <div class="case-result__metric-bar">
+                            <div class="case-result__metric-progress" data-progress="87"></div>
+                        </div>
+                    </div>
+
+                    <div class="case-result__metric">
+                        <div class="case-result__metric-value">
+                            <span class="case-result__number" data-target="1.8">0</span>
+                            <span class="case-result__unit">분</span>
+                        </div>
+                        <div class="case-result__metric-info">
+                            <span class="case-result__metric-label">평균 가입 시간</span>
+                            <span class="case-result__metric-change positive">-64% 단축</span>
+                        </div>
+                        <div class="case-result__metric-bar">
+                            <div class="case-result__metric-progress" data-progress="36"></div>
+                        </div>
+                    </div>
+
+                    <div class="case-result__metric">
+                        <div class="case-result__metric-value">
+                            <span class="case-result__number" data-target="52">0</span>
+                            <span class="case-result__unit">%</span>
+                        </div>
+                        <div class="case-result__metric-info">
+                            <span class="case-result__metric-label">첫 주 리텐션</span>
+                            <span class="case-result__metric-change positive">+22%p 향상</span>
+                        </div>
+                        <div class="case-result__metric-bar">
+                            <div class="case-result__metric-progress" data-progress="52"></div>
+                        </div>
+                    </div>
+
+                    <div class="case-result__metric">
+                        <div class="case-result__metric-value">
+                            <span class="case-result__number" data-target="4.6">0</span>
+                            <span class="case-result__unit">점</span>
+                        </div>
+                        <div class="case-result__metric-info">
+                            <span class="case-result__metric-label">앱스토어 평점</span>
+                            <span class="case-result__metric-change positive">+0.8점 상승</span>
+                        </div>
+                        <div class="case-result__metric-bar">
+                            <div class="case-result__metric-progress" data-progress="92"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 정성적 피드백 -->
+                <div class="case-result__feedback">
+                    <h3 class="case-result__feedback-title">User Feedback</h3>
+                    <div class="case-result__feedback-grid">
+                        <blockquote class="case-result__feedback-item">
+                            <p>"가입이 이렇게 빠른 앱은 처음이에요. 바로 써볼 수 있어서 좋았어요."</p>
+                            <cite>— 앱스토어 리뷰</cite>
+                        </blockquote>
+                        <blockquote class="case-result__feedback-item">
+                            <p>"입력하다가 뭐가 틀렸는지 바로 알려줘서 헤매지 않았습니다."</p>
+                            <cite>— 사용자 설문</cite>
+                        </blockquote>
+                        <blockquote class="case-result__feedback-item">
+                            <p>"진행 상황이 보여서 끝까지 할 수 있었어요."</p>
+                            <cite>— 사용성 테스트 참가자</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             7. Reflection
+             ======================================== -->
+        <section class="case-section case-reflection" id="case-reflection">
+            <div class="case-section__container">
+                <div class="case-section__header">
+                    <span class="case-section__number">06</span>
+                    <h2 class="case-section__title">Reflection</h2>
+                </div>
+
+                <div class="case-reflection__grid">
+                    <!-- 배운 점 -->
+                    <div class="case-reflection__item">
+                        <div class="case-reflection__icon case-reflection__icon--learn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="case-reflection__title">What I Learned</h3>
+                        <p class="case-reflection__text">
+                            "적을수록 좋다"는 단순한 원칙이 아니라, <strong>사용자에게 가치를 증명한 후 
+                            정보를 요청</strong>하는 것이 핵심이었습니다. 
+                            데이터 기반 의사결정의 중요성과, 가설을 빠르게 검증하는 
+                            린 UX 방법론의 효과를 체감했습니다.
+                        </p>
+                    </div>
+
+                    <!-- 아쉬웠던 점 -->
+                    <div class="case-reflection__item">
+                        <div class="case-reflection__icon case-reflection__icon--challenge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="case-reflection__title">Challenges</h3>
+                        <p class="case-reflection__text">
+                            초기 접근 시 사용자 인터뷰보다 데이터 분석에 치중했던 점이 아쉽습니다.
+                            숫자만으로는 <strong>"왜" 이탈하는지</strong>를 파악하기 어려웠고, 
+                            인터뷰를 통해서야 핵심 인사이트를 얻을 수 있었습니다.
+                        </p>
+                    </div>
+
+                    <!-- 다음에 적용할 점 -->
+                    <div class="case-reflection__item">
+                        <div class="case-reflection__icon case-reflection__icon--next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </div>
+                        <h3 class="case-reflection__title">Next Steps</h3>
+                        <p class="case-reflection__text">
+                            향후 프로젝트에서는 <strong>정량 + 정성 데이터를 동시에 수집</strong>하는 
+                            리서치 설계를 적용할 예정입니다. 또한 A/B 테스트를 더 세분화하여 
+                            어떤 요소가 가장 큰 영향을 미쳤는지 분석하고자 합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             8. Next Project CTA
+             ======================================== -->
+        <section class="case-section case-cta" id="case-cta">
+            <div class="case-cta__container">
+                <div class="case-cta__content">
+                    <span class="case-cta__label">Next Project</span>
+                    <h2 class="case-cta__title">E-commerce 검색 UX 개선</h2>
+                    <p class="case-cta__description">
+                        검색 전환율 35% 향상을 이끈 AI 기반 검색 경험 리디자인
+                    </p>
+                    <a href="#" class="case-cta__button">
+                        <span>View Case Study</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="case-cta__visual">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" 
+                         alt="다음 프로젝트 미리보기" 
+                         loading="lazy">
+                </div>
+            </div>
+
+            <!-- Back to Works -->
+            <div class="case-cta__back">
+                <a href="../index.html#selected-works" class="case-cta__back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    <span>Back to All Works</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="case-footer">
+        <div class="case-footer__container">
+            <p class="case-footer__copyright">© 2024 Designer Portfolio. All rights reserved.</p>
+            <div class="case-footer__links">
+                <a href="#" class="case-footer__link">LinkedIn</a>
+                <a href="#" class="case-footer__link">Behance</a>
+                <a href="#" class="case-footer__link">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../assets/js/gsap/caseStudyAnimation.js"></script>
+    <script src="../assets/js/caseStudy.js"></script>
+</body>
+
+</html>

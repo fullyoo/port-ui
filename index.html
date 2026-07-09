@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UI/UX 디자이너 포트폴리오 - 전략적 디자인 사고와 매끄러운 인터랙션을 통해 의미 있는 디지털 경험을 만듭니다.">
+    <meta name="keywords" content="UI/UX 디자이너, 포트폴리오, 웹 디자인, 인터랙션 디자인, 사용자 경험">
+    <meta name="author" content="Designer Name">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="UI/UX 디자이너 포트폴리오">
+    <meta property="og:description" content="전략적 디자인 사고와 매끄러운 인터랙션을 통해 의미 있는 디지털 경험을 만듭니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/variables.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/hero.css">
+    <link rel="stylesheet" href="./assets/css/about.css">
+    <link rel="stylesheet" href="./assets/css/works.css">
+    <link rel="stylesheet" href="./assets/css/selectedWorks.css">
+    <link rel="stylesheet" href="./assets/css/contact.css">
+    <link rel="stylesheet" href="./assets/css/floatingMenu.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <title>UI/UX 디자이너 | 포트폴리오</title>
+</head>
+
+<body>
+    <!-- Noise Overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Custom Cursor (Desktop Only) -->
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <div class="header__container">
+            <!-- Logo / Brand -->
+            <h1 class="header__logo">
+                <a href="#hero" class="header__logo-link" data-scroll-to="hero">
+                    <span class="header__logo-text">Portfolio</span>
+                </a>
+            </h1>
+
+            <!-- Navigation Menu -->
+            <nav class="header__nav" aria-label="메인 네비게이션">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="#hero" class="header__nav-link" data-scroll-to="hero">
+                            <span class="header__nav-text">홈</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#about" class="header__nav-link" data-scroll-to="about">
+                            <span class="header__nav-text">자기소개</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#works" class="header__nav-link" data-scroll-to="works">
+                            <span class="header__nav-text">작업물</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#contact" class="header__nav-link" data-scroll-to="contact">
+                            <span class="header__nav-text">연락처</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="header__menu-toggle" aria-label="메뉴 열기/닫기" aria-expanded="false">
+                <span class="header__menu-toggle-line"></span>
+                <span class="header__menu-toggle-line"></span>
+                <span class="header__menu-toggle-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero" id="hero" data-section="hero">
+            <!-- Background Decorations -->
+            <div class="hero__deco hero__deco--grid" aria-hidden="true"></div>
+            <div class="hero__deco hero__deco--line" aria-hidden="true"></div>
+
+            <!-- Floating Keywords -->
+            <div class="hero__keywords" aria-hidden="true">
+                <span class="hero__keyword">사용자 경험</span>
+                <span class="hero__keyword">인터랙션</span>
+                <span class="hero__keyword">디자인 시스템</span>
+                <span class="hero__keyword">프로토타이핑</span>
+                <span class="hero__keyword">모션 디자인</span>
+            </div>
+
+            <!-- Content Area (Left) -->
+            <div class="hero__content">
+                <!-- Label / Eyebrow -->
+                <div class="hero__label">
+                    <span class="hero__label-dot"></span>
+                    <span>프로젝트 가능</span>
+                </div>
+
+                <!-- Main Title -->
+                <h2 class="hero__title">
+                    <span class="hero__title-line">
+                        <span class="hero__title-text">UI/UX 디자이너</span>
+                    </span>
+                    <span class="hero__title-line">
+                        <span class="hero__title-text">개발도 하는 <span class="hero__title-highlight">인터랙션</span></span>
+                    </span>
+                    <span class="hero__title-line">
+                        <span class="hero__title-text">디자이너</span>
+                    </span>
+                </h2>
+
+                <!-- Subtitle -->
+                <p class="hero__subtitle">
+                    전략적 디자인 사고와 매끄러운 인터랙션, 픽셀 단위의 완벽한 실행을 통해
+                    <strong>의미 있는 디지털 경험</strong>을 만듭니다.
+                    <strong>디자인과 개발</strong> 사이의 간격을 메웁니다.
+                </p>
+
+                <!-- CTA Area -->
+                <div class="hero__cta">
+                    <a href="#works" class="hero__cta-btn">
+                        <span>프로젝트 보기</span>
+                        <svg class="hero__cta-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <button class="hero__scroll" aria-label="다음 섹션으로 스크롤">
+                        <span class="hero__scroll-line"></span>
+                        <span>스크롤</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Visual Area (Right) -->
+            <div class="hero__visual">
+                <!-- Progress Counter -->
+                <div class="hero__progress">
+                    <span class="hero__progress-current">01</span>
+                    <span>/</span>
+                    <span class="hero__progress-total">04</span>
+                </div>
+
+                <!-- Autoplay Control -->
+                <button class="hero__autoplay-btn" aria-label="자동 재생 제어">
+                    <svg class="hero__autoplay-icon hero__autoplay-icon--play" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M5 3l14 9-14 9V3z" />
+                    </svg>
+                    <svg class="hero__autoplay-icon hero__autoplay-icon--pause" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M6 4h4v16H6V4zM14 4h4v16h-4V4z" />
+                    </svg>
+                </button>
+
+                <!-- Swiper Container -->
+                <div class="hero__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide hero__slide">
+                            <div class="hero__slide-inner">
+                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80"
+                                    alt="추상 그라데이션 디자인" class="hero__slide-image" loading="eager">
+                                <div class="hero__slide-overlay">
+                                    <span class="hero__slide-category">브랜드 아이덴티티</span>
+                                    <h3 class="hero__slide-title">루미나 앱</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide hero__slide">
+                            <div class="hero__slide-inner">
+                                <img src="https://images.unsplash.com/photo-1634017839464-5c339bbe3c35?w=800&q=80"
+                                    alt="모던 UI 디자인" class="hero__slide-image" loading="lazy">
+                                <div class="hero__slide-overlay">
+                                    <span class="hero__slide-category">웹 디자인</span>
+                                    <h3 class="hero__slide-title">넥서스 플랫폼</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide hero__slide">
+                            <div class="hero__slide-inner">
+                                <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&q=80"
+                                    alt="창의적 추상 아트" class="hero__slide-image" loading="lazy">
+                                <div class="hero__slide-overlay">
+                                    <span class="hero__slide-category">모바일 앱</span>
+                                    <h3 class="hero__slide-title">플로우 파이낸스</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide hero__slide">
+                            <div class="hero__slide-inner">
+                                <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=800&q=80"
+                                    alt="기하학적 디자인 패턴" class="hero__slide-image" loading="lazy">
+                                <div class="hero__slide-overlay">
+                                    <span class="hero__slide-category">디자인 시스템</span>
+                                    <h3 class="hero__slide-title">버텍스 UI</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swiper Pagination -->
+                <div class="hero__swiper-pagination"></div>
+
+                <!-- Swiper Navigation -->
+                <div class="hero__swiper-nav">
+                    <button class="hero__swiper-btn hero__swiper-btn--prev" aria-label="이전 슬라이드">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button class="hero__swiper-btn hero__swiper-btn--next" aria-label="다음 슬라이드">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ABOUT SECTION ========== -->
+        <section class="about" id="about" data-section="about">
+            <!-- Section Number (Decorative) -->
+            <span class="about__number" aria-hidden="true">01</span>
+
+            <div class="about__container">
+                <!-- Content Area (Left) -->
+                <div class="about__content">
+                    <!-- Section Header -->
+                    <div class="about__header">
+                        <div class="about__label">
+                            <span>자기소개</span>
+                        </div>
+                        <h2 class="about__title">
+                            <span class="about__title-line">
+                                <span class="about__title-text">디자이너이자</span>
+                            </span>
+                            <span class="about__title-line">
+                                <span class="about__title-text">문제 해결자</span>
+                            </span>
+                        </h2>
+                    </div>
+
+                    <!-- Main Statement -->
+                    <p class="about__statement">
+                        저는 단순한 화면이 아닌<br>
+                        <span class="about__statement-highlight">경험</span>을 디자인합니다.
+                    </p>
+
+                    <!-- Description -->
+                    <p class="about__description">
+                        <strong>사용자 중심 디자인</strong>을 기반으로 하고
+                        <strong>인터랙티브 경험</strong>에 대한 열정을 가지고,
+                        모든 프로젝트를 실제 문제를 해결할 기회로 접근합니다.
+                        훌륭한 디자인은 사용자 니즈를 이해하고, 명확한 목표를 정의하며,
+                        끊임없이 반복하는 과정에서 탄생한다고 믿습니다.
+                    </p>
+
+                    <!-- Keywords Grid -->
+                    <div class="about__keywords">
+                        <!-- Keyword 1 -->
+                        <div class="about__keyword">
+                            <svg class="about__keyword-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                            <h3 class="about__keyword-title">UX 리서치</h3>
+                            <p class="about__keyword-desc">데이터 기반 디자인 결정</p>
+                        </div>
+
+                        <!-- Keyword 2 -->
+                        <div class="about__keyword">
+                            <svg class="about__keyword-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <h3 class="about__keyword-title">인터랙션</h3>
+                            <p class="about__keyword-desc">스토리를 전달하는 모션</p>
+                        </div>
+
+                        <!-- Keyword 3 -->
+                        <div class="about__keyword">
+                            <svg class="about__keyword-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path
+                                    d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                            </svg>
+                            <h3 class="about__keyword-title">프로토타이핑</h3>
+                            <p class="about__keyword-desc">컨셉에서 현실로</p>
+                        </div>
+
+                        <!-- Keyword 4 -->
+                        <div class="about__keyword">
+                            <svg class="about__keyword-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                            <h3 class="about__keyword-title">개발 사고</h3>
+                            <p class="about__keyword-desc">실현 가능성을 고려한 디자인</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Area (Right) -->
+                <div class="about__visual">
+                    <!-- Decorative Elements -->
+                    <div class="about__deco about__deco--dots" aria-hidden="true"></div>
+                    <div class="about__deco about__deco--circle" aria-hidden="true"></div>
+
+                    <!-- Profile Image -->
+                    <div class="about__image-wrapper">
+                        <div class="about__image-frame" aria-hidden="true"></div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+                            alt="디자이너 프로필 사진" class="about__image" loading="lazy">
+
+                        <!-- Floating Stats -->
+                        <div class="about__stats">
+                            <div class="about__stat">
+                                <span class="about__stat-number">5+</span>
+                                <span class="about__stat-label">년 경력</span>
+                            </div>
+                            <div class="about__stat">
+                                <span class="about__stat-number">40+</span>
+                                <span class="about__stat-label">프로젝트</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== WORKS SECTION ========== -->
+        <section class="works" id="works" data-section="works">
+            <!-- Section Number (Decorative) -->
+            <span class="works__number" aria-hidden="true">02</span>
+
+            <!-- Section Header -->
+            <header class="works__header">
+                <div class="works__header-content">
+                    <div class="works__label">
+                        <span>Portfolio</span>
+                    </div>
+                    <h2 class="works__title">
+                        <span class="works__title-line">
+                            <span class="works__title-text">대표</span>
+                        </span>
+                        <span class="works__title-line">
+                            <span class="works__title-text"><span class="works__title-highlight">작업물</span></span>
+                        </span>
+                    </h2>
+                </div>
+            </header>
+
+            <!-- Swiper Container -->
+            <div class="works__swiper-container">
+                <div class="works__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Project 1 -->
+                        <div class="swiper-slide works__slide">
+                            <article class="works__card">
+                                <div class="works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80"
+                                        alt="Lumina Health App" class="works__card-img" loading="lazy">
+                                </div>
+                                <div class="works__card-content">
+                                    <h3 class="works__card-title">Lumina Health</h3>
+                                    <p class="works__card-problem">
+                                        How might we help users track their mental wellness without adding cognitive
+                                        burden to their daily routine?
+                                    </p>
+                                    <div class="works__card-roles">
+                                        <span class="works__card-role">UX</span>
+                                        <span class="works__card-role">UI</span>
+                                        <span class="works__card-role">Interaction</span>
+                                    </div>
+                                    <a href="#" class="works__card-cta">
+                                        <span>View Case</span>
+                                        <svg class="works__card-cta-icon" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="swiper-slide works__slide">
+                            <article class="works__card">
+                                <div class="works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                                        alt="Nexus Analytics Platform" class="works__card-img" loading="lazy">
+                                </div>
+                                <div class="works__card-content">
+                                    <h3 class="works__card-title">Nexus Analytics</h3>
+                                    <p class="works__card-problem">
+                                        How might we simplify complex data visualization for non-technical stakeholders
+                                        while maintaining analytical depth?
+                                    </p>
+                                    <div class="works__card-roles">
+                                        <span class="works__card-role">UX</span>
+                                        <span class="works__card-role">UI</span>
+                                        <span class="works__card-role">Front-end</span>
+                                    </div>
+                                    <a href="#" class="works__card-cta">
+                                        <span>View Case</span>
+                                        <svg class="works__card-cta-icon" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="swiper-slide works__slide">
+                            <article class="works__card">
+                                <div class="works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80"
+                                        alt="Flow Finance App" class="works__card-img" loading="lazy">
+                                </div>
+                                <div class="works__card-content">
+                                    <h3 class="works__card-title">Flow Finance</h3>
+                                    <p class="works__card-problem">
+                                        How might we make personal finance management feel less intimidating for
+                                        first-time investors?
+                                    </p>
+                                    <div class="works__card-roles">
+                                        <span class="works__card-role">UX</span>
+                                        <span class="works__card-role">UI</span>
+                                        <span class="works__card-role">Interaction</span>
+                                    </div>
+                                    <a href="#" class="works__card-cta">
+                                        <span>View Case</span>
+                                        <svg class="works__card-cta-icon" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="swiper-slide works__slide">
+                            <article class="works__card">
+                                <div class="works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80"
+                                        alt="Vertex Design System" class="works__card-img" loading="lazy">
+                                </div>
+                                <div class="works__card-content">
+                                    <h3 class="works__card-title">Vertex UI Kit</h3>
+                                    <p class="works__card-problem">
+                                        How might we create a scalable design system that accelerates product
+                                        development while ensuring consistency?
+                                    </p>
+                                    <div class="works__card-roles">
+                                        <span class="works__card-role">UI</span>
+                                        <span class="works__card-role">Front-end</span>
+                                        <span class="works__card-role">Documentation</span>
+                                    </div>
+                                    <a href="#" class="works__card-cta">
+                                        <span>View Case</span>
+                                        <svg class="works__card-cta-icon" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="swiper-slide works__slide">
+                            <article class="works__card">
+                                <div class="works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
+                                        alt="E-commerce Platform" class="works__card-img" loading="lazy">
+                                </div>
+                                <div class="works__card-content">
+                                    <h3 class="works__card-title">Commerce Pro</h3>
+                                    <p class="works__card-problem">
+                                        How might we reduce cart abandonment by creating a more intuitive checkout
+                                        experience?
+                                    </p>
+                                    <div class="works__card-roles">
+                                        <span class="works__card-role">UX</span>
+                                        <span class="works__card-role">UI</span>
+                                        <span class="works__card-role">Front-end</span>
+                                    </div>
+                                    <a href="#" class="works__card-cta">
+                                        <span>View Case</span>
+                                        <svg class="works__card-cta-icon" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 6 -->
+                        <div class="swiper-slide works__slide">
+                            <article class="works__card">
+                                <div class="works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                                        alt="Analytics Dashboard" class="works__card-img" loading="lazy">
+                                </div>
+                                <div class="works__card-content">
+                                    <h3 class="works__card-title">Data Insights</h3>
+                                    <p class="works__card-problem">
+                                        How might we help business users make data-driven decisions without overwhelming
+                                        them with complexity?
+                                    </p>
+                                    <div class="works__card-roles">
+                                        <span class="works__card-role">UX</span>
+                                        <span class="works__card-role">UI</span>
+                                        <span class="works__card-role">Interaction</span>
+                                    </div>
+                                    <a href="#" class="works__card-cta">
+                                        <span>View Case</span>
+                                        <svg class="works__card-cta-icon" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 7 -->
+                        <div class="swiper-slide works__slide">
+                            <article class="works__card">
+                                <div class="works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80"
+                                        alt="Mobile App Design" class="works__card-img" loading="lazy">
+                                </div>
+                                <div class="works__card-content">
+                                    <h3 class="works__card-title">Wellness Tracker</h3>
+                                    <p class="works__card-problem">
+                                        How might we encourage healthy habits through positive reinforcement rather than
+                                        guilt?
+                                    </p>
+                                    <div class="works__card-roles">
+                                        <span class="works__card-role">UX</span>
+                                        <span class="works__card-role">UI</span>
+                                        <span class="works__card-role">Interaction</span>
+                                    </div>
+                                    <a href="#" class="works__card-cta">
+                                        <span>View Case</span>
+                                        <svg class="works__card-cta-icon" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 8 -->
+                        <div class="swiper-slide works__slide">
+                            <article class="works__card">
+                                <div class="works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80"
+                                        alt="SaaS Platform" class="works__card-img" loading="lazy">
+                                </div>
+                                <div class="works__card-content">
+                                    <h3 class="works__card-title">Team Collaboration</h3>
+                                    <p class="works__card-problem">
+                                        How might we reduce context switching and improve team productivity in remote
+                                        work environments?
+                                    </p>
+                                    <div class="works__card-roles">
+                                        <span class="works__card-role">UX</span>
+                                        <span class="works__card-role">UI</span>
+                                        <span class="works__card-role">Front-end</span>
+                                    </div>
+                                    <a href="#" class="works__card-cta">
+                                        <span>View Case</span>
+                                        <svg class="works__card-cta-icon" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SELECTED WORKS SECTION ========== -->
+        <section class="selected-works" id="selected-works" data-section="selected-works">
+            <!-- Background -->
+            <div class="selected-works__bg" aria-hidden="true"></div>
+
+            <!-- Section Header -->
+            <header class="selected-works__header">
+                <div class="selected-works__header-content">
+                    <h2 class="selected-works__title">
+                        <span class="selected-works__title-line">
+                            <span class="selected-works__title-text">Selected</span>
+                        </span>
+                        <span class="selected-works__title-line">
+                            <span class="selected-works__title-text"><span
+                                    class="selected-works__title-highlight">Works</span></span>
+                        </span>
+                    </h2>
+                </div>
+            </header>
+
+            <!-- Swiper Container -->
+            <div class="selected-works__swiper-container">
+                <!-- Progress Bar -->
+                <div class="selected-works__progress" aria-hidden="true">
+                    <div class="selected-works__progress-bar"></div>
+                </div>
+                <!-- Navigation Buttons -->
+                <button class="selected-works__swiper-btn selected-works__swiper-btn--prev" aria-label="이전 슬라이드">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button class="selected-works__swiper-btn selected-works__swiper-btn--next" aria-label="다음 슬라이드">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <div class="selected-works__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Project 1 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 1</h3>
+                                    <p class="selected-works__card-problem">사용자 경험 개선을 위한 모바일 앱 리디자인</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UX</span>
+                                        <span class="selected-works__role">UI</span>
+                                        <span class="selected-works__role">Interaction</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&q=80"
+                                        alt="Project 1" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 2</h3>
+                                    <p class="selected-works__card-problem">복잡한 정보 구조를 단순화한 대시보드 설계</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UX</span>
+                                        <span class="selected-works__role">UI</span>
+                                        <span class="selected-works__role">Front-end</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
+                                        alt="Project 2" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 3</h3>
+                                    <p class="selected-works__card-problem">브랜드 아이덴티티를 반영한 랜딩 페이지 제작</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UI</span>
+                                        <span class="selected-works__role">Interaction</span>
+                                        <span class="selected-works__role">Front-end</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
+                                        alt="Project 3" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 4</h3>
+                                    <p class="selected-works__card-problem">접근성을 고려한 웹 애플리케이션 개발</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UX</span>
+                                        <span class="selected-works__role">Front-end</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80"
+                                        alt="Project 4" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 5</h3>
+                                    <p class="selected-works__card-problem">데이터 시각화를 통한 인사이트 제공</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UX</span>
+                                        <span class="selected-works__role">UI</span>
+                                        <span class="selected-works__role">Interaction</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
+                                        alt="Project 5" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 6 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 6</h3>
+                                    <p class="selected-works__card-problem">실시간 협업을 위한 웹툴 설계</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UX</span>
+                                        <span class="selected-works__role">UI</span>
+                                        <span class="selected-works__role">Front-end</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80"
+                                        alt="Project 6" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 7 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 7</h3>
+                                    <p class="selected-works__card-problem">온라인 쇼핑 결제 플로우 최적화</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UX</span>
+                                        <span class="selected-works__role">Interaction</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80"
+                                        alt="Project 7" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 8 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 8</h3>
+                                    <p class="selected-works__card-problem">멀티 플랫폼 디자인 시스템 구축</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UI</span>
+                                        <span class="selected-works__role">Front-end</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80"
+                                        alt="Project 8" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 9 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 9</h3>
+                                    <p class="selected-works__card-problem">앱 온보딩 경험 개선 및 리텐션 설계</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UX</span>
+                                        <span class="selected-works__role">UI</span>
+                                        <span class="selected-works__role">Interaction</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80"
+                                        alt="Project 9" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Project 10 -->
+                        <div class="swiper-slide selected-works__slide">
+                            <article class="selected-works__card">
+                                <div class="selected-works__card-content">
+                                    <h3 class="selected-works__card-title">프로젝트명 10</h3>
+                                    <p class="selected-works__card-problem">브랜드 일관성을 위한 글로벌 웹 리뉴얼</p>
+                                    <div class="selected-works__card-roles">
+                                        <span class="selected-works__role">UX</span>
+                                        <span class="selected-works__role">UI</span>
+                                        <span class="selected-works__role">Front-end</span>
+                                    </div>
+                                    <a href="./works/case-study.html" class="selected-works__card-btn">
+                                        View Case
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="selected-works__card-image">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80"
+                                        alt="Project 10" class="selected-works__card-img">
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT SECTION ========== -->
+        <section class="contact" id="contact" data-section="contact">
+            <!-- Background -->
+            <div class="contact__bg" aria-hidden="true"></div>
+
+            <!-- Decorative Elements -->
+            <span class="contact__deco contact__deco--number" aria-hidden="true">03</span>
+            <div class="contact__deco contact__deco--circle" aria-hidden="true"></div>
+            <div class="contact__deco contact__deco--circle-sm" aria-hidden="true"></div>
+
+            <!-- Main Content -->
+            <div class="contact__container">
+                <!-- Section Label -->
+                <div class="contact__label">
+                    <span>연락하기</span>
+                </div>
+
+                <!-- Main Title -->
+                <h2 class="contact__title">
+                    <span class="contact__title-line">
+                        <span class="contact__title-text">함께 만들어요</span>
+                    </span>
+                    <span class="contact__title-line">
+                        <span class="contact__title-text"><span class="contact__title-highlight">의미 있는</span>
+                            경험을</span>
+                    </span>
+                    <span class="contact__title-line">
+                        <span class="contact__title-text">함께.</span>
+                    </span>
+                </h2>
+
+                <!-- Subtitle -->
+                <p class="contact__subtitle">
+                    <strong>새로운 프로젝트</strong>, 창의적인 아이디어, 또는 여러분의 비전에 함께할 기회에 대해
+                    항상 열려있습니다. 정규직, 프리랜스 프로젝트, 또는 단순히 디자인에 대한 대화까지 환영합니다.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="contact__cta">
+                    <a href="mailto:hello@designer.com" class="contact__cta-btn contact__cta-btn--primary">
+                        <span>안녕하세요</span>
+                        <svg class="contact__cta-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#" class="contact__cta-btn contact__cta-btn--secondary" download>
+                        <span>이력서 다운로드</span>
+                        <svg class="contact__cta-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Contact Links -->
+                <div class="contact__links">
+                    <!-- Email -->
+                    <a href="mailto:hello@designer.com" class="contact__link">
+                        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span class="contact__link-label">이메일</span>
+                        <span class="contact__link-hint">hello@designer.com</span>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact__link">
+                        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" />
+                        </svg>
+                        <span class="contact__link-label">링크드인</span>
+                        <span class="contact__link-hint">연결하기</span>
+                    </a>
+
+                    <!-- Notion -->
+                    <a href="https://notion.so" target="_blank" rel="noopener noreferrer" class="contact__link">
+                        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <path d="M8 2v4M16 2v4M2 10h20" />
+                        </svg>
+                        <span class="contact__link-label">노션</span>
+                        <span class="contact__link-hint">포트폴리오</span>
+                    </a>
+
+                    <!-- Dribbble -->
+                    <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="contact__link">
+                        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <path
+                                d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" />
+                        </svg>
+                        <span class="contact__link-label">드리블</span>
+                        <span class="contact__link-hint">작업물</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Note -->
+            <footer class="contact__footer">
+                <p class="contact__footer-text">
+                    💛과 함께 디자인하고 개발했습니다 · © 2026
+                </p>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- Floating Menu (탑 버튼, 노션) -->
+    <nav class="floating-menu" aria-label="플로팅 메뉴">
+        <button type="button" class="floating-menu__item floating-menu__item--top" id="floating-menu-top" aria-label="맨 위로">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </button>
+        <a href="https://notion.so" target="_blank" rel="noopener noreferrer" class="floating-menu__item" aria-label="노션 포트폴리오">
+            <svg class="icon-notion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.98-.56-1.68-.466L2.763 2.902c-.747.047-.934.326-.28.56l1.976 1.022zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.56-.373-.934-1.121-.887l-14.07.794c-.56.047-.747.327-.747.887zm14.337.745c.093.42 0 .84-.42.887l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.747 0-.934-.234-1.495-.933L8.31 10.064v8.055c-.467.14-.934.28-1.401.28-.56 0-.747-.14-1.214-.42V6.728c0-.56.28-.934.747-.98l13.876-.794c.56-.047.934.28.934.747l-.047 4.36zm-1.635 2.06v-.14l-5.615-.326c-.42-.047-.7.14-.747.56v3.08c0 .42.28.7.7.747l5.615.326c.42.047.7-.14.747-.56v-3.08c0-.327-.14-.56-.42-.607z"/>
+            </svg>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <!-- GSAP Core + Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/gsap/heroAnimation.js"></script>
+    <script src="./assets/js/gsap/aboutAnimation.js"></script>
+    <script src="./assets/js/gsap/worksAnimation.js"></script>
+    <script src="./assets/js/gsap/selectedWorksAnimation.js"></script>
+    <script src="./assets/js/gsap/contactAnimation.js"></script>
+    <script src="./assets/js/swiper/heroSwiper.js"></script>
+    <script src="./assets/js/swiper/worksSwiper.js"></script>
+    <script src="./assets/js/swiper/selectedWorksSwiper.js"></script>
+    <script src="./assets/js/floatingMenu.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

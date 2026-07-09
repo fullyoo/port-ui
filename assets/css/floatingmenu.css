@@ -1,0 +1,95 @@
+/**
+ * floatingMenu.css
+ * 우측 플로팅 메뉴 (탑 버튼, 노션 아이콘)
+ */
+
+.floating-menu {
+    position: fixed;
+    right: var(--space-6);
+    bottom: var(--space-10);
+    z-index: var(--z-tooltip);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    pointer-events: none;
+}
+
+.floating-menu__item {
+    pointer-events: auto;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--color-light);
+    text-decoration: none;
+    transition: all var(--duration-normal) var(--ease-out-expo);
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+}
+
+button.floating-menu__item {
+    padding: 0;
+    font: inherit;
+}
+
+.floating-menu__item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: scale(1.08);
+}
+
+.floating-menu__item:active {
+    transform: scale(0.96);
+}
+
+.floating-menu__item--top {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity var(--duration-normal) var(--ease-out-expo),
+                visibility var(--duration-normal),
+                transform var(--duration-normal) var(--ease-out-expo),
+                background var(--duration-normal),
+                border-color var(--duration-normal),
+                color var(--duration-normal);
+}
+
+.floating-menu__item--top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.floating-menu__item svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.floating-menu__item .icon-notion {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .floating-menu {
+        right: var(--space-4);
+        bottom: var(--space-8);
+    }
+
+    .floating-menu__item {
+        width: 44px;
+        height: 44px;
+    }
+
+    .floating-menu__item svg {
+        width: 20px;
+        height: 20px;
+    }
+}

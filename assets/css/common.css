@@ -1,0 +1,274 @@
+/**
+ * common.css
+ * 공통 UI 스타일, 유틸리티 클래스
+ * 재사용 가능한 컴포넌트 스타일
+ */
+
+/* ===== Google Fonts Import ===== */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+/* ===== Base Styles ===== */
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+/* ===== Container ===== */
+.container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.container--fluid {
+    max-width: 100%;
+}
+
+/* ===== Typography Classes ===== */
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.font-display {
+    font-family: var(--font-primary);
+}
+
+.font-body {
+    font-family: var(--font-secondary);
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+/* ===== Button Styles ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    transition: all var(--duration-normal) var(--ease-out-expo);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn--primary {
+    background: var(--color-primary);
+    color: var(--color-light);
+}
+
+.btn--primary:hover {
+    background: var(--color-accent);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-accent);
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--color-light);
+    border: 1px solid var(--color-gray-600);
+}
+
+.btn--outline:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--color-light);
+    padding: var(--space-2) 0;
+}
+
+.btn--ghost::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-accent);
+    transition: width var(--duration-normal) var(--ease-out-expo);
+}
+
+.btn--ghost:hover::after {
+    width: 100%;
+}
+
+/* Button Icon */
+.btn__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.btn:hover .btn__icon {
+    transform: translateX(4px);
+}
+
+/* ===== Link Styles ===== */
+.link {
+    position: relative;
+    display: inline-block;
+    color: var(--color-light);
+    transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.link:hover {
+    color: var(--color-accent);
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ===== Decorative Elements ===== */
+.line-horizontal {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gray-700), transparent);
+}
+
+.line-vertical {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--color-gray-700), transparent);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+}
+
+/* ===== Animation Utilities ===== */
+.split-text {
+    overflow: hidden;
+}
+
+.split-text__char,
+.split-text__word,
+.split-text__line {
+    display: inline-block;
+}
+
+/* ===== Visibility Utilities ===== */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ===== Loading State ===== */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-max);
+}
+
+.loading-screen__progress {
+    width: 200px;
+    height: 2px;
+    background: var(--color-gray-800);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.loading-screen__bar {
+    width: 0%;
+    height: 100%;
+    background: var(--color-primary);
+    transition: width var(--duration-slow) var(--ease-out-expo);
+}
+
+/* ===== Cursor Custom (Desktop Only) ===== */
+@media (hover: hover) and (pointer: fine) {
+    .cursor {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--color-accent);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: var(--z-max);
+        transform: translate(-50%, -50%);
+        transition: width 0.2s, height 0.2s, border-color 0.2s;
+        mix-blend-mode: difference;
+    }
+
+    .cursor--hover {
+        width: 60px;
+        height: 60px;
+        border-color: var(--color-primary);
+    }
+}
+
+/* ===== Noise Texture Overlay ===== */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: var(--z-max);
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ===== Title Highlight Typewriter (한 글자씩 써지는 효과) ===== */
+.title-highlight__char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.3em);
+}

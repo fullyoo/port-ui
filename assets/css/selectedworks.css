@@ -13,6 +13,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    display: none;
 }
 
 .selected-works__bg {

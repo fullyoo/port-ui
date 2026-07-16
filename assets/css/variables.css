@@ -22,7 +22,7 @@
     --color-gray-900: #171717;
 
     /* ===== Typography ===== */
-    --font-primary: 'Syne', sans-serif;
+    --font-primary: 'Pretendard', sans-serif;
     --font-secondary: 'Space Grotesk', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
@@ -78,6 +78,7 @@
     --space-16: 6.4rem;
     --space-20: 8rem;
     --space-24: 9.6rem;
+    --space-25: 10rem;
     --space-32: 12.8rem;
 
     /* Container */

@@ -417,17 +417,11 @@ class HeroAnimation {
             });
         });
 
-        // Scroll fade out (모바일 제외)
+        // 스크롤해도 키워드는 계속 보이도록 유지
         if (!this.isMobile) {
-            gsap.to(this.elements.keywords, {
-                opacity: 0.3,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: this.hero,
-                    start: '30% top',
-                    end: '60% top',
-                    scrub: true
-                }
+            this.elements.keywords.forEach(keyword => {
+                keyword.style.opacity = '0.8';
+                keyword.style.visibility = 'visible';
             });
         }
     }

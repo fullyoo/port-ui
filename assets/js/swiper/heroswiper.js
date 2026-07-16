@@ -55,11 +55,11 @@ class HeroSwiper {
                 speed: 800,
 
                 // Autoplay
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true
-                },
+                // autoplay: {
+                //     delay: 4000,
+                //     disableOnInteraction: false,
+                //     pauseOnMouseEnter: true
+                // },
 
                 // Effect
                 effect: 'slide',

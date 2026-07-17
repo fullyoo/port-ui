@@ -9,7 +9,7 @@
     position: relative;
     /* height: 100vh; */
     /* max-height: 100vh; */
-    padding: var(--space-12) 0;
+    padding: var(--space-32) 0;
     background: var(--color-dark);
     overflow: hidden;
 }

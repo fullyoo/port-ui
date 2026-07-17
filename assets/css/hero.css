@@ -11,10 +11,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
     background: var(--color-dark);
     justify-content: flex-start;
-    padding-top: var(--space-25);
+    padding: var(--space-32) 0;
 }
 
 .hero::before {
@@ -38,11 +38,12 @@
     flex: 1;
     /* padding: var(--space-8) var(--space-8); */
     /* padding-left: calc(var(--container-padding) + 3vw); */
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 50%;
+    padding-bottom: var(--space-8);
 }
 
 /* Label / Eyebrow */
@@ -270,7 +271,8 @@
 .hero__visual {
     position: relative;
     flex: 1;
-    min-height: 60vh;
+    min-height: clamp(420px, 68vh, 720px);
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -281,9 +283,9 @@
 /* Swiper Container */
 .hero__swiper {
     width: 100%;
-    height: 70vh;
-    max-height: 600px;
-    min-height: 450px;
+    height: clamp(420px, 68vh, 640px);
+    max-height: 640px;
+    min-height: 420px;
 }
 
 .hero__swiper .swiper-wrapper {
@@ -555,6 +557,7 @@
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
+    overflow: visible;
     pointer-events: none;
     z-index: 10;
 }

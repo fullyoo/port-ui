@@ -56,7 +56,7 @@ class HeroSwiper {
 
                 // Autoplay
                 // autoplay: {
-                //     delay: 4000,
+                //     delay: 2000,
                 //     disableOnInteraction: false,
                 //     pauseOnMouseEnter: true
                 // },

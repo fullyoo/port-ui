@@ -55,8 +55,9 @@ class HeroSwiper {
                 speed: 800,
 
                 // Autoplay
+
                 // autoplay: {
-                //     delay: 2000,
+                //     delay: 4000,
                 //     disableOnInteraction: false,
                 //     pauseOnMouseEnter: true
                 // },
@@ -111,6 +112,7 @@ class HeroSwiper {
                         setTimeout(() => {
                             this.updateProgress();
                             this.initCustomEffects();
+                            this.playInitialEntrance();
                         }, 100);
                     },
                     slideChange: () => {
@@ -178,6 +180,31 @@ class HeroSwiper {
             this.swiper.autoplay.start();
             this.elements.autoplayBtn.classList.remove('is-paused');
         }
+    }
+
+    /**
+     * Animate the first active slide into place on initial load
+     */
+    playInitialEntrance() {
+        if (!this.swiper || !this.swiper.slides?.length) return;
+
+        const activeSlide = this.swiper.slides[this.swiper.activeIndex];
+        const activeInner = activeSlide?.querySelector('.hero__slide-inner');
+
+        if (!activeInner) return;
+
+        gsap.fromTo(activeInner,
+            {
+                scale: 0.85,
+                opacity: 0.4
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 0.8,
+                ease: 'power2.out'
+            }
+        );
     }
 
     /**

@@ -184,3 +184,42 @@ Ran terminal command: python -m http.server 3000 --bind 127.0.0.1
 브라우저에서 반영 확인하려면 페이지를 새로고침해 주세요. 필요하면 다음으로 `about`와 `hero` 사이 간격도 미세하게 더 여유 있게 맞출 수 있습니다.
 
 Made changes.
+
+
+**User**
+
+hero__slide-inner 가 슬라이드 되면서 크기가 커지는데 첫화면에서 첫번째 슬라이드는 커지지 않은 채로 슬라이드 되네요! 첫화면에서도 첫번째 슬라이드가 스케일이 커진후에 이동하게 해주세요
+
+---
+
+**VS-CODE**
+
+첫 번째 슬라이드가 초기 진입 시에는 이미 확대된 상태가 아니라, 전환 시작 시점에만 커지는 느낌을 주는 원인을 확인하고 있습니다. 그 상태를 초기 렌더링부터 일관되게 맞추겠습니다.
+
+첫 진입 시점이 초기 상태와 전환 상태가 분리돼 있어서, 첫 슬라이드가 바로 확대 애니메이션 없이 넘어가는 현상이 생긴 것으로 보입니다. 그 초기 진입 애니메이션을 명시적으로 넣어 첫 화면에서도 동일하게 보이도록 맞추겠습니다.
+
+Replacing 13 lines with 39 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/swiper/heroswiper.js)
+
+
+```
+
+```
+
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/swiper/heroswiper.js), no problems found
+
+## 수정 완료
+
+첫 화면에서도 첫 번째 슬라이드가 “커진 뒤 이동”하는 느낌이 아니라, 처음부터 스케일된 상태로 등장하도록 바꿨습니다.
+
+### 반영 내용
+- heroswiper.js에서 Swiper 초기화 완료 후 `playInitialEntrance()`를 실행하도록 추가
+- 첫 활성 슬라이드의 `.hero__slide-inner`에 대해 초기 진입용 `gsap.fromTo()` 애니메이션 적용
+- 시작 상태를 `scale: 0.85`, `opacity: 0.4`에서 `scale: 1`, `opacity: 1`로 자연스럽게 전환
+
+### 확인
+- heroswiper.js 기준 에디터 오류 검사 결과: `No errors found`
+
+원하면 다음 단계로는 “첫 진입 시에는 더 부드럽게, 슬라이드 전환 시에는 약간 더 크게”처럼 첫 화면과 전환 애니메이션을 분리해서 더 정교하게 다듬어드릴 수 있습니다.
+
+Made changes.

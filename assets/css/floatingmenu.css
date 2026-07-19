@@ -15,6 +15,12 @@
     pointer-events: none;
 }
 
+.floating-menu__item-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .floating-menu__item {
     pointer-events: auto;
     width: 48px;
@@ -38,6 +44,14 @@ button.floating-menu__item {
 }
 
 .floating-menu__item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: scale(1.08);
+}
+
+.floating-menu__item-wrap:hover .floating-menu__item,
+.floating-menu__item-wrap:focus-within .floating-menu__item {
     background: rgba(255, 255, 255, 0.12);
     border-color: var(--color-accent);
     color: var(--color-accent);
@@ -75,6 +89,45 @@ button.floating-menu__item {
 .floating-menu__item .icon-notion {
     width: 24px;
     height: 24px;
+}
+
+.floating-menu__tooltip {
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    /* min-width: 180px; */
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    background: rgba(15, 15, 18, 0.92);
+    color: var(--color-light);
+    font-family: var(--font-secondary);
+    font-size: var(--text-xs);
+    white-space: nowrap;
+    letter-spacing: var(--tracking-wide);
+    text-decoration: none;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: auto;
+    transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.floating-menu__item-wrap:hover .floating-menu__tooltip,
+.floating-menu__item-wrap:focus-within .floating-menu__tooltip,
+.floating-menu__tooltip:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0);
+}
+
+.floating-menu__item-wrap:hover .floating-menu__tooltip:hover {
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    border-color: var(--color-primary);
+    color: var(--color-accent);
 }
 
 @media (max-width: 768px) {

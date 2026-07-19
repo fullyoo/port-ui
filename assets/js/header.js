@@ -11,10 +11,10 @@ class Header {
         this.menuToggle = document.querySelector('.header__menu-toggle');
         this.nav = document.querySelector('.header__nav');
         this.sections = document.querySelectorAll('section[data-section]');
-        
+
         this.isMenuOpen = false;
         this.scrollThreshold = 100;
-        
+
         // Bind methods
         this.init = this.init.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
@@ -35,7 +35,7 @@ class Header {
 
         // Scroll event listener
         window.addEventListener('scroll', this.handleScroll, { passive: true });
-        
+
         // Navigation link click handlers
         this.navLinks.forEach(link => {
             link.addEventListener('click', this.handleNavClick);
@@ -48,8 +48,8 @@ class Header {
 
         // Close menu on outside click
         document.addEventListener('click', (e) => {
-            if (this.isMenuOpen && 
-                !this.nav.contains(e.target) && 
+            if (this.isMenuOpen &&
+                !this.nav.contains(e.target) &&
                 !this.menuToggle.contains(e.target)) {
                 this.closeMenu();
             }
@@ -90,10 +90,10 @@ class Header {
      */
     handleNavClick(e) {
         e.preventDefault();
-        
+
         const link = e.currentTarget;
         const targetId = link.getAttribute('data-scroll-to') || link.getAttribute('href')?.replace('#', '');
-        
+
         if (!targetId) return;
 
         // Close mobile menu if open
@@ -112,9 +112,9 @@ class Header {
      * Scroll to target section smoothly
      */
     scrollToSection(sectionId) {
-        const targetSection = document.getElementById(sectionId) || 
-                             document.querySelector(`[data-section="${sectionId}"]`);
-        
+        const targetSection = document.getElementById(sectionId) ||
+            document.querySelector(`[data-section="${sectionId}"]`);
+
         if (!targetSection) {
             console.warn(`⚠️ Header: Section "${sectionId}" not found`);
             return;
@@ -151,9 +151,9 @@ class Header {
         // Set active nav link
         if (activeSection) {
             this.navLinks.forEach(link => {
-                const linkTarget = link.getAttribute('data-scroll-to') || 
-                                  link.getAttribute('href')?.replace('#', '');
-                
+                const linkTarget = link.getAttribute('data-scroll-to') ||
+                    link.getAttribute('href')?.replace('#', '');
+
                 if (linkTarget === activeSection) {
                     link.classList.add('is-active');
                 } else {
@@ -178,11 +178,15 @@ class Header {
      */
     toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;
-        
+
         if (this.menuToggle) {
             this.menuToggle.setAttribute('aria-expanded', this.isMenuOpen);
         }
-        
+
+        if (this.header) {
+            this.header.classList.toggle('is-menu-open', this.isMenuOpen);
+        }
+
         if (this.nav) {
             if (this.isMenuOpen) {
                 this.nav.classList.add('is-open');
@@ -201,11 +205,15 @@ class Header {
         if (!this.isMenuOpen) return;
 
         this.isMenuOpen = false;
-        
+
         if (this.menuToggle) {
             this.menuToggle.setAttribute('aria-expanded', 'false');
         }
-        
+
+        if (this.header) {
+            this.header.classList.remove('is-menu-open');
+        }
+
         if (this.nav) {
             this.nav.classList.remove('is-open');
             document.body.style.overflow = '';

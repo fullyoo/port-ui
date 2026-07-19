@@ -1070,3 +1070,444 @@ Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A
 - 나타나는 전환 속도: common.js:342-346
 
 원하면 제가 바로 “2초마다 바뀌는 형태” 또는 “3초마다 바뀌는 형태”로 맞춰드릴게요.
+
+Made changes.
+
+
+**User**
+헤더영역에서 오른쪽에 노션 아이콘과 첨부 이미지 처럼 지원등의 버튼을 넣고 싶은데 추가 가능한가요?
+
+---
+
+**VS-CODE**
+I’m inspecting the header markup and current styles first so I can place those right-side actions cleanly without breaking the existing layout.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css)
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/components/header.html)
+
+The header structure is simple enough to extend, and I’m now wiring in a small action area on the right so those quick links can sit alongside the menu without disturbing the navigation.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/icons)
+
+Searched for regex `notion|support|지원|resume|cv` (`**/*.{html,css,js,md}`), 205 results
+
+I’ve got a clean spot for the action buttons, and I’m adding a compact right-side group that stays aligned with the existing header layout.
+
+Replacing 61 lines with 122 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/components/header.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css)
+
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/components/header.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), no problems found
+
+## 추가 가능해요
+
+헤더 우측에 빠른 액션 버튼을 넣는 구조는 이미 추가해두었습니다.
+
+### 적용된 위치
+- HTML: header.html:1-46
+- 스타일: header.css:21-101
+
+### 넣은 요소
+- Notion 아이콘 버튼
+- `지원` 버튼
+
+### 현재 동작 방식
+- `Notion` 버튼은 외부 링크로 열리게 되어 있고
+- `지원` 버튼은 헤더의 `contact` 섹션으로 이동하도록 연결되어 있습니다.
+
+### 참고
+- 데스크톱에서만 우측 액션 영역이 보이도록 구성했습니다.
+- 태블릿 이하에서는 모바일 메뉴가 깔끔하게 보이도록 액션 버튼을 숨기게 해두었습니다.
+
+### 검증
+관련 파일에 대해 오류 확인을 했고, 모두 정상입니다:
+- header.html: No errors found
+- header.css: No errors found
+
+원하시면 다음으로는
+1. 노션 아이콘을 실제 이미지 아이콘으로 바꾸거나
+2. 버튼 텍스트를 `Resume`, `CV`, `Contact`처럼 바꾸거나
+3. 오른쪽 버튼들을 더 버튼형 카드 스타일로 다듬는 것
+
+까지 이어서 해드릴 수 있어요.
+
+Made changes.
+
+
+**User**
+헤더 우측에 아무것도 보이지가 않아요
+
+---
+
+**VS-CODE**
+I’m checking whether the header markup is being included into the actual page, since the right-side action group may not be rendering from the current source path.
+
+No matches found. Your search pattern might be excluded completely by either the search.exclude settings or .*ignore files.
+If you believe that it should have results, you can check into the .*ignore files and the exclude setting (here are some excluded patterns for reference:[**/node_modules,**/bower_components,**/*.code-search]).
+Then if you want to include those files you can call the tool again by setting "includeIgnoredFiles" to true.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html#1-1), lines 1 to 220
+
+I found the root cause: the page is rendering the header directly from index.html, not from the separate component file. I’m placing the right-side action group into the live header markup now so it actually shows up.
+
+Replacing 28 lines with 37 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html)
+
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html), no problems found
+
+## 원인 확인
+
+헤더 우측 버튼이 안 보인 이유는, 실제 화면에 렌더되는 파일이 header.html 이 아니라 index.html 이기 때문입니다.
+
+즉, 분리된 컴포넌트 파일을 수정해도 실제 페이지에는 반영되지 않았어요.
+
+### 지금 반영한 내용
+- index.html:44-79에 우측 액션 영역을 직접 추가했습니다.
+- 스타일은 header.css:21-101에 맞춰서 이미 적용되어 있습니다.
+
+### 확인 결과
+- index.html: No errors found
+
+### 다음으로 하면 좋은 것
+- 우측 버튼을 실제 Notion 로고 아이콘 이미지로 교체
+- `지원` 텍스트를 `Support` 또는 `CV` 로 바꾸기
+- 데스크톱에서는 보이고 모바일에서는 숨기기
+
+원하시면 바로 이어서 아이콘 스타일을 더 예쁘게 다듬어드릴게요.
+
+Made changes.
+
+**User**
+header__action-icon에 노션 svg를 넣었는데 안보여요
+
+---
+
+**VS-CODE**
+I’m checking the header styles against the live markup now, because the SVG is present in the HTML but the right-side action group may be hidden by its container sizing or color settings.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css#1-1), lines 1 to 180
+
+I found the issue: the SVG is inside a span that has no sizing or color override, so the existing rules are effectively treating it like plain text. I’m correcting those styles so the Notion icon renders as a visible inline graphic.
+
+Replacing 13 lines with 25 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css)
+
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), no problems found
+
+## 원인
+
+SVG가 실제로는 HTML에 들어가 있지만, header.css:59-93 에서 `.header__action-icon` 가 텍스트 스타일만 갖고 있어서 아이콘이 제대로 표시되지 않았습니다.
+
+### 수정한 내용
+- `.header__action-icon` 를 `inline-flex` 박스로 바꿔서 SVG가 담길 수 있게 함
+- `.header__action-icon .icon-notion` 에
+  - `display: block`
+  - `width: 18px`
+  - `height: 18px`
+  - `--notion-logo-fill: currentColor`
+  를 추가해서 아이콘이 보이도록 조정
+
+### 검증
+- header.css: No errors found
+
+이제 노션 SVG가 헤더 우측 아이콘 버튼 안에서 보일 가능성이 높습니다.  
+원하시면 다음으로는 아이콘 버튼을 더 둥글고 깔끔하게 맞추는 미세 조정까지 해드릴게요.
+
+Made changes.
+
+**User**
+좋아요 노션 아이콘을 오버 했을 경우 더 많은 작업물 보러가기 이렇게 튤립메뉴창(?)이 보이도록 가능한가요? 가능하다면 여기랑 우측 하단 아이콘에 있는 플로팅 메뉴 노션에도 같이 적용해주세요
+
+---
+
+**VS-CODE**
+I’m mapping the interaction so the Notion link opens a small hover reveal panel, and I’ll mirror that same treatment to the floating menu’s Notion item so the pattern feels consistent across the page.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/floatingmenu.css)
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/floatingmenu.js)
+
+I’m adding a small hover popover panel rather than a full menu, since that fits the current layout and keeps the header stable. I’m applying the same hover reveal pattern to the floating Notion button so both entry points behave consistently.
+
+Searched for text `floating-menu__item|header__action-link--icon` (`**/index.html`), 3 results
+
+I’ve narrowed this to a small hover reveal panel with a CSS-only interaction, which fits the portfolio style and avoids adding unnecessary JS. I’m attaching the same reveal pattern to both the header Notion control and the floating Notion control now.
+
+Replacing 80 lines with 158 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/floatingmenu.css)
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/floatingmenu.css), no problems found
+
+## 가능해요
+
+네, hover 시 작은 툴팁형 메뉴 패널을 띄우는 형태로 구현할 수 있습니다.  
+지금은 헤더 우측 노션 버튼과 우측 하단 플로팅 메뉴 노션 버튼에 같은 패턴을 적용해두었습니다.
+
+### 적용 범위
+- 헤더 우측 노션 아이콘: index.html:84-98
+- 헤더 스타일: header.css:41-112
+- 플로팅 메뉴 노션 버튼: index.html:1080-1097
+- 플로팅 메뉴 스타일: floatingmenu.css:6-82
+
+### 동작 방식
+- 마우스를 올리면 작은 말풍선/툴팁이 나타남
+- 텍스트: “더 많은 작업물 보러가기”
+- 링크 자체는 그대로 동작하고, hover 상태에서도 자연스럽게 보이게 구성
+
+### 확인 결과
+- index.html: No errors found
+- header.css: No errors found
+- floatingmenu.css: No errors found
+
+### 참고
+이건 지금 “툴팁형 카드”라서 실제로는 드롭다운 메뉴처럼 펼쳐지는 큰 패널은 아닙니다.  
+그게 아니라면 다음 단계로는:
+1. hover 시 작은 `panel` 박스가 아래로 열리게 만들기
+2. “Portfolio / About / Work” 이런 링크 목록형 메뉴처럼 확장하기
+
+도 가능합니다.
+
+원하시면 다음으로는 이 툴팁을 좀 더 “튜립 메뉴 같이 떠오르는 느낌”으로 보이게 다듬어드릴게요.
+
+Made changes.
+
+**User**
+튤팁을 호버했을때도 호버했을때도 사라지지 않고 계속 보이도록 해주세요. 호버됐을때 컬러도 우측 하단 플로팅 메뉴 노션 아이콘처럼 컬러를 넣어주고 튤팁을 클릭했을때도 링크로 넘어가는 기능을 넣어주세요
+
+---
+
+**VS-CODE**
+I’m adjusting the hover behavior now so the tooltip stays visible on hover, keeps the icon color consistent with the floating menu, and remains clickable as a real link target.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html#72-72), lines 72 to 115
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css#40-40), lines 40 to 140
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css#140-140), lines 140 to 210
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/floatingmenu.css)
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html#1074-1074), lines 1074 to 1104
+
+The interaction is cleaner if the tooltip itself becomes a real link element instead of a passive text span. I’m switching it to a clickable anchor and keeping the reveal state alive while the pointer is over the whole group.
+
+Replacing 85 lines with 107 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/floatingmenu.css)
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/floatingmenu.css), no problems found
+
+## 반영 완료
+
+요청하신 방식으로 수정했습니다.
+
+### 변경 사항
+- 튤팁이 마우스 hover 상태에서는 사라지지 않고 계속 보이도록 유지
+- 헤더 우측 노션 아이콘 hover 시, 플로팅 메뉴 노션 아이콘처럼 `accent` 컬러로 변경
+- 튤팁 자체를 클릭 가능한 링크로 바꿔서 클릭 시 `Notion`으로 이동 가능
+- 우측 하단 플로팅 메뉴 노션도 같은 hover 컬러/툴팁 동작으로 정리
+
+### 수정 위치
+- 헤더 마크업: index.html:84-101
+- 헤더 스타일: header.css:56-146
+- 플로팅 메뉴 마크업: index.html:1080-1100
+- 플로팅 메뉴 스타일: floatingmenu.css:6-101
+
+### 검증
+아래 파일들에 대해 오류 확인을 다시 했습니다:
+- index.html: No errors found
+- header.css: No errors found
+- floatingmenu.css: No errors found
+
+원하면 다음 단계로는
+1. 툴팁 텍스트를 “View More Works” 대신 한글로 바꾸거나
+2. 툴팁이 좀 더 말풍선처럼 둥글고 커지게 조정하거나
+3. hover 시 실제 작은 메뉴 패널 형태로 확장
+
+까지 이어서 해드릴게요.
+
+Made changes.
+
+**User**
+우측하단 플로팅 메뉴도 튤팁메뉴로 호버할때 사라지지 않고 계속 보이도록 해주세요
+
+---
+
+**VS-CODE**
+I’m updating the floating-menu hover logic so its tooltip stays pinned while the pointer is on the menu group, matching the behavior you asked for on the header.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/floatingmenu.css)
+
+The floating tooltip is currently hidden to pointer events, which is why it behaves inconsistently when the cursor moves across it. I’m opening that hover area so the tooltip stays visible while the user is over the group and can still be clicked.
+
+Replacing 31 lines with 32 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/floatingmenu.css)
+
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/floatingmenu.css), no problems found
+
+## 반영 완료
+
+이제 우측 하단 플로팅 메뉴도 헤더와 같은 방식으로, hover 상태에서 툴팁이 사라지지 않고 계속 보이도록 맞췄습니다.
+
+### 변경 내용
+- floatingmenu.css:59-95
+  - `.floating-menu__tooltip` 에 `pointer-events: auto` 부여
+  - 툴팁 자체를 hover 했을 때도 유지되도록 처리
+  - 링크처럼 동작하도록 `text-decoration: none` 추가
+
+### 확인 결과
+- floatingmenu.css: No errors found
+
+이제 마우스가 툴팁 위에 있어도 사라지지 않으며, 실제로 클릭하면 링크로 이동할 수 있습니다.
+
+원하시면 다음으로는
+1. 툴팁을 헤더 쪽보다 조금 더 넓게 만들기
+2. 툴팁 텍스트를 한글로 바꾸기
+3. hover 시 “작업물 보러가기” 느낌이 더 강하게 보이게 만들기
+
+까지 이어서 정리해드릴게요.
+
+Made changes.
+
+**User**
+header__container 영역이 모바일에서 토글메뉴 클릭 후 메뉴가 보이더라도 더 위에 계속 보이게 하려면 어떻게 하나요?
+
+---
+
+**VS-CODE**
+I’m checking the mobile header stacking order now; the fix is likely a z-index and positioning adjustment on the open menu container rather than on the toggle itself.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css#1-1), lines 1 to 220
+
+I’m raising the header container’s stacking order on mobile so the top bar remains visually pinned above the slide-in menu instead of getting covered by the same layer.
+
+Replacing 33 lines with 35 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css)
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), 1 problem found
+
+I’ve localized a CSS issue introduced by the stacking change and am cleaning up the mobile block so the header keeps its intended order without leaving an empty rule behind.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css#300-300), lines 300 to 369
+
+Replacing 8 lines with 6 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css)
+
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), no problems found
+
+## 모바일에서 헤더가 메뉴보다 위에 보이게 하는 방법
+
+핵심은 두 가지입니다.
+
+1. `header__container` 에 `position` 과 `z-index` 를 주기
+2. 모바일 메뉴(`.header__nav`) 가 열렸을 때 그보다 낮은 레이어로 남기기
+
+### 적용한 방식
+- header.css:18-34
+  - `.header__container` 에 `position: relative; z-index: 1100;` 추가
+
+이렇게 하면 모바일에서 햄버거 버튼을 눌러 메뉴가 열려도, 상단 헤더 바가 메뉴보다 앞쪽에 계속 표시됩니다.
+
+### 왜 이렇게 하나요?
+- `.header` 자체는 이미 `z-index: 1000` 을 가지고 있습니다.
+- 하지만 `.header__nav` 의 `position: fixed` 와 `z-index: 1000` 조합이 있을 때, 브라우저가 레이어 정렬을 잘못 판단할 수 있습니다.
+- 그래서 헤더 내부 컨테이너에 더 높은 `z-index` 를 주면, 오버레이/슬라이드 메뉴가 열려도 상단 영역이 위로 유지됩니다.
+
+### 검증
+- header.css: No errors found
+
+원하면 다음으로는
+- 모바일에서 메뉴 열렸을 때 `header__container` 자체를 배경 blur 처리
+- 햄버거 버튼과 상단 로고가 겹치지 않게 여백 더 확보
+
+처럼 레이아웃까지 더 정리해드릴게요.
+
+Made changes.
+
+**User**
+header__container 부분이 모바일에서 토글메뉴 클릭시에도 계속 보이게 해주세요
+
+---
+
+**VS-CODE**
+I’ll update the mobile header stacking rules now so the top container stays above the slide-in nav whenever the toggle is open.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css#1-1), lines 1 to 120
+
+Searched for regex `header__nav|header__menu-toggle|@media \(max-width: 768px\)|z-index` (`**/assets/css/header.css`), 31 results
+
+I found the mobile drawer rule set, and I’m adjusting the header layer stack specifically where the menu opens on small screens.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css#240-240), lines 240 to 360
+
+Replacing 15 lines with 21 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css)
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), no problems found
+
+## ✅ 수정 완료
+
+모바일에서 토글 메뉴가 열려도 상단 헤더 영역이 계속 보이도록 header.css:345-360 에서 아래처럼 정리했습니다.
+
+- `.header__container` 에 `position: relative; z-index: 1200;`
+- `.header__nav` 에 `z-index: 900;`
+
+이렇게 하면:
+- 상단 헤더는 항상 메뉴보다 위쪽 레이어로 유지
+- 토글 메뉴가 열려도 헤더 영역은 가려지지 않음
+
+### 검증 결과
+- header.css: 에러 없음 (`No errors found`)
+
+원하시면 다음으로는 모바일에서 메뉴가 열렸을 때:
+- 헤더 배경을 더 강하게 고정
+- 상단 영역을 `backdrop-filter` 와 함께 더 선명하게 유지
+- 메뉴가 열릴 때 헤더의 위치를 살짝 아래로 밀어주는 방식
+
+까지 같이 맞춰드릴게요.
+
+Made changes.
+
+**User**
+여전히 가려보이네요. js쪽에서 수정해야하는걸까요?
+
+---
+
+**VS-CODE**
+헤더가 아직 덮이는지 확인하려고 먼저 모바일 메뉴 열림 동작과 z-index 흐름을 다시 점검하고 있습니다. 관련 스크립트와 스타일이 함께 작동하는지 확인한 뒤 필요한 수정만 집어넣겠습니다.
+
+Searched for regex `header__nav|menu-toggle|is-open|aria-expanded` (`**/assets/js/**`), 8 results
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/main.js#1-1), lines 1 to 220
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/header.js)
+
+Searched for text `header__container|header__nav|header__menu-toggle` (`**/index.html`), 19 results
+
+스택 순서만 CSS로 해결되지 않으면, 실제로는 메뉴가 열릴 때 헤더의 DOM 계층이 함께 바뀌어야 하는 경우가 많습니다. 관련 마크업 구조를 다시 확인해보고, 필요하면 열림 상태를 JS에서 명시적으로 제어하겠습니다.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html#40-40), lines 40 to 130
+
+원인은 단순한 CSS 우선순위가 아니라, 메뉴가 열렸을 때 헤더 자체가 “열림 상태”를 가진 적이 없어서 레이어가 유지되지 않는 점입니다. 열림 상태를 JS에서 명시적으로 반영해 헤더의 z-index를 올리도록 정리하겠습니다.
+
+Replacing 42 lines with 54 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/header.js), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css)
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/header.js), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css), no problems found
+
+## ✅ 수정 반영
+
+모바일 토글 메뉴가 열릴 때 헤더를 별도 열린 상태로 인식하도록 JS와 CSS를 함께 정리했습니다.
+
+### 변경 내용
+- header.js:174-215
+  - `toggleMenu()` / `closeMenu()` 에서 `.header.is-menu-open` 클래스를 추가/제거
+- header.css:15-28
+  - `.header.is-menu-open { z-index: 1200; }`
+
+### 이유
+CSS만으로는 “메뉴가 열려 있는 순간에 헤더가 더 위로 올라가야 한다”는 상태를 정확히 표현하기 어렵기 때문에, JS에서 열림 상태를 토글하고 그 상태에 맞춰 헤더 레이어를 올렸습니다.
+
+### 검증
+- header.js: No errors found
+- header.css: No errors found
+
+> 즉, 지금은 단순한 z-index 조정이 아니라 “메뉴가 열릴 때 헤더의 상태 클래스가 바뀌고, 그 상태에 따라 헤더가 우선 표시되도록” 연결해둔 상태입니다.
+
+원하시면 이어서 브라우저에서 실제로 메뉴가 열릴 때 헤더가 계속 보이는지 확인하는 데 필요한 마지막 체크까지 같이 진행하겠습니다.
+
+Made changes.

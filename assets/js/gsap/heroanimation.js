@@ -13,7 +13,7 @@ class HeroAnimation {
         this.elements = {
             label: document.querySelector('.hero__label'),
             titleLines: document.querySelectorAll('.hero__title-text'),
-            highlight: document.querySelector('.hero__title-highlight'),
+            highlight: document.querySelector('.hero__title-highlight:not(.hero__title-highlight--cycle)'),
             subtitle: document.querySelector('.hero__subtitle'),
             cta: document.querySelector('.hero__cta'),
             keywords: document.querySelectorAll('.hero__keyword'),
@@ -269,7 +269,8 @@ class HeroAnimation {
     animateHighlightUnderline() {
         if (!this.elements.highlight) return;
 
-        // 한 글자씩 타이핑 효과
+        // 한 글자씩 타이핑 효과: 순환형 하이라이트가 아니라
+        // 실제 타이핑 대상인 UI Designer 텍스트만 애니메이션
         const chars = this.elements.highlight.querySelectorAll('.title-highlight__char');
         if (chars.length) {
             gsap.to(chars, {

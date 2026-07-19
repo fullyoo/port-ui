@@ -12,10 +12,10 @@ class CustomCursor {
     constructor() {
         this.cursor = document.getElementById('cursor');
         this.isEnabled = false;
-        
+
         // Check if device supports hover (desktop)
         this.supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-        
+
         // Bind methods
         this.init = this.init.bind(this);
         this.onMouseMove = this.onMouseMove.bind(this);
@@ -32,10 +32,10 @@ class CustomCursor {
         }
 
         this.isEnabled = true;
-        
+
         // Mouse move listener
         document.addEventListener('mousemove', this.onMouseMove);
-        
+
         // Interactive elements hover
         const interactiveElements = document.querySelectorAll('a, button, [data-cursor="hover"]');
         interactiveElements.forEach(el => {
@@ -48,7 +48,7 @@ class CustomCursor {
 
     onMouseMove(e) {
         if (!this.isEnabled) return;
-        
+
         gsap.to(this.cursor, {
             x: e.clientX,
             y: e.clientY,
@@ -83,7 +83,7 @@ class LoadingScreen {
         this.bar = document.getElementById('loading-bar');
         this.progress = 0;
         this.isComplete = false;
-        
+
         // Callbacks
         this.onComplete = null;
     }
@@ -94,7 +94,7 @@ class LoadingScreen {
      */
     start(callback) {
         this.onComplete = callback;
-        
+
         // If no loading screen elements, call callback immediately
         if (!this.screen || !this.bar) {
             console.log('⚡ No loading screen elements found, skipping...');
@@ -114,13 +114,13 @@ class LoadingScreen {
     simulateProgress() {
         const interval = setInterval(() => {
             this.progress += Math.random() * 15;
-            
+
             if (this.progress >= 100) {
                 this.progress = 100;
                 clearInterval(interval);
                 this.complete();
             }
-            
+
             this.updateBar();
         }, 100);
     }
@@ -175,7 +175,7 @@ function smoothScrollTo(selector, offset = 0) {
     if (!element) return;
 
     const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
-    
+
     gsap.to(window, {
         scrollTo: { y: top, autoKill: false },
         duration: 1,
@@ -224,7 +224,7 @@ function throttle(func, limit = 100) {
 function isInViewport(element, threshold = 0) {
     const rect = element.getBoundingClientRect();
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    
+
     return (
         rect.top <= windowHeight * (1 - threshold) &&
         rect.bottom >= windowHeight * threshold
@@ -279,7 +279,7 @@ function preloadImages(urls) {
  */
 function initTitleHighlightTypewriter() {
     const selectors = [
-        '.hero__title-highlight',
+        '.hero__title-highlight:not(.hero__title-highlight--cycle)',
         '.works__title-highlight',
         '.selected-works__title-highlight',
         '.contact__title-highlight'
@@ -287,7 +287,7 @@ function initTitleHighlightTypewriter() {
 
     selectors.forEach(sel => {
         const el = document.querySelector(sel);
-        if (!el || el.dataset.typewriterDone) return;
+        if (!el || el.dataset.typewriterDone || el.classList.contains('hero__title-highlight--cycle')) return;
 
         const text = el.textContent.trim();
         if (!text) return;
@@ -312,10 +312,57 @@ function initTitleHighlightTypewriter() {
     });
 }
 
+function initHeroRotatingHighlight() {
+    const rotator = document.querySelector('.hero__title-highlight--cycle');
+    if (!rotator) return;
+
+    const words = (rotator.dataset.rotatingWords || '')
+        .split(',')
+        .map(word => word.trim())
+        .filter(Boolean);
+
+    if (words.length < 2) return;
+
+    let currentIndex = 0;
+    const swapText = () => {
+        const nextWord = words[currentIndex];
+        const currentWord = rotator.textContent.trim();
+
+        if (currentWord === nextWord) {
+            currentIndex = (currentIndex + 1) % words.length;
+            return;
+        }
+
+        gsap.to(rotator, {
+            opacity: 0,
+            y: -4,
+            duration: 0.25,
+            ease: 'power2.out',
+            onComplete: () => {
+                rotator.textContent = nextWord;
+                rotator.setAttribute('aria-label', nextWord);
+                gsap.fromTo(rotator,
+                    { opacity: 0, y: 4 },
+                    { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }
+                );
+            }
+        });
+
+        currentIndex = (currentIndex + 1) % words.length;
+    };
+
+    rotator.textContent = words[0];
+    rotator.setAttribute('aria-label', words[0]);
+    gsap.set(rotator, { opacity: 1, y: 0 });
+
+    setInterval(swapText, 2500);
+}
+
 // Export utilities
 window.CustomCursor = CustomCursor;
 window.LoadingScreen = LoadingScreen;
 window.initTitleHighlightTypewriter = initTitleHighlightTypewriter;
+window.initHeroRotatingHighlight = initHeroRotatingHighlight;
 window.utils = {
     smoothScrollTo,
     debounce,

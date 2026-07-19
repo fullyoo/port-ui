@@ -69,6 +69,11 @@ class App {
             initTitleHighlightTypewriter();
         }
 
+        // hero title rotating highlight effect
+        if (typeof initHeroRotatingHighlight === 'function') {
+            initHeroRotatingHighlight();
+        }
+
         // Initialize all animation modules
         this.initAnimations();
 

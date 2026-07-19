@@ -258,7 +258,7 @@ class HeroAnimation {
         // Phase 7: Highlight underline animation
         this.masterTimeline.add(() => {
             this.animateHighlightUnderline();
-        }, 1.5);
+        }, 0.4);
 
         return this.masterTimeline;
     }

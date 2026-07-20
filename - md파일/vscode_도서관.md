@@ -1511,3 +1511,195 @@ CSS만으로는 “메뉴가 열려 있는 순간에 헤더가 더 위로 올라
 원하시면 이어서 브라우저에서 실제로 메뉴가 열릴 때 헤더가 계속 보이는지 확인하는 데 필요한 마지막 체크까지 같이 진행하겠습니다.
 
 Made changes.
+
+**User**
+.hero__label 부분이 스크롤해서 내렸다가 올리면 안보이는데 1. translate: none;
+2. rotate: none;
+3. scale: none;
+4. transform: translate(0px, 30px);
+5. opacity: 0;
+
+opacity: 0;과 관련있어보여요
+
+---
+
+**VS-CODE**
+문제 원인을 확인하기 위해 현재 hero 레이아웃과 관련 애니메이션 설정을 먼저 살펴보고, `.hero__label`에 적용된 `opacity`/`transform` 상태가 스크롤 복귀 시 어떻게 남는지 확인하겠습니다.
+
+Searched for regex `hero__label|opacity\s*:\s*0|translate\(|transform\s*:\s*translate` (`**/assets/**`), 153 results
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/hero.css#1-1), lines 1 to 260
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/heroanimation.js#1-1), lines 1 to 260
+
+원인은 거의 확인됐습니다. 스크롤 애니메이션이 `label`을 `opacity: 0`과 `y: 30` 상태로 다시 되돌리는 쪽으로 잡혀 있는 반면, 실제 CSS는 그 상태를 보정하지 못하고 있어서, 스크롤 업 후 재노출이 안 보이는 형태로 보입니다.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/heroanimation.js#260-260), lines 260 to 420
+
+이제 `.hero__label`이 스크롤 트리거에 의해 다시 숨겨지지 않도록 초기 상태와 스크롤 애니메이션 범위를 함께 정리하겠습니다.
+
+Replacing 25 lines with 25 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/heroanimation.js)
+
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/heroanimation.js), no problems found
+
+## 수정 내용
+
+`.hero__label`이 스크롤하면서 사라지는 원인은, GSAP 초기 상태와 스크롤 트리거가 함께 `opacity: 0` / `y: 30` 쪽으로 붙어 있었기 때문입니다.
+
+수정한 핵심은 두 군데입니다.
+
+- heroanimation.js:111-117
+  - `.hero__label` 초기 상태를 `opacity: 1, y: 0`으로 보장
+- heroanimation.js:330-346
+  - 스크롤 시 `.hero__label`을 숨기던 트윈을 제거하고, `.hero__cta`만 흐리게 처리
+
+## 원인 요약
+
+당신이 지적한 것처럼, `opacity: 0`과 관련된 상태가 남아 있으면 스크롤 업 후 레이블이 “보이지 않는 상태”로 고착될 수 있습니다.  
+이번 수정으로는 `.hero__label`이 진입 시부터 보이도록 고정하고, 스크롤 중에도 `opacity: 0` 상태로 내려가지 않게 막았습니다.
+
+## 확인 결과
+
+검증으로 heroanimation.js에 대해 오류 확인을 했고, 결과는 다음과 같습니다.
+
+- `No errors found`
+
+원하면 다음으로 `.hero__cta`만 보이는 애니메이션과 `.hero__label`의 간격, 위치까지 같이 정리해서 더 안정적으로 맞춰드릴 수 있습니다.
+
+Made changes.
+
+**User**
+처음에 있었던 애니메이션은 유지해야해요
+
+---
+
+**VS-CODE**
+처음 진입 애니메이션은 유지하면서, 스크롤 후 라벨이 사라지지 않게 하는 쪽으로 다시 조정하겠습니다. 바로 그 동작만 남기고 기존 페이드인 효과는 살려두겠습니다.
+
+Replacing 8 lines with 8 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/heroanimation.js)
+
+기존 입장 애니메이션은 그대로 두고, 스크롤 중에 라벨만 숨기지 않는 구조로 정리했습니다. 마지막으로 문법 문제 없는지 다시 확인합니다.
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/heroanimation.js), no problems found
+
+## 반영 사항
+
+처음의 진입 애니메이션은 그대로 유지하도록 정리했습니다.
+
+- heroanimation.js:111-117
+  - `.hero__label`의 초기 상태는 다시 `opacity: 0, y: 30`으로 두어 기존 등장 효과가 유지됩니다.
+- heroanimation.js:330-346
+  - 스크롤 시 `.hero__label`을 `opacity: 0`으로 숨기던 트윈은 제거했습니다.
+  - 대신 `.hero__cta`만 스크롤에 따라 사라지게 남겨둔 상태입니다.
+
+## 결과
+
+즉, 이제:
+
+- 처음 로드할 때 `.hero__label`이 자연스럽게 등장하는 기존 애니메이션은 유지
+- 스크롤해서 내려갔다 올려도 `.hero__label`이 안 보이는 현상은 제거
+
+검증도 했고, 수정 파일의 문법 오류는 없습니다.
+
+- heroanimation.js → `No errors found`
+
+원하시면 다음 단계로 `.hero__cta`와 `.hero__label`의 스크롤 시 흐림/이동 강도를 더 자연스럽게 맞춰드릴게요.
+
+Made changes.
+
+
+**User**
+about__title 효과가 about__statement로 바뀌어야 할거 같아요 다른 섹션들도 그렇게 통일감을 줬네요! about__statement 내용을 about__title로 교체해서 적용해주세요
+
+---
+
+**VS-CODE**
+이제 About 섹션 제목과 설명이 섹션 패턴에 맞게 정리하겠습니다. `about__statement`의 내용을 `about__title` 쪽으로 옮겨서 다른 섹션과 동일한 톤으로 맞추겠습니다.
+
+Searched for text `about__title|about__statement` (`**/assets/css/about.css`), 16 results
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/about.css#1-1), lines 1 to 220
+
+Searched for text `about__title|about__statement` (`**/assets/js/**`), 5 results
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/aboutanimation.js#1-1), lines 1 to 220
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/aboutanimation.js#220-220), lines 220 to 360
+
+About 섹션의 큰 문장 톤은 제목 영역으로 이동시키고, 애니메이션 스크립트가 그 구조를 기대하도록 맞추겠습니다. 이렇게 하면 섹션 간 시각적 통일감이 더 자연스럽게 잡힙니다.
+
+Replacing 52 lines with 36 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/aboutanimation.js)
+
+Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/index.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/gsap/aboutanimation.js), no problems found
+
+## 반영 완료
+
+About 섹션의 큰 문구를 `.about__statement`에서 `.about__title` 쪽으로 이동해서, 다른 섹션과 같은 제목형 패턴으로 통일했습니다.
+
+### 변경 내용
+- index.html:295-312
+  - 기존의 `.about__statement` 문구를 `.about__title` 안으로 이동
+  - 강조 부분은 `about__statement-highlight` 클래스를 유지해서 밑줄 하이라이트가 보이도록 적용
+
+- aboutanimation.js:11-22
+  - 애니메이션 타깃에서 `.about__statement` 참조 제거
+
+- aboutanimation.js:62-77
+  - `.about__statement` 초기 상태 설정 제거
+
+- aboutanimation.js:137-164
+  - `statement` 등장 애니메이션 대신 하이라이트 효과만 유지
+
+### 확인
+- index.html → 오류 없음
+- aboutanimation.js → 오류 없음
+
+원하시면 다음으로 About 섹션의 글자 크기, 줄간격, 강조 밑줄 스타일까지 다른 섹션과 더 비슷하게 정리해드릴게요.
+
+Made changes.
+
+
+**User**
+
+---
+
+**VS-CODE**
+
+
+**User**
+
+---
+
+**VS-CODE**
+
+
+**User**
+
+---
+
+**VS-CODE**
+
+
+
+**User**
+
+---
+
+**VS-CODE**
+
+
+
+**User**
+
+---
+
+**VS-CODE**
+
+
+
+**User**
+
+---
+
+**VS-CODE**

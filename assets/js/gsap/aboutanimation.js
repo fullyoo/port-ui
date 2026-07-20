@@ -13,7 +13,6 @@ class AboutAnimation {
         this.elements = {
             label: document.querySelector('.about__label'),
             titleLines: document.querySelectorAll('.about__title-text'),
-            statement: document.querySelector('.about__statement'),
             statementHighlight: document.querySelector('.about__statement-highlight'),
             description: document.querySelector('.about__description'),
             keywords: document.querySelectorAll('.about__keyword'),
@@ -85,12 +84,6 @@ class AboutAnimation {
                 line.style.opacity = '1';
             });
         }
-
-        // Statement
-        gsap.set(this.elements.statement, {
-            opacity: 0,
-            y: 40
-        });
 
         // Description
         gsap.set(this.elements.description, {
@@ -199,21 +192,16 @@ class AboutAnimation {
             }, 0.3);
         }
 
-        // Phase 4: Statement appears
-        tl.to(this.elements.statement, {
-            opacity: 1,
-            y: 0,
-            duration: 1
-        }, 0.5);
+        // Phase 4: Highlight underline
+        if (this.elements.statementHighlight) {
+            tl.to(this.elements.statementHighlight, {
+                '--highlight-scale': 1,
+                duration: 0.8,
+                ease: 'power2.out'
+            }, 0.9);
+        }
 
-        // Phase 5: Highlight underline
-        tl.to(this.elements.statementHighlight, {
-            '--highlight-scale': 1,
-            duration: 0.8,
-            ease: 'power2.out'
-        }, 0.9);
-
-        // Phase 6: Description
+        // Phase 5: Description
         tl.to(this.elements.description, {
             opacity: 1,
             y: 0,

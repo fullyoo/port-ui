@@ -29,7 +29,8 @@
 .header__container {
     max-width: var(--container-xl);
     margin: 0 auto;
-    padding: var(--space-8) var(--container-padding);
+    /* padding: var(--space-8) var(--container-padding); */
+    padding: var(--space-8) 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,7 +64,7 @@
 }
 
 .header__logo-text {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: var(--text-2xl);
     font-weight: var(--weight-bold);
     color: var(--color-light);

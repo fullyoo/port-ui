@@ -142,7 +142,7 @@ class HeroAnimation {
             });
         }
 
-        // Label - invisible
+        // Label - initial state for the original entrance animation
         if (this.elements.label) {
             gsap.set(this.elements.label, {
                 opacity: 0,
@@ -331,9 +331,9 @@ class HeroAnimation {
             });
         }
 
-        // Label and CTA fade out on scroll (모바일 제외)
+        // CTA only fades out on scroll; label should stay anchored and readable
         if (!this.isMobile) {
-            const fadeElements = [this.elements.label, this.elements.cta].filter(el => el);
+            const fadeElements = [this.elements.cta].filter(el => el);
             if (fadeElements.length) {
                 gsap.to(fadeElements, {
                     opacity: 0,

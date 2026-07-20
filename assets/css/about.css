@@ -27,10 +27,10 @@
 .about__container {
     max-width: var(--container-xl);
     margin: 0 auto;
-    padding: 0 var(--container-padding);
+    /* padding: 0 var(--container-padding); */
     display: flex;
     flex-direction: row;
-    gap: var(--space-8);
+    gap: var(--space-24);
     align-items: center;
     height: 100%;
     /* max-height: 100vh; */
@@ -47,10 +47,10 @@
     gap: var(--space-3);
     font-family: var(--font-mono);
     font-size: var(--text-xs);
-    color: var(--color-gray-500);
+    color: var(--color-gray-400);
     text-transform: uppercase;
     letter-spacing: var(--tracking-widest);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-5);
 }
 
 .about__label::before {
@@ -78,20 +78,20 @@
 .about__content {
     position: relative;
     z-index: 1;
+    flex: 1;
 }
 
 .about__title {
     font-family: var(--font-primary);
-    font-size: clamp(3rem, 6vw, 6rem);
+    font-size: clamp(3.6rem, 6vw, 5.6rem);
     font-weight: var(--weight-bold);
-    line-height: 1.2;
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
     color: var(--color-light);
-    margin-bottom: var(--space-4);
 }
 
 .about__title-line {
     display: block;
-    margin-bottom: 0.2em;
     overflow: visible;
 }
 
@@ -118,6 +118,12 @@
 .about__statement-highlight {
     color: var(--color-primary);
     position: relative;
+    transition: all var(--duration-slow) var(--ease-out-expo);
+
+}
+
+.about__statement-highlight:hover {
+    color: var(--color-accent);
 }
 
 .about__statement-highlight::after {
@@ -126,7 +132,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 0.12em;
     background: var(--color-accent);
     transform: scaleX(0);
     transform-origin: left;
@@ -134,13 +140,12 @@
 
 /* Description */
 .about__description {
-    font-family: var(--font-secondary);
-    font-size: var(--text-sm);
+    /* font-size: var(--text-sm); */
     font-weight: var(--weight-light);
     line-height: var(--leading-relaxed);
     color: var(--color-gray-400);
-    max-width: 520px;
-    margin-bottom: var(--space-4);
+    /* max-width: 500px; */
+    margin: var(--space-8) 0;
 }
 
 .about__description strong {
@@ -153,14 +158,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: var(--space-2);
+    gap: var(--space-6);
 }
 
 .about__keyword {
     position: relative;
-    flex: 1 1 calc(50% - var(--space-1));
-    min-width: calc(50% - var(--space-1));
-    max-width: calc(50% - var(--space-1));
+    flex: 1 1 calc(50% - var(--space-3));
+    min-width: calc(50% - var(--space-3));
+    max-width: calc(50% - var(--space-3));
     padding: var(--space-3) var(--space-4);
     background: var(--color-gray-900);
     border: 1px solid var(--color-gray-800);
@@ -183,7 +188,7 @@
 }
 
 .about__keyword:hover {
-    border-color: var(--color-gray-700);
+    border-color: var(--color-gray-600);
     transform: translateX(4px);
 }
 
@@ -199,37 +204,31 @@
 }
 
 .about__keyword-title {
-    font-family: var(--font-secondary);
-    font-size: var(--text-sm);
+    /* font-size: var(--text-sm); */
     font-weight: var(--weight-semibold);
     color: var(--color-light);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: var(--tracking-wide);
 }
 
 .about__keyword-desc {
-    font-family: var(--font-secondary);
-    font-size: var(--text-xs);
-    color: var(--color-gray-500);
+    font-size: var(--text-sm);
+    color: var(--color-gray-400);
     margin-top: var(--space-1);
 }
 
 /* ===== Visual Area (Right) ===== */
 .about__visual {
-    position: relative;
-    flex: 1;
-    height: 100%;
+    /* flex: 1; */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 50%;
+    justify-content: flex-end;
 }
 
 /* Profile Image Container */
 .about__image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     max-height: 75vh;
     aspect-ratio: 3/4;
 }
@@ -326,6 +325,22 @@
     height: 200px;
     border: 1px solid var(--color-gray-800);
     border-radius: 50%;
+}
+
+.about-video {
+    width: 100%;
+    /* max-width: 420px; */
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 28px;
+    position: relative;
+}
+
+.about-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* ===== Responsive Styles ===== */

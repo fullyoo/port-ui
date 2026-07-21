@@ -635,6 +635,10 @@
     box-shadow: 0 0 20px rgba(240, 255, 54, 0.3);
 }
 
+.hero__keyword.mo {
+    display: block;
+}
+
 @keyframes keywordFloat {
 
     0%,
@@ -874,7 +878,9 @@
 
 /* Small Mobile */
 @media (max-width: 480px) {
-    .hero {}
+    .hero__keyword.mo {
+        display: none;
+    }
 
     .hero__content {
         flex: none;

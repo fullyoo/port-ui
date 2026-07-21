@@ -37,10 +37,6 @@
 }
 
 /* ===== Section Header ===== */
-.about__header {
-    margin-bottom: var(--space-4);
-}
-
 .about__label {
     display: inline-flex;
     align-items: center;
@@ -149,7 +145,7 @@
     line-height: var(--leading-relaxed);
     color: var(--color-gray-400);
     /* max-width: 500px; */
-    margin: var(--space-8) 0;
+    margin: var(--space-8) 0 var(--space-10);
 }
 
 .about__description strong {
@@ -211,7 +207,7 @@
 .about__keyword-title {
     font-weight: var(--weight-semibold);
     color: var(--color-light);
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
 }
 
@@ -246,7 +242,7 @@
     border-radius: var(--radius-xl);
     filter: grayscale(20%);
     transition: filter var(--duration-slow) var(--ease-smooth);
-    display: none;
+    /* display: none; */
 }
 
 .about__image-wrapper:hover .about__image {
@@ -351,7 +347,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* display: none; */
+    display: none;
 }
 
 /* ===== Responsive Styles ===== */
@@ -379,7 +375,6 @@
     .about__title {
         font-size: var(--text-5xl);
         font-size: clamp(2.5rem, 8vw, 4.8rem);
-        margin-bottom: var(--space-6);
         overflow: visible;
     }
 
@@ -442,6 +437,7 @@
 
     .about__description {
         font-size: var(--text-sm);
+        margin: var(--space-6) 0 var(--space-8) 0;
     }
 
     .about__keywords {
@@ -542,35 +538,34 @@
     .about__stat {
         padding: var(--space-2);
     }
-}
 
-.about__description {
-    /* font-size: var(--text-xs); */
-    margin: var(--space-6) 0;
-}
+    .about__description br {
+        display: none;
+    }
 
-.about__description br {
-    display: none;
-}
 
-.about__keywords {
-    /* flex-direction: column; */
-}
+    .about__description {
+        /* font-size: var(--text-xs); */
+    }
 
-.about__keyword {
-    padding: var(--space-3) var(--space-2);
-    flex: 1 1 100%;
-    /* min-width: 100%; */
-    /* max-width: 100%; */
-}
+    .about__keywords {
+        /* flex-direction: column; */
+    }
 
-.about__keyword-title {
-    font-size: var(--text-sm);
-}
+    .about__keyword {
+        padding: var(--space-3) var(--space-2);
+        flex: 1 1 100%;
+        /* min-width: 100%; */
+        /* max-width: 100%; */
+    }
 
-.about__keyword-desc {
-    font-size: var(--text-xs);
-}
+    .about__keyword-title {
+        font-size: var(--text-sm);
+    }
+
+    .about__keyword-desc {
+        font-size: var(--text-xs);
+    }
 }
 
 

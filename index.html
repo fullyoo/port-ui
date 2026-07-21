@@ -127,8 +127,8 @@
 
             <!-- Floating Keywords -->
             <div class="hero__keywords" aria-hidden="true">
-                <span class="hero__keyword">User Experience</span>
-                <span class="hero__keyword">Responsive web</span>
+                <span class="hero__keyword mo">User Experience</span>
+                <span class="hero__keyword mo">Responsive web</span>
                 <span class="hero__keyword">Design System</span>
                 <span class="hero__keyword">Interaction</span>
                 <span class="hero__keyword">Components</span>
@@ -284,6 +284,9 @@
         <section class="about" id="about" data-section="about">
             <!-- Section Number (Decorative) -->
             <span class="about__number" aria-hidden="true">01</span>
+            <!-- Decorative Elements -->
+            <div class="about__deco about__deco--dots" aria-hidden="true"></div>
+            <div class="about__deco about__deco--circle" aria-hidden="true"></div>
 
             <div class="about__container">
                 <!-- Content Area (Left) -->
@@ -356,30 +359,27 @@
                                 <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                             </svg>
                             <h3 class="about__keyword-title">Development</h3>
-                            <p class="about__keyword-desc">HTML · CSS · JavaScript 구현</p>
+                            <p class="about__keyword-desc">HTML · CSS · JavaScript</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Visual Area (Right) -->
                 <div class="about__visual">
-                    <!-- Decorative Elements -->
-                    <div class="about__deco about__deco--dots" aria-hidden="true"></div>
-                    <div class="about__deco about__deco--circle" aria-hidden="true"></div>
 
                     <!-- Profile Image -->
                     <div class="about__image-wrapper">
 
                         <div class="about__image-frame" aria-hidden="true"></div>
 
-                        <img src="./assets/images/about_img_02.webp" alt="디자이너 프로필 사진" class="about__image"
+                        <img src="./assets/images/about_img_01.webp" alt="디자이너 프로필 사진" class="about__image"
                             loading="lazy">
 
-                        <div class="about-video">
+                        <!-- <div class="about-video">
                             <video autoplay muted loop playsinline preload="auto">
                                 <source src="./assets/images/about_mv.mp4" type="video/mp4">
                             </video>
-                        </div>
+                        </div> -->
 
                         <!-- Floating Stats -->
                         <div class="about__stats">
@@ -399,25 +399,40 @@
 
         <!-- ========== WORKS SECTION ========== -->
         <section class="works" id="works" data-section="works">
+
             <!-- Section Number (Decorative) -->
             <span class="works__number" aria-hidden="true">02</span>
+            <div class="works__deco works__deco--dots" aria-hidden="true"></div>
+            <div class="works__deco works__deco--circle" aria-hidden="true"></div>
+            <div class="works__deco works__deco--circle-sm" aria-hidden="true"></div>
+            <div class="works__deco works__deco--circle-md" aria-hidden="true"></div>
 
             <!-- Section Header -->
-            <header class="works__header">
+            <div class="works__header">
                 <div class="works__header-content">
                     <div class="works__label">
-                        <span>Portfolio</span>
+                        <span class="hero__label-dot"></span>
+                        <span>Works</span>
                     </div>
                     <h2 class="works__title">
                         <span class="works__title-line">
-                            <span class="works__title-text">대표</span>
+                            <span class="works__title-text">디자인으로</span>
+                            <span class="about__statement-highlight add">구현</span>한
                         </span>
                         <span class="works__title-line">
-                            <span class="works__title-text"><span class="works__title-highlight">작업물</span></span>
+
+                            <span class="works__title-highlight">작업물</span>을 소개합니다.
                         </span>
                     </h2>
                 </div>
-            </header>
+
+                <!-- Description -->
+                <p class="works__description">
+                    사용자 경험과 완성도를 고려하여 문제를 이해하고 <br>
+                    UI 설계부터 <strong>반응형 구현</strong>까지
+                    <strong>직접 수행</strong>하고 완성한 대표 프로젝트를 소개합니다.
+                </p>
+            </div>
 
             <!-- Swiper Container -->
             <div class="works__swiper-container">
@@ -655,6 +670,43 @@
                             </article>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Flowy Text Ticker -->
+            <div class="works__ticker" aria-hidden="true">
+                <div class="works__ticker-track">
+                    <span class="works__ticker-item">Coding</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">HTML / CSS</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Prototyping</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Design System</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Interaction</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Responsive</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Creative UI</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">User Experience</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Coding</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">HTML / CSS</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Prototyping</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Design System</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Interaction</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Responsive</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">Creative UI</span>
+                    <span class="works__ticker-separator">•</span>
+                    <span class="works__ticker-item">User Experience</span>
                 </div>
             </div>
         </section>
@@ -970,11 +1022,124 @@
             </div>
         </section>
 
+        <!-- ========== MORE WORKS SECTION ========== -->
+        <section class="more-works" id="more-works" data-section="more-works">
+            <div class="more-works__header">
+                <div class="more-works__label">
+                    <span class="hero__label-dot"></span>
+                    <span>CASE STUDIES</span>
+                </div>
+                <h2 class="more-works__title">
+                    <span class="more-works__title-line">More</span>
+                    <span class="more-works__title-line"><span class="more-works__title-highlight">WORKS</span></span>
+                </h2>
+                <p class="more-works__description">
+                    대표 프로젝트를 한눈에 살펴보고, 마우스를 올리면 구현된 대표 이미지를 확인할 수 있습니다.
+                </p>
+            </div>
+
+            <div class="more-works__content">
+                <ul class="more-works__list">
+                    <li class="more-works__item">
+                        <a class="more-works__link" href="./works/case-study.html" target="_blank"
+                            rel="noreferrer noopener">
+                            <div>
+                                <span class="more-works__item-title">PANORAMA(3D)</span>
+                                <span class="more-works__item-tags">#3D #CSS #JS #인터랙티브</span>
+                            </div>
+                            <span class="more-works__item-year">2024</span>
+                        </a>
+                        <div class="more-works__preview">
+                            <img class="more-works__preview-img"
+                                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80"
+                                alt="Panorama 3D project preview">
+                        </div>
+                    </li>
+                    <li class="more-works__item">
+                        <a class="more-works__link" href="./works/case-study.html" target="_blank"
+                            rel="noreferrer noopener">
+                            <div>
+                                <span class="more-works__item-title">MUSIC PLAYER</span>
+                                <span class="more-works__item-tags">#UI #MOTION #PLAYER</span>
+                            </div>
+                            <span class="more-works__item-year">2024</span>
+                        </a>
+                        <div class="more-works__preview">
+                            <img class="more-works__preview-img"
+                                src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80"
+                                alt="Music player project preview">
+                        </div>
+                    </li>
+                    <li class="more-works__item">
+                        <a class="more-works__link" href="./works/case-study.html" target="_blank"
+                            rel="noreferrer noopener">
+                            <div>
+                                <span class="more-works__item-title">SORO</span>
+                                <span class="more-works__item-tags">#GSAP #CLONE #인터랙션</span>
+                            </div>
+                            <span class="more-works__item-year">2024</span>
+                        </a>
+                        <div class="more-works__preview">
+                            <img class="more-works__preview-img"
+                                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80"
+                                alt="Soro project preview">
+                        </div>
+                    </li>
+                    <li class="more-works__item">
+                        <a class="more-works__link" href="./works/case-study.html" target="_blank"
+                            rel="noreferrer noopener">
+                            <div>
+                                <span class="more-works__item-title">Qude</span>
+                                <span class="more-works__item-tags">#GSAP #CLONE #인터랙션</span>
+                            </div>
+                            <span class="more-works__item-year">2024</span>
+                        </a>
+                        <div class="more-works__preview">
+                            <img class="more-works__preview-img"
+                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80"
+                                alt="Qude project preview">
+                        </div>
+                    </li>
+                    <li class="more-works__item">
+                        <a class="more-works__link" href="./works/case-study.html" target="_blank"
+                            rel="noreferrer noopener">
+                            <div>
+                                <span class="more-works__item-title">K.ACE LAB</span>
+                                <span class="more-works__item-tags">#SCSS #GSAP #CLONE #반응형</span>
+                            </div>
+                            <span class="more-works__item-year">2024</span>
+                        </a>
+                        <div class="more-works__preview">
+                            <img class="more-works__preview-img"
+                                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80"
+                                alt="K.ACE Lab project preview">
+                        </div>
+                    </li>
+                    <li class="more-works__item">
+                        <a class="more-works__link" href="./works/case-study.html" target="_blank"
+                            rel="noreferrer noopener">
+                            <div>
+                                <span class="more-works__item-title">SEVEN(비디오 플레이어)</span>
+                                <span class="more-works__item-tags">#FIGMA #패러디 #다크모드</span>
+                            </div>
+                            <span class="more-works__item-year">2024</span>
+                        </a>
+                        <div class="more-works__preview">
+                            <img class="more-works__preview-img"
+                                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1200&q=80"
+                                alt="Seven video player project preview">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <!-- ========== CONTACT SECTION ========== -->
         <section class="contact" id="contact" data-section="contact">
 
             <!-- Decorative Elements -->
             <span class="contact__deco contact__deco--number" aria-hidden="true">03</span>
+            <div class="contact__deco contact__deco--dots" aria-hidden="true"></div>
             <div class="contact__deco contact__deco--circle" aria-hidden="true"></div>
             <div class="contact__deco contact__deco--circle-sm" aria-hidden="true"></div>
 

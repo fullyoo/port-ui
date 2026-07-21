@@ -286,10 +286,20 @@
     user-select: none;
 }
 
+.contact__deco--dots {
+    top: 40%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(var(--color-gray-400) 1px, transparent 1px);
+    background-size: 10px 10px;
+    opacity: 0.5;
+}
+
 .contact__deco--circle {
     width: 300px;
     height: 300px;
-    border: 1px solid var(--color-gray-800);
+    border: 1px solid var(--color-gray-400);
     border-radius: 50%;
     top: 10%;
     right: -100px;
@@ -299,7 +309,7 @@
 .contact__deco--circle-sm {
     width: 150px;
     height: 150px;
-    border: 1px solid var(--color-gray-800);
+    border: 1px solid var(--color-gray-400);
     border-radius: 50%;
     bottom: 20%;
     left: -50px;

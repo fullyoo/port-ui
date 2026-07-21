@@ -106,6 +106,20 @@ class AboutAnimation {
         });
 
         // Stats
+        this.elements.stats.forEach(stat => {
+            const numberEl = stat.querySelector('.about__stat-number');
+            if (numberEl) {
+                const targetText = numberEl.textContent.trim();
+                const isPlus = targetText.endsWith('+');
+                const numericValue = parseInt(targetText.replace(/\D/g, ''), 10) || 0;
+
+                // 목표 숫자를 데이터 속성으로 저장한 뒤, 초기 표시값은 0부터 시작합니다.
+                numberEl.dataset.targetValue = numericValue;
+                numberEl.dataset.hasPlus = isPlus ? 'true' : 'false';
+                numberEl.textContent = `0${isPlus ? '+' : ''}`;
+            }
+        });
+
         gsap.set(this.elements.stats, {
             opacity: 0,
             y: 30
@@ -230,7 +244,15 @@ class AboutAnimation {
             opacity: 1,
             y: 0,
             duration: 0.6,
-            stagger: 0.1
+            stagger: 0.1,
+            onComplete: () => {
+                this.elements.stats.forEach(stat => {
+                    const numberEl = stat.querySelector('.about__stat-number');
+                    if (numberEl) {
+                        this.animateCounter(numberEl);
+                    }
+                });
+            }
         }, 1);
 
         // Phase 10: Decorations
@@ -341,8 +363,36 @@ class AboutAnimation {
     }
 
     /**
-     * Create image hover animations
+     * 숫자 카운트업 애니메이션
+     * 시작값은 0부터 출발하며
+     * 목표 숫자까지 부드럽게 증가합니다.
+     *
+     * @param {HTMLElement} element - 카운트할 숫자 요소
      */
+    animateCounter(element) {
+        // 저장된 목표 숫자(데이터 속성)를 사용하여 0부터 카운트업합니다.
+        const targetValue = parseInt(element.dataset.targetValue, 10) || 0;
+        const isPlus = element.dataset.hasPlus === 'true';
+        const duration = 1.6;
+
+        // 목표 수치가 0보다 클 때만 애니메이션 실행
+        gsap.set(element, {
+            textContent: `0${isPlus ? '+' : ''}`
+        });
+
+        if (targetValue <= 0) return;
+
+        gsap.to({ value: 0 }, {
+            value: targetValue,
+            duration: duration,
+            ease: 'power2.out',
+            onUpdate: function () {
+                const current = Math.round(this.targets()[0].value);
+                element.textContent = `${current}${isPlus ? '+' : ''}`;
+            }
+        });
+    }
+
     createImageAnimations() {
         if (!this.elements.imageWrapper) return;
 

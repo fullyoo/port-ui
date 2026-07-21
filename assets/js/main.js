@@ -90,6 +90,9 @@ class App {
 
         // Add ready class to body
         document.body.classList.add('is-ready');
+
+        // Initialize More Works preview hover
+        this.initMoreWorksPreview();
     }
 
     /**
@@ -158,6 +161,36 @@ class App {
         }
 
         console.log('🎠 All swipers initialized');
+    }
+
+    /**
+     * Initialize More Works preview hover interactions
+     */
+    initMoreWorksPreview() {
+        const items = document.querySelectorAll('.more-works__item');
+
+        items.forEach((item) => {
+            const preview = item.querySelector('.more-works__preview');
+            if (!preview) return;
+
+            const updatePreviewPosition = (event) => {
+                const rect = item.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                const offsetX = 26;
+                const offsetY = 18;
+
+                preview.style.left = `${x + offsetX}px`;
+                preview.style.top = `${y + offsetY}px`;
+            };
+
+            item.addEventListener('mousemove', updatePreviewPosition);
+            item.addEventListener('mouseenter', updatePreviewPosition);
+            item.addEventListener('mouseleave', () => {
+                preview.style.opacity = '';
+                preview.style.transform = '';
+            });
+        });
     }
 
     /**

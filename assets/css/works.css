@@ -8,9 +8,9 @@
 .works {
     position: relative;
     min-height: 100vh;
-    padding: var(--space-32) 0 0;
+    padding: var(--space-32) 0 var(--container-padding);
     background: var(--color-gray-900);
-    overflow: visible;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -236,7 +236,7 @@
     overflow: visible;
     max-width: var(--container-xl);
     margin: 0 auto;
-    /* padding: 0 var(--container-padding); */
+    padding: 0 var(--container-padding);
 }
 
 .works__ticker {
@@ -699,8 +699,7 @@
     }
 
     .works__swiper .swiper-wrapper {
-        grid-template-columns: 1fr;
-        gap: 0;
+        grid-template-columns: 1fr 1fr;
     }
 
     .works__slide {
@@ -744,7 +743,6 @@
 
     .works__swiper .swiper-wrapper {
         grid-template-columns: 1fr;
-        gap: 0;
     }
 
     .works__slide {

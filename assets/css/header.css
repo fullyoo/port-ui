@@ -29,8 +29,7 @@
 .header__container {
     max-width: var(--container-xl);
     margin: 0 auto;
-    /* padding: var(--space-8) var(--container-padding); */
-    padding: var(--space-8) 0;
+    padding: var(--space-8) var(--container-padding);
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -273,7 +273,7 @@ class AboutAnimation {
 
         // Image parallax - moves up faster
         gsap.to(this.elements.image, {
-            yPercent: -10,
+            //yPercent: -10,
             ease: 'none',
             scrollTrigger: {
                 trigger: this.section,

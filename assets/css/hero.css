@@ -141,7 +141,7 @@
     width: 8ch;
     white-space: nowrap;
     text-align: left;
-    line-height: 1;
+    line-height: var(--leading-none);
     vertical-align: baseline;
     transition: color var(--duration-fast) var(--ease-out-expo),
         transform var(--duration-fast) var(--ease-out-expo);
@@ -799,7 +799,7 @@
         overflow: visible;
         word-break: keep-all;
         white-space: normal;
-        line-height: 1.3;
+        line-height: var(--leading-snug);
     }
 
     .hero__title-text {

@@ -199,7 +199,7 @@
     /* text-transform: uppercase; */
     letter-spacing: var(--tracking-wide);
     height: 40px;
-    line-height: 40px;
+    line-height: var(--leading-none);
 }
 
 .header__nav-list {

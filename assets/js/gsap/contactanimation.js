@@ -121,17 +121,22 @@ class ContactAnimation {
         }
 
         // Decorative number
+        // 방향/시간 조절 포인트: x는 시작 위치, rotation은 초기 회전 방향을 결정합니다.
         if (this.elements.decoNumber) {
             gsap.set(this.elements.decoNumber, {
                 opacity: 0,
-                x: -100
+                x: -100,
+                rotation: -8
             });
         }
 
         // Decorative circles
+        // 방향/시간 조절 포인트: y와 rotation 값을 바꾸면 요소의 진입 방향과 각도를 바꿀 수 있습니다.
         gsap.set(this.elements.decoCircles, {
             opacity: 0,
-            scale: 0.8
+            scale: 0.8,
+            y: 20,
+            rotation: -6
         });
     }
 
@@ -214,10 +219,12 @@ class ContactAnimation {
         }
 
         // Phase 8: Decorative elements
+        // 방향/시간 조절 포인트: duration을 늘리면 더 천천히, x/rotation 값을 바꾸면 이동 방향과 회전 효과를 조정할 수 있습니다.
         if (this.elements.decoNumber) {
             tl.to(this.elements.decoNumber, {
                 opacity: 0.5,
                 x: 0,
+                rotation: 0,
                 duration: 1.2
             }, 0.4);
         }
@@ -225,6 +232,8 @@ class ContactAnimation {
         tl.to(this.elements.decoCircles, {
             opacity: 0.3,
             scale: 1,
+            y: 0,
+            rotation: 0,
             duration: 1,
             stagger: 0.2
         }, 0.6);
@@ -278,9 +287,12 @@ class ContactAnimation {
         // Only apply parallax to decorative elements
 
         // Decorative number parallax
+        // 방향/시간 조절 포인트: yPercent와 rotation 값을 바꾸면 스크롤 시 움직임 방향을 조정하고,
+        // scrub 값을 바꾸면 반응 속도를 조절할 수 있습니다.
         if (this.elements.decoNumber) {
             gsap.to(this.elements.decoNumber, {
-                yPercent: 15,
+                yPercent: 12,
+                rotation: 5,
                 ease: 'none',
                 scrollTrigger: {
                     trigger: this.section,
@@ -295,6 +307,7 @@ class ContactAnimation {
         this.elements.decoCircles.forEach((circle, index) => {
             gsap.to(circle, {
                 y: index % 2 === 0 ? -30 : 30,
+                rotation: index % 2 === 0 ? 8 : -8,
                 ease: 'none',
                 scrollTrigger: {
                     trigger: this.section,

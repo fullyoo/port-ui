@@ -167,29 +167,56 @@ class App {
      * Initialize More Works preview hover interactions
      */
     initMoreWorksPreview() {
+        const previewOverlay = document.createElement('div');
+        previewOverlay.className = 'more-works-preview-overlay';
+        const previewImg = document.createElement('img');
+        previewImg.alt = '';
+        previewOverlay.appendChild(previewImg);
+        document.body.appendChild(previewOverlay);
+
+        const previewWidth = 380;
+        const previewHeight = 240;
+        const offsetX = 26;
+        const offsetY = 18;
+
+        const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
         const items = document.querySelectorAll('.more-works__item');
 
         items.forEach((item) => {
-            const preview = item.querySelector('.more-works__preview');
-            if (!preview) return;
+            const nestedImg = item.querySelector('.more-works__preview-img');
+            if (!nestedImg) return;
+
+            const previewSrc = nestedImg.src;
+            const previewAlt = nestedImg.alt || '';
 
             const updatePreviewPosition = (event) => {
-                const rect = item.getBoundingClientRect();
-                const x = event.clientX - rect.left;
-                const y = event.clientY - rect.top;
-                const offsetX = 26;
-                const offsetY = 18;
+                const x = event.clientX + offsetX;
+                const y = event.clientY + offsetY;
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
 
-                preview.style.left = `${x + offsetX}px`;
-                preview.style.top = `${y + offsetY}px`;
+                const left = clamp(x, previewWidth / 2 + 16, windowWidth - previewWidth / 2 - 16);
+                const top = clamp(y, previewHeight / 2 + 16, windowHeight - previewHeight / 2 - 16);
+
+                previewOverlay.style.left = `${left}px`;
+                previewOverlay.style.top = `${top}px`;
             };
 
-            item.addEventListener('mousemove', updatePreviewPosition);
-            item.addEventListener('mouseenter', updatePreviewPosition);
-            item.addEventListener('mouseleave', () => {
-                preview.style.opacity = '';
-                preview.style.transform = '';
-            });
+            const showPreview = (event) => {
+                previewImg.src = previewSrc;
+                previewImg.alt = previewAlt;
+                previewOverlay.classList.add('active');
+                updatePreviewPosition(event);
+            };
+
+            const hidePreview = () => {
+                previewOverlay.classList.remove('active');
+            };
+
+            item.addEventListener('mousemove', showPreview);
+            item.addEventListener('mouseenter', showPreview);
+            item.addEventListener('mouseleave', hidePreview);
         });
     }
 

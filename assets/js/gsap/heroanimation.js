@@ -182,6 +182,23 @@ class HeroAnimation {
             });
         }
 
+        // Decorative elements
+        // 방향/시간 조절 포인트: y, scale, opacity 값을 바꾸면 시작 위치와 등장 속도를 조절할 수 있습니다.
+        if (this.elements.decoGrid) {
+            gsap.set(this.elements.decoGrid, {
+                opacity: 0,
+                scale: 0.96,
+                y: 20
+            });
+        }
+
+        if (this.elements.decoLine) {
+            gsap.set(this.elements.decoLine, {
+                opacity: 0,
+                scaleY: 0.9
+            });
+        }
+
         // Progress counter
         if (this.elements.progress) {
             gsap.set(this.elements.progress, {
@@ -246,7 +263,29 @@ class HeroAnimation {
             }, 0.6);
         }
 
-        // Phase 6: Progress counter
+        // Phase 6: Decorative elements
+        // 방향/시간 조절 포인트: duration 값을 늘리면 느리게, 줄이면 더 빠르게 나타납니다.
+        // y/scale 값은 등장 방향과 크기 변화에 영향을 줍니다.
+        if (this.elements.decoGrid) {
+            this.masterTimeline.to(this.elements.decoGrid, {
+                opacity: 0.4,
+                y: 0,
+                scale: 1,
+                duration: 1.1,
+                ease: 'power2.out'
+            }, 0.2);
+        }
+
+        if (this.elements.decoLine) {
+            this.masterTimeline.to(this.elements.decoLine, {
+                opacity: 0.8,
+                scaleY: 1,
+                duration: 1.1,
+                ease: 'power2.out'
+            }, 0.3);
+        }
+
+        // Phase 7: Progress counter
         if (this.elements.progress) {
             this.masterTimeline.to(this.elements.progress, {
                 opacity: 1,
@@ -255,7 +294,7 @@ class HeroAnimation {
             }, 1.2);
         }
 
-        // Phase 7: Highlight underline animation
+        // Phase 8: Highlight underline animation
         this.masterTimeline.add(() => {
             this.animateHighlightUnderline();
         }, 0.4);
@@ -317,16 +356,34 @@ class HeroAnimation {
             });
         }
 
-        // Decorative grid fade
+        // Decorative elements parallax
+        // 방향/시간 조절 포인트: yPercent와 rotation 값을 바꾸면 스크롤 시 이동 방향과 회전 방향을 바꿀 수 있습니다.
+        // scrub 값이 클수록 스크롤 반응이 느려지고, 작을수록 더 민감하게 반응합니다.
         if (this.elements.decoGrid) {
             gsap.to(this.elements.decoGrid, {
                 opacity: 0,
+                yPercent: -4,
+                rotation: -1,
                 ease: 'none',
                 scrollTrigger: {
                     trigger: this.hero,
                     start: 'center top',
                     end: 'bottom top',
                     scrub: true
+                }
+            });
+        }
+
+        if (this.elements.decoLine) {
+            gsap.to(this.elements.decoLine, {
+                opacity: 0.3,
+                yPercent: 8,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: this.hero,
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 1.2
                 }
             });
         }

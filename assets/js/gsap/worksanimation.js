@@ -14,7 +14,8 @@ class WorksAnimation {
             label: document.querySelector('.works__label'),
             titleLines: document.querySelectorAll('.works__title-text'),
             titleHighlight: document.querySelector('.works__title-highlight'),
-            cards: document.querySelectorAll('.works__card')
+            cards: document.querySelectorAll('.works__card'),
+            decos: document.querySelectorAll('.works__deco, .more-works__deco')
         };
 
         // Bind methods
@@ -82,6 +83,17 @@ class WorksAnimation {
                 y: 60
             });
         }
+
+        // Decorative elements - initial state
+        // 방향/시간 조절 포인트: y는 아래로 이동할 거리, rotation은 회전 방향을 결정합니다.
+        if (this.elements.decos && this.elements.decos.length > 0) {
+            gsap.set(this.elements.decos, {
+                opacity: 0,
+                y: 20,
+                scale: 0.9,
+                rotation: -6
+            });
+        }
     }
 
     /**
@@ -137,7 +149,20 @@ class WorksAnimation {
             }, 0.8);
         }
 
-        // Phase 3: First 6 cards appear on section entry, remaining 2 on scroll
+        // Phase 3: Decorative elements enter smoothly
+        // 방향/시간 조절 포인트: duration과 stagger 값을 바꾸면 나타나는 속도와 순차 간격을 조정할 수 있습니다.
+        if (this.elements.decos && this.elements.decos.length > 0) {
+            tl.to(this.elements.decos, {
+                opacity: 0.5,
+                y: 0,
+                scale: 1,
+                rotation: 0,
+                duration: 0.9,
+                stagger: 0.12
+            }, 0.4);
+        }
+
+        // Phase 4: First 6 cards appear on section entry, remaining 2 on scroll
         if (this.elements.cards && this.elements.cards.length > 0) {
             const firstSixCards = Array.from(this.elements.cards).slice(0, 6);
             const remainingCards = Array.from(this.elements.cards).slice(6);
@@ -175,7 +200,23 @@ class WorksAnimation {
      * Create parallax effects on scroll
      */
     createParallaxEffects() {
-        // works__card에 transform(translate) 미적용 - 레이아웃 유지
+        // 방향/시간 조절 포인트: y와 rotation 값으로 스크롤 시 방향을 바꾸고,
+        // scrub 값으로 반응 속도를 조절할 수 있습니다.
+        if (this.elements.decos && this.elements.decos.length > 0) {
+            this.elements.decos.forEach((deco, index) => {
+                gsap.to(deco, {
+                    y: index % 2 === 0 ? -24 : 24,
+                    rotation: index % 2 === 0 ? 4 : -4,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: deco,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.5
+                    }
+                });
+            });
+        }
     }
 
     /**

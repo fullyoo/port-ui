@@ -271,9 +271,27 @@
 .contact__deco {
     position: absolute;
     pointer-events: none;
+    will-change: transform, opacity;
 }
 
-.contact__deco--number {
+.contact__deco--circle.is-animated,
+.contact__deco--circle-sm.is-animated {
+    animation: contactCircleReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes contactCircleReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(24px) rotate(-8deg);
+    }
+
+    100% {
+        opacity: 0.35;
+        transform: scale(1) translateY(0) rotate(0deg);
+    }
+}
+
+.contact__number {
     font-family: var(--font-mono);
     font-size: var(--text-8xl);
     font-weight: var(--weight-bold);

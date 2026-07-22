@@ -47,6 +47,10 @@ body {
     background-clip: text;
 }
 
+.text-uppercase {
+    text-transform: uppercase;
+}
+
 .font-display {
     font-family: var(--font-primary);
 }
@@ -58,6 +62,8 @@ body {
 .font-mono {
     font-family: var(--font-mono);
 }
+
+
 
 /* ===== Button Styles ===== */
 .btn {

@@ -86,7 +86,7 @@
 
 .contact__title-line {
     display: block;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
     z-index: 10;
 }

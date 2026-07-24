@@ -100,7 +100,7 @@
 
 .selected-works__title-line {
     display: block;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
     z-index: 10;
     margin-bottom: 0.2em;
@@ -179,7 +179,7 @@
 .selected-works__swiper {
     touch-action: pan-y;
     /* 마우스 휠 이벤트 활성화 */
-    overflow: visible;
+    overflow: hidden;
     pointer-events: auto;
 }
 
@@ -187,7 +187,7 @@
     /* 마우스 휠 이벤트를 위해 포인터 이벤트 활성화 */
     pointer-events: auto;
     /* 스크롤 방지 (커스텀 핸들러가 처리) */
-    overflow: visible;
+    overflow: hidden;
 }
 
 /* ===== Navigation Buttons ===== */

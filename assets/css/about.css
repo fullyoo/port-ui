@@ -88,7 +88,7 @@
 
 .about__title-line {
     display: block;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .about__title-text {
@@ -368,14 +368,14 @@
         flex: none;
         width: 100%;
         max-width: 100%;
-        text-align: center;
+        /* text-align: center; */
         /* order: 2; */
     }
 
     .about__title {
-        font-size: var(--text-5xl);
+        font-size: var(--text-6xl);
         font-size: clamp(2.5rem, 8vw, 4.8rem);
-        overflow: visible;
+        overflow: hidden;
     }
 
     .about__visual {
@@ -395,8 +395,9 @@
     }
 
     .about__keywords {
-        max-width: 500px;
+        /* max-width: 500px; */
         margin: 0 auto;
+        gap: var(--space-5);
     }
 
     .about__description {
@@ -567,6 +568,19 @@
         font-size: var(--text-xs);
     }
 }
+
+
+/* Small Mobile */
+@media (max-width: 360px) {
+    .about__keywords {
+        flex-direction: column;
+    }
+
+    .about__keyword {
+        min-width: 100%;
+    }
+}
+
 
 
 /* ===== Reduced Motion ===== */

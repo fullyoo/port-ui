@@ -13,7 +13,7 @@ class WorksAnimation {
         this.elements = {
             label: document.querySelector('.works__label'),
             titleLines: document.querySelectorAll('.works__title-text'),
-            titleHighlight: document.querySelector('.works__title-highlight'),
+            titleHighlight: document.querySelectorAll('.works__title-highlight, .more-works__title-highlight'),
             cards: document.querySelectorAll('.works__card'),
             decos: document.querySelectorAll('.works__deco, .more-works__deco')
         };
@@ -223,17 +223,19 @@ class WorksAnimation {
      * Animate highlight underline
      */
     animateHighlightUnderline() {
-        if (!this.elements.titleHighlight) return;
+        if (!this.elements.titleHighlight || this.elements.titleHighlight.length === 0) return;
 
         // Create CSS variable for animation if not exists
         if (!document.querySelector('#works-highlight-styles')) {
             const style = document.createElement('style');
             style.id = 'works-highlight-styles';
             style.textContent = `
-                .works__title-highlight {
+                .works__title-highlight,
+                .more-works__title-highlight {
                     --highlight-scale: 0;
                 }
-                .works__title-highlight::after {
+                .works__title-highlight::after,
+                .more-works__title-highlight::after {
                     transform: scaleX(var(--highlight-scale));
                 }
             `;
@@ -241,21 +243,23 @@ class WorksAnimation {
         }
 
         // 한 글자씩 타이핑 효과
-        const chars = this.elements.titleHighlight.querySelectorAll('.title-highlight__char');
-        if (chars.length) {
-            gsap.to(chars, {
-                opacity: 1,
-                y: 0,
-                duration: 0.25,
-                stagger: 0.06,
+        this.elements.titleHighlight.forEach(highlight => {
+            const chars = highlight.querySelectorAll('.title-highlight__char');
+            if (chars.length) {
+                gsap.to(chars, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.25,
+                    stagger: 0.06,
+                    ease: 'power2.out'
+                });
+            }
+
+            gsap.to(highlight, {
+                '--highlight-scale': 1,
+                duration: 0.8,
                 ease: 'power2.out'
             });
-        }
-
-        gsap.to(this.elements.titleHighlight, {
-            '--highlight-scale': 1,
-            duration: 0.8,
-            ease: 'power2.out'
         });
     }
 

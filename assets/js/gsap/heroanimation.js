@@ -186,7 +186,8 @@ class HeroAnimation {
         // 방향/시간 조절 포인트: y, scale, opacity 값을 바꾸면 시작 위치와 등장 속도를 조절할 수 있습니다.
         if (this.elements.decoGrid) {
             gsap.set(this.elements.decoGrid, {
-                opacity: 0,
+                // 시작 투명도: 여기서 요소가 기본적으로 보일지 여부를 조절합니다.
+                opacity: 0.4,
                 scale: 0.96,
                 y: 20
             });
@@ -268,6 +269,7 @@ class HeroAnimation {
         // y/scale 값은 등장 방향과 크기 변화에 영향을 줍니다.
         if (this.elements.decoGrid) {
             this.masterTimeline.to(this.elements.decoGrid, {
+                // 등장 후 최종 투명도: 이 값을 올리면 더 선명하게 보입니다.
                 opacity: 0.4,
                 y: 0,
                 scale: 1,
@@ -361,7 +363,8 @@ class HeroAnimation {
         // scrub 값이 클수록 스크롤 반응이 느려지고, 작을수록 더 민감하게 반응합니다.
         if (this.elements.decoGrid) {
             gsap.to(this.elements.decoGrid, {
-                opacity: 0,
+                // 스크롤 중 유지할 투명도: 스크롤 시에도 보이게 하려면 0이 아닌 값을 사용하세요.
+                opacity: 0.2,
                 yPercent: -4,
                 rotation: -1,
                 ease: 'none',

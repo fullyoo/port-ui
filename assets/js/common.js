@@ -281,6 +281,7 @@ function initTitleHighlightTypewriter() {
     const selectors = [
         '.hero__title-highlight:not(.hero__title-highlight--cycle)',
         '.works__title-highlight',
+        '.more-works__title-highlight',
         '.selected-works__title-highlight',
         '.contact__title-highlight'
     ];

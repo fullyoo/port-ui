@@ -13,9 +13,11 @@ class WorksAnimation {
         this.elements = {
             label: document.querySelector('.works__label'),
             titleLines: document.querySelectorAll('.works__title-text'),
-            titleHighlight: document.querySelectorAll('.works__title-highlight, .more-works__title-highlight'),
+            titleHighlight: document.querySelectorAll('.works__title-highlight'),
             cards: document.querySelectorAll('.works__card'),
-            decos: document.querySelectorAll('.works__deco, .more-works__deco')
+            decos: document.querySelectorAll('.works__deco, .more-works__deco'),
+            moreWorksSection: document.querySelector('.more-works'),
+            moreWorksTitleHighlight: document.querySelector('.more-works__title-highlight')
         };
 
         // Bind methods
@@ -41,6 +43,7 @@ class WorksAnimation {
 
         // Create scroll-triggered animations
         this.createEntranceAnimation();
+        this.createMoreWorksHighlightAnimation();
         this.createParallaxEffects();
 
         this.isInitialized = true;
@@ -197,6 +200,33 @@ class WorksAnimation {
     }
 
     /**
+     * Trigger the more-works highlight underline when that section enters view.
+     */
+    createMoreWorksHighlightAnimation() {
+        const section = this.elements.moreWorksSection;
+        const highlight = this.elements.moreWorksTitleHighlight;
+
+        if (!section || !highlight) return;
+
+        gsap.set(highlight, { '--highlight-scale': 0 });
+
+        const chars = highlight.querySelectorAll('.title-highlight__char');
+        if (chars.length) {
+            gsap.set(chars, { opacity: 0, y: '0.35em' });
+        }
+
+        ScrollTrigger.create({
+            trigger: section,
+            start: 'top 70%',
+            end: 'top 20%',
+            once: true,
+            onEnter: () => {
+                this.animateHighlightUnderline([highlight]);
+            }
+        });
+    }
+
+    /**
      * Create parallax effects on scroll
      */
     createParallaxEffects() {
@@ -222,8 +252,9 @@ class WorksAnimation {
     /**
      * Animate highlight underline
      */
-    animateHighlightUnderline() {
-        if (!this.elements.titleHighlight || this.elements.titleHighlight.length === 0) return;
+    animateHighlightUnderline(targets = this.elements.titleHighlight) {
+        const highlightItems = Array.from(targets || []).filter(Boolean);
+        if (highlightItems.length === 0) return;
 
         // Create CSS variable for animation if not exists
         if (!document.querySelector('#works-highlight-styles')) {
@@ -243,7 +274,7 @@ class WorksAnimation {
         }
 
         // 한 글자씩 타이핑 효과
-        this.elements.titleHighlight.forEach(highlight => {
+        highlightItems.forEach(highlight => {
             const chars = highlight.querySelectorAll('.title-highlight__char');
             if (chars.length) {
                 gsap.to(chars, {

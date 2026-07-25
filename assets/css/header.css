@@ -29,7 +29,7 @@
 .header__container {
     max-width: var(--container-xl);
     margin: 0 auto;
-    padding: var(--space-8) var(--container-padding);
+    padding: var(--space-6) 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -237,10 +237,24 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
+    width: 0%;
     height: 2px;
     background: var(--color-accent);
     transition: width var(--duration-normal) var(--ease-out-expo);
+}
+
+.header__nav-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: var(--space-1);
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background: var(--color-accent);
+    transition: width var(--duration-normal) var(--ease-out-expo);
+    opacity: 0;
 }
 
 .header__nav-link:hover,
@@ -248,9 +262,17 @@
     color: var(--color-light);
 }
 
+.header__nav-link.is-active {
+    padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+}
+
 .header__nav-link:hover::before,
 .header__nav-link.is-active::before {
     width: 100%;
+}
+
+.header__nav-link.is-active::after {
+    opacity: 1;
 }
 
 .header__nav-text {
@@ -300,7 +322,7 @@
 /* Tablet */
 @media (max-width: 1024px) {
     .header__container {
-        padding: var(--space-5) var(--container-padding);
+        padding: var(--space-4) var(--container-padding);
         grid-template-columns: 1fr 1fr auto;
         gap: var(--space-2);
     }
@@ -313,7 +335,7 @@
     .header__nav {
         position: fixed;
         top: 0;
-        top: 81px;
+        top: 73px;
         right: -100%;
         width: 280px;
         height: 100vh;
@@ -346,6 +368,7 @@
         width: 100%;
         padding: var(--space-3) var(--space-4);
         font-size: var(--text-base);
+        gap: var(--space-2);
     }
 
     .header__menu-toggle {
@@ -358,6 +381,7 @@
     .header__container {
         position: relative;
         z-index: 1200;
+        padding: var(--space-3) var(--container-padding);
     }
 
     .header__logo-text {
@@ -367,6 +391,7 @@
     .header__nav {
         width: 100%;
         right: -100%;
+        top: 65px;
         z-index: 900;
     }
 

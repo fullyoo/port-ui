@@ -337,6 +337,7 @@ function initHeroRotatingHighlight() {
         gsap.to(rotator, {
             opacity: 0,
             y: -4,
+            // 전환 애니메이션 시간: 이 값을 조절하면 단어가 사라지는 속도가 바뀝니다.
             duration: 0.25,
             ease: 'power2.out',
             onComplete: () => {
@@ -344,6 +345,7 @@ function initHeroRotatingHighlight() {
                 rotator.setAttribute('aria-label', nextWord);
                 gsap.fromTo(rotator,
                     { opacity: 0, y: 4 },
+                    // 전환 애니메이션 시간: 이 값을 조절하면 새 단어가 나타나는 속도가 바뀝니다.
                     { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }
                 );
             }
@@ -356,7 +358,7 @@ function initHeroRotatingHighlight() {
     rotator.setAttribute('aria-label', words[0]);
     gsap.set(rotator, { opacity: 1, y: 0 });
 
-    setInterval(swapText, 2500);
+    setInterval(swapText, 2000);
 }
 
 // Export utilities

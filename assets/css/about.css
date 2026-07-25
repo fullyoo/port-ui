@@ -140,12 +140,12 @@
 
 /* Description */
 .about__description {
-    /* font-size: var(--text-sm); */
+    /* max-width: 500px; */
     font-weight: var(--weight-light);
     line-height: var(--leading-relaxed);
     color: var(--color-gray-400);
-    /* max-width: 500px; */
     margin: var(--space-8) 0 var(--space-10);
+    word-break: auto-phrase;
 }
 
 .about__description strong {
@@ -423,6 +423,10 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+    .about {
+        padding: var(--space-16) var(--container-padding)
+    }
+
     .about__title {
         font-size: var(--text-4xl);
         font-size: clamp(2rem, 8vw, 4rem);
@@ -479,9 +483,7 @@
 
 /* Small Mobile */
 @media (max-width: 480px) {
-    .about {
-        padding: var(--space-16) var(--container-padding) var(--space-20);
-    }
+    .about {}
 
     .about__container {
         flex-direction: column;

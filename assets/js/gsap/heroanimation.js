@@ -497,15 +497,15 @@ class HeroAnimation {
         this.elements.highlight.addEventListener('mouseenter', () => {
             gsap.to(this.elements.highlight, {
                 color: 'var(--color-accent)',
-                duration: 0.3,
+                duration: 0.2,
                 ease: 'power2.out'
             });
         });
 
         this.elements.highlight.addEventListener('mouseleave', () => {
             gsap.to(this.elements.highlight, {
-                color: 'var(--color-primary)',
-                duration: 0.3,
+                color: 'var(--color-primary)', // 원래 색상으로 돌아가도록 설정
+                duration: 0.2,
                 ease: 'power2.out'
             });
         });

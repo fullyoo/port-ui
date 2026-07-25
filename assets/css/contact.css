@@ -53,14 +53,13 @@
 .contact__label {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: var(--space-3);
     font-family: var(--font-mono);
     font-size: var(--text-xs);
-    color: var(--color-gray-500);
+    color: var(--color-gray-400);
     text-transform: uppercase;
     letter-spacing: var(--tracking-widest);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-5);
 }
 
 .contact__label::before,
@@ -69,7 +68,7 @@
     display: block;
     width: 32px;
     height: 1px;
-    background: var(--color-gray-700);
+    background: var(--color-primary);
 }
 
 /* ===== Main Title ===== */
@@ -372,7 +371,7 @@
 /* Tablet */
 @media (max-width: 1024px) {
     .contact {
-        padding: var(--space-24) var(--container-padding);
+        padding: var(--space-20) var(--container-padding);
     }
 
     .contact__title {
@@ -395,9 +394,7 @@
 /* Mobile */
 @media (max-width: 768px) {
     .contact {
-        padding: var(--space-20) var(--container-padding);
-        min-height: auto;
-        padding-bottom: var(--space-24);
+        padding: var(--space-16) var(--container-padding);
     }
 
     .contact__title {
@@ -443,15 +440,12 @@
         bottom: auto;
         left: auto;
         transform: none;
-        margin-top: var(--space-12);
     }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
-    .contact {
-        padding: var(--space-16) var(--container-padding);
-    }
+    .contact {}
 
     .contact__title {
         font-size: var(--text-3xl);

@@ -144,7 +144,7 @@
     line-height: var(--leading-relaxed);
     color: var(--color-gray-400);
     margin: var(--space-8) 0 var(--space-10);
-    word-break: auto-phrase;
+    word-break: keep-all;
 }
 
 .about__description strong {

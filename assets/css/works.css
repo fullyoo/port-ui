@@ -219,7 +219,7 @@
 
 .works__description {
     /* max-width: 500px; */
-    word-break: auto-phrase;
+    word-break: keep-all;
     font-weight: var(--weight-light);
     line-height: var(--leading-relaxed);
     color: var(--color-gray-400);
@@ -237,11 +237,81 @@
     position: relative;
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: center;
     overflow: hidden;
     max-width: var(--container-xl);
     margin: 0 auto;
+    gap: var(--space-8);
+}
+
+.works__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-3);
+    width: 100%;
+    margin: var(--space-1) auto var(--space-4);
+    max-width: var(--container-xl);
+    z-index: 2;
+}
+
+.works__tab {
+    appearance: none;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-gray-100);
+    padding: 0.95rem 1.5rem;
+    border-radius: 999px;
+    font-family: var(--font-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-out-expo);
+    white-space: nowrap;
+}
+
+.works__tab:hover,
+.works__tab:focus {
+    border-color: rgba(255, 255, 255, 0.22);
+    color: var(--color-light);
+    outline: none;
+}
+
+.works__tab--active {
+    background: rgba(160, 255, 92, 0.14);
+    border-color: rgba(160, 255, 92, 0.75);
+    color: var(--color-primary);
+    box-shadow: 0 10px 30px rgba(41, 255, 145, 0.08);
+}
+
+.works__tab--active:hover,
+.works__tab--active:focus {
+    color: var(--color-primary);
+}
+
+.works__tab:not(.works__tab--active) {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.works__tab:focus-visible {
+    box-shadow: 0 0 0 3px rgba(160, 255, 92, 0.18);
+}
+
+.works__tabs-label {
+    width: 100%;
+    margin-top: var(--space-16);
+    padding-left: var(--space-4);
+    color: var(--color-gray-200);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wide);
+    /* font-family: var(--font-mono); */
+    /* font-family: var(--font-secondary); */
+    text-transform: uppercase;
 }
 
 .works__ticker {
@@ -312,12 +382,47 @@
 
 .works__swiper .swiper-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-6);
     align-items: stretch;
     width: 100%;
     height: auto;
     transform: none !important;
+}
+
+.works__slide {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.works__slide--hidden {
+    display: none !important;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.works__slide--show {
+    display: flex !important;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1100px) {
+    .works__swiper .swiper-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .works__tabs {
+        justify-content: center;
+    }
+
+    .works__swiper .swiper-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ===== Project Card ===== */
@@ -363,8 +468,8 @@
 .works__card-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 16/10;
     aspect-ratio: 3/4;
+    aspect-ratio: 16/10;
     overflow: hidden;
     border-radius: var(--radius-lg);
     background: var(--color-gray-800);
@@ -637,7 +742,7 @@
 
 .more-works__description {
     /* max-width: 500px; */
-    word-break: auto-phrase;
+    word-break: keep-all;
     font-weight: var(--weight-light);
     line-height: var(--leading-relaxed);
     color: var(--color-gray-400);
@@ -817,12 +922,12 @@
         padding: var(--space-5);
     }
 
-    .more-works__item-year {
-        margin-top: var(--space-4);
-    }
-
     .more-works__preview {
         display: none;
+    }
+
+    .more-works__item-title {
+        font-size: var(--text-lg);
     }
 }
 
@@ -830,10 +935,6 @@
 @media (max-width: 768px) {
     .works {
         padding: var(--space-16) var(--container-padding)
-    }
-
-    .works__header {
-        padding: 0 var(--container-padding);
     }
 
     .works__title {

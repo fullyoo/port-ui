@@ -80,6 +80,9 @@ class App {
         // Initialize all swiper modules
         this.initSwipers();
 
+        // Initialize works tabs filter
+        this.initWorksTabs();
+
         // Play entrance animations with a small delay
         setTimeout(() => {
             if (this.heroAnimation) {
@@ -161,6 +164,81 @@ class App {
         }
 
         console.log('🎠 All swipers initialized');
+    }
+
+    /**
+     * Initialize Works category tabs filter
+     */
+    initWorksTabs() {
+        const tabContainer = document.querySelector('.works__tabs');
+        const tabButtons = document.querySelectorAll('.works__tab');
+        const slides = document.querySelectorAll('.works__slide[data-filter]');
+
+        if (!tabContainer || tabButtons.length === 0 || slides.length === 0) {
+            return;
+        }
+
+        const applyFilter = (filter) => {
+            slides.forEach(slide => {
+                const slideFilter = slide.dataset.filter;
+                const shouldShow = filter === 'all' || slideFilter === filter;
+
+                if (shouldShow) {
+                    slide.style.display = 'flex';
+                    slide.style.opacity = '0';
+                    slide.style.transform = 'translateY(30px)';
+                    slide.classList.remove('works__slide--hidden');
+
+                    requestAnimationFrame(() => {
+                        slide.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        slide.style.opacity = '1';
+                        slide.style.transform = 'translateY(0)';
+                    });
+
+                    slide.addEventListener('transitionend', function cleanup() {
+                        slide.style.transition = '';
+                        slide.style.opacity = '';
+                        slide.style.transform = '';
+                        slide.removeEventListener('transitionend', cleanup);
+                    });
+                } else {
+                    slide.classList.remove('works__slide--show');
+                    slide.classList.add('works__slide--hidden');
+                    slide.style.opacity = '';
+                    slide.style.transform = '';
+                    slide.style.transition = '';
+                }
+            });
+        };
+
+        const tabLabel = document.querySelector('.works__tabs-label');
+
+        const setActiveTab = (activeTab) => {
+            tabButtons.forEach(tab => {
+                const isActive = tab === activeTab;
+                tab.classList.toggle('works__tab--active', isActive);
+                tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+            if (tabLabel && activeTab) {
+                const labelText = activeTab.dataset.label || activeTab.textContent.trim();
+                tabLabel.textContent = labelText;
+            }
+        };
+
+        tabButtons.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const filterValue = tab.dataset.filter || 'all';
+                setActiveTab(tab);
+                applyFilter(filterValue);
+            });
+        });
+
+        const initialActiveTab = document.querySelector('.works__tab--active') || tabButtons[0];
+        if (initialActiveTab) {
+            setActiveTab(initialActiveTab);
+            applyFilter(initialActiveTab.dataset.filter || 'all');
+        }
+
     }
 
     /**

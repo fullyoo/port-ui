@@ -455,12 +455,29 @@
                 </p>
             </div>
 
+            <div class="works__tabs" role="tablist" aria-label="Works category tabs">
+                <button type="button" class="works__tab works__tab--active" data-filter="all" data-label="전체 프로젝트"
+                    role="tab" aria-selected="true">All</button>
+                <button type="button" class="works__tab" data-filter="website-build" data-label="웹사이트 구축 프로젝트"
+                    role="tab" aria-selected="false">Website Build</button>
+                <button type="button" class="works__tab" data-filter="vibe-coding" data-label="바이브 코딩 프로젝트" role="tab"
+                    aria-selected="false">Vibe
+                    Coding</button>
+                <button type="button" class="works__tab" data-filter="promotion-design" data-label="프로모션 디자인 프로젝트"
+                    role="tab" aria-selected="false">Promotion Design</button>
+                <button type="button" class="works__tab" data-filter="marketing" data-label="마케팅 프로젝트" role="tab"
+                    aria-selected="false">Marketing</button>
+                <button type="button" class="works__tab" data-filter="other-works" data-label="기타 작업물" role="tab"
+                    aria-selected="false">Other Works</button>
+                <p class="works__tabs-label" aria-live="polite">전체 프로젝트</p>
+            </div>
+
             <!-- Swiper Container -->
             <div class="works__swiper-container">
                 <div class="works__swiper swiper">
                     <div class="swiper-wrapper">
                         <!-- Project 1 -->
-                        <div class="swiper-slide works__slide">
+                        <div class="swiper-slide works__slide" data-filter="vibe-coding">
                             <article class="works__card">
                                 <div class="works__card-image">
                                     <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80"
@@ -489,7 +506,7 @@
                         </div>
 
                         <!-- Project 2 -->
-                        <div class="swiper-slide works__slide">
+                        <div class="swiper-slide works__slide" data-filter="website-build">
                             <article class="works__card">
                                 <div class="works__card-image">
                                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
@@ -518,7 +535,7 @@
                         </div>
 
                         <!-- Project 3 -->
-                        <div class="swiper-slide works__slide">
+                        <div class="swiper-slide works__slide" data-filter="marketing">
                             <article class="works__card">
                                 <div class="works__card-image">
                                     <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80"
@@ -547,7 +564,7 @@
                         </div>
 
                         <!-- Project 4 -->
-                        <div class="swiper-slide works__slide">
+                        <div class="swiper-slide works__slide" data-filter="other-works">
                             <article class="works__card">
                                 <div class="works__card-image">
                                     <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80"
@@ -576,7 +593,7 @@
                         </div>
 
                         <!-- Project 5 -->
-                        <div class="swiper-slide works__slide">
+                        <div class="swiper-slide works__slide" data-filter="website-build">
                             <article class="works__card">
                                 <div class="works__card-image">
                                     <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
@@ -605,7 +622,7 @@
                         </div>
 
                         <!-- Project 6 -->
-                        <div class="swiper-slide works__slide">
+                        <div class="swiper-slide works__slide" data-filter="promotion-design">
                             <article class="works__card">
                                 <div class="works__card-image">
                                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
@@ -634,7 +651,7 @@
                         </div>
 
                         <!-- Project 7 -->
-                        <div class="swiper-slide works__slide">
+                        <div class="swiper-slide works__slide" data-filter="marketing">
                             <article class="works__card">
                                 <div class="works__card-image">
                                     <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80"
@@ -663,11 +680,11 @@
                         </div>
 
                         <!-- Project 8 -->
-                        <div class="swiper-slide works__slide">
+                        <div class="swiper-slide works__slide" data-filter="marketing">
                             <article class="works__card">
                                 <div class="works__card-image">
                                     <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80"
-                                        alt="SaaS Platform" class="works__card-img" loading="lazy">
+                                        alt=" Mobile App Design" class="works__card-img" loading="lazy">
                                 </div>
                                 <div class="works__card-content">
                                     <h3 class="works__card-title">Team Collaboration</h3>
@@ -693,8 +710,6 @@
                     </div>
                 </div>
             </div>
-
-
         </section>
 
         <!-- Flowy Text Ticker -->
@@ -1192,20 +1207,19 @@
                 <div class="contact__label">
                     <span class="hero__label-dot"></span>
                     <span>CONTACT</span>
-                    <!-- <span class="hero__label-dot"></span> -->
+                    <span class="hero__label-dot add"></span>
                 </div>
 
                 <h2 class="contact__title">
                     <span class="contact__title-line">
                         <span class="contact__title-text">의미있고</span>
-                    </span>
-                    <span class="contact__title-line">
                         <span class="contact__title-text">
                             <span class="contact__title-highlight">새로운</span> 경험을
                         </span>
                     </span>
                     <span class="contact__title-line">
-                        <span class="contact__title-text">함께 만들어갑니다.</span>
+                        <span class="contact__title-text"><span class="contact__title-highlight add">함께
+                            </span>만들어갑니다.</span>
                     </span>
                 </h2>
 
@@ -1352,8 +1366,6 @@
                     </a> -->
                 </div>
             </div>
-
-
         </section>
 
         <!-- Footer Note -->

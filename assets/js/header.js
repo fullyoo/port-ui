@@ -14,6 +14,9 @@ class Header {
 
         this.isMenuOpen = false;
         this.scrollThreshold = 100;
+        this.sectionNavMap = {
+            'more-works': 'works'
+        };
 
         // Bind methods
         this.init = this.init.bind(this);
@@ -130,6 +133,13 @@ class Header {
     }
 
     /**
+     * Resolve which navigation target should be active for a section.
+     */
+    getNavTargetForSection(sectionId) {
+        return this.sectionNavMap[sectionId] || sectionId;
+    }
+
+    /**
      * Update active navigation based on scroll position
      */
     updateActiveNav() {
@@ -144,7 +154,7 @@ class Header {
             const sectionId = section.id || section.getAttribute('data-section');
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                activeSection = sectionId;
+                activeSection = this.getNavTargetForSection(sectionId);
             }
         });
 

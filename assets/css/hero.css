@@ -191,7 +191,7 @@
     color: var(--color-gray-400);
     max-width: 480px;
     margin: var(--space-8) 0;
-    word-break: auto-phrase;
+    word-break: keep-all;
 }
 
 .hero__subtitle strong {
@@ -756,7 +756,9 @@
         font-size: clamp(2.5rem, 7vw, 6rem);
     }
 
-    .hero__label {}
+    .hero__label-dot.add {
+        display: none;
+    }
 
     .hero__subtitle {
         max-width: 100%;

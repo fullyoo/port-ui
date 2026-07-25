@@ -66,7 +66,7 @@
     position: absolute;
     top: var(--space-16);
     right: var(--space-8);
-    z-index: 0;
+    z-index: 1;
     user-select: none;
 }
 
@@ -93,10 +93,9 @@
 
 .about__title-text {
     display: inline-block;
-    /* Ensure title is always visible */
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
     position: relative;
 }
 
@@ -428,7 +427,7 @@
     }
 
     .about__title {
-        font-size: var(--text-4xl);
+        font-size: var(--text-5xl);
         font-size: clamp(2rem, 8vw, 4rem);
     }
 

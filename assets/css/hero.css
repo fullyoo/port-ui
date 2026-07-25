@@ -68,6 +68,14 @@
     background: var(--color-primary);
 }
 
+.hero__label::after {
+    /* content: ''; */
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--color-primary);
+}
+
 .hero__label-dot {
     width: 6px;
     height: 6px;

@@ -10,12 +10,55 @@
     /* height: 100vh; */
     /* max-height: 100vh; */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: var(--space-32) 0;
+    align-items: center; */
+    padding: var(--space-32) var(--container-padding);
     background: var(--color-dark);
     overflow: hidden;
+}
+
+.contact__number {
+    font-family: var(--font-mono);
+    font-size: var(--text-8xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-gray-700);
+    line-height: 1;
+    position: absolute;
+    top: var(--space-16);
+    right: var(--space-8);
+    z-index: 1;
+    user-select: none;
+}
+
+.contact__deco--dots {
+    top: 40%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(var(--color-gray-400) 1px, transparent 1px);
+    background-size: 10px 10px;
+    opacity: 0.5;
+}
+
+.contact__deco--circle {
+    width: 300px;
+    height: 300px;
+    border: 1px solid var(--color-gray-400);
+    border-radius: 50%;
+    top: 10%;
+    right: -100px;
+    opacity: 0.3;
+}
+
+.contact__deco--circle-sm {
+    width: 150px;
+    height: 150px;
+    border: 1px solid var(--color-gray-400);
+    border-radius: 50%;
+    bottom: 20%;
+    left: -50px;
+    opacity: 0.3;
 }
 
 .contact::before {
@@ -39,14 +82,16 @@
 }
 
 /* ===== Contact Container ===== */
-.contact__container {
+.contact__header {
     position: relative;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
     z-index: 1;
-    max-width: 900px;
-    text-align: center;
-    padding: var(--space-4) 0;
-    max-height: 100%;
-    /* overflow-y: auto; */
 }
 
 /* ===== Section Header ===== */
@@ -62,9 +107,16 @@
     margin-bottom: var(--space-5);
 }
 
-.contact__label::before,
-.contact__label::after {
+.contact__label::before {
     content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--color-primary);
+}
+
+.contact__label::after {
+    /* content: ''; */
     display: block;
     width: 32px;
     height: 1px;
@@ -74,13 +126,11 @@
 /* ===== Main Title ===== */
 .contact__title {
     font-family: var(--font-primary);
-    font-size: clamp(2.4rem, 5vw, 6rem);
+    font-size: clamp(3rem, 5vw, 5.6rem);
     font-weight: var(--weight-bold);
-    line-height: var(--leading-tight);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
     color: var(--color-light);
-    margin-bottom: var(--space-4);
-    position: relative;
-    z-index: 10;
 }
 
 .contact__title-line {
@@ -93,9 +143,9 @@
 .contact__title-text {
     display: inline-block;
     /* Ensure title is always visible */
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
     position: relative;
     z-index: 10;
 }
@@ -119,17 +169,16 @@
 }
 
 /* ===== Subtitle ===== */
-.contact__subtitle {
-    font-family: var(--font-secondary);
-    font-size: var(--text-base);
+.contact__description {
+    /* max-width: 500px; */
+    word-break: auto-phrase;
     font-weight: var(--weight-light);
     line-height: var(--leading-relaxed);
     color: var(--color-gray-400);
-    max-width: 600px;
-    margin: 0 auto var(--space-4);
+    margin: var(--space-8) 0 var(--space-10);
 }
 
-.contact__subtitle strong {
+.contact__description strong {
     color: var(--color-light);
     font-weight: var(--weight-medium);
 }
@@ -137,9 +186,9 @@
 /* ===== CTA Buttons ===== */
 .contact__cta {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     gap: var(--space-3);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-8);
 }
 
 .contact__cta-btn {
@@ -157,6 +206,8 @@
     transition: all var(--duration-normal) var(--ease-out-expo);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 240px;
 }
 
 .contact__cta-btn--primary {
@@ -211,8 +262,7 @@
 /* ===== Contact Links ===== */
 .contact__links {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    /* justify-content: center; */
     gap: var(--space-4);
 }
 
@@ -222,18 +272,20 @@
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-4);
-    min-width: 100px;
+    width: 160px;
+    width: 240px;
     background: transparent;
     border: 1px solid transparent;
     border-radius: var(--radius-lg);
     transition: all var(--duration-normal) var(--ease-out-expo);
     text-decoration: none;
+    text-align: center;
 }
 
 .contact__link:hover {
-    background: var(--color-gray-900);
-    border-color: var(--color-gray-800);
-    transform: translateY(-4px);
+    /* background: var(--color-gray-900); */
+    /* border-color: var(--color-gray-800); */
+    transform: translateY(-4px) !important;
 }
 
 .contact__link-icon {
@@ -290,48 +342,7 @@
     }
 }
 
-.contact__number {
-    font-family: var(--font-mono);
-    font-size: var(--text-8xl);
-    font-weight: var(--weight-bold);
-    color: var(--color-gray-700);
-    line-height: 1;
-    position: absolute;
-    top: var(--space-16);
-    right: var(--space-8);
-    z-index: 0;
-    user-select: none;
-}
 
-.contact__deco--dots {
-    top: 40%;
-    left: 5%;
-    width: 100px;
-    height: 100px;
-    background-image: radial-gradient(var(--color-gray-400) 1px, transparent 1px);
-    background-size: 10px 10px;
-    opacity: 0.5;
-}
-
-.contact__deco--circle {
-    width: 300px;
-    height: 300px;
-    border: 1px solid var(--color-gray-400);
-    border-radius: 50%;
-    top: 10%;
-    right: -100px;
-    opacity: 0.3;
-}
-
-.contact__deco--circle-sm {
-    width: 150px;
-    height: 150px;
-    border: 1px solid var(--color-gray-400);
-    border-radius: 50%;
-    bottom: 20%;
-    left: -50px;
-    opacity: 0.3;
-}
 
 /* ===== Footer Note ===== */
 .contact__footer {
@@ -375,7 +386,8 @@
     }
 
     .contact__title {
-        font-size: var(--text-5xl);
+        font-size: var(--text-6xl);
+        font-size: clamp(2.5rem, 8vw, 4.8rem);
     }
 
     .contact__deco--number {
@@ -398,32 +410,39 @@
     }
 
     .contact__title {
-        font-size: var(--text-4xl);
+        font-size: var(--text-5xl);
+        font-size: clamp(2rem, 8vw, 4rem);
     }
 
-    .contact__subtitle {
-        font-size: var(--text-lg);
-        margin-bottom: var(--space-8);
+    .contact__description {
+        font-size: var(--text-sm);
+        margin: var(--space-6) 0 var(--space-8) 0;
     }
 
     .contact__cta {
-        flex-direction: column;
-        gap: var(--space-3);
-        margin-bottom: var(--space-12);
+        gap: var(--space-2);
     }
 
     .contact__cta-btn {
-        width: 100%;
-        max-width: 300px;
+        font-size: var(--text-xs);
     }
 
     .contact__links {
-        gap: var(--space-4);
+        gap: var(--space-2);
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .contact__link-icon {
+        width: 20px;
+        height: 20px;
     }
 
     .contact__link {
-        min-width: 100px;
-        padding: var(--space-4);
+        width: calc(50% - 8px);
+        align-items: center;
+        flex-direction: row;
+        padding: var(--space-4) 0;
     }
 
     .contact__deco--number {
@@ -447,31 +466,32 @@
 @media (max-width: 480px) {
     .contact {}
 
-    .contact__title {
-        font-size: var(--text-3xl);
+    .contact__description {
+        font-size: var(--text-sm);
     }
 
-    .contact__subtitle {
-        font-size: var(--text-base);
+    .contact__description br {
+        display: none;
     }
 
     .contact__links {
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
         gap: var(--space-2);
     }
 
     .contact__link {
-        width: 100%;
-        max-width: 200px;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: var(--space-4);
+        gap: var(--space-1);
+        flex-direction: column;
+        /* width: 100%; */
     }
 
-    .contact__link-icon {
-        width: 24px;
-        height: 24px;
+    .contact__cta {
+        flex-direction: column;
+    }
+
+    .contact__cta-btn {
+        max-width: 100%;
     }
 }
 

@@ -2967,26 +2967,117 @@ Made changes.
 
 **User**
 
+case-study.html 에서
+header__nav-item에 있는 a 링크를 클릭하면 해당 영역으로 이동하지 않아요.
+
+footer__links a링크처럼 클릭하면 해당영역으로 가야하거든요
 
 ---
 
 **VS-CODE**
+
+확인 중입니다. 먼저 스크립트와 앵커 처리 방식을 살펴보겠습니다.
+
+Searched for regex `data-scroll-to|scrollTo|scroll-to|header__nav-link|footer__link` (`**/*.{html,js}`), 58 results
+
+문제 원인을 찾겠습니다. case-study.html 헤더와 header.js를 함께 확인합니다.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/works/case-study.html#1-1), lines 1 to 130
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/header.js#1-1), lines 1 to 220
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/header.js#220-220), lines 220 to 238
+
+헤더 클릭 로직에서 다른 페이지 이동은 기본 동작을 유지하도록 수정합니다.
+
+Replacing 23 lines with 33 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/header.js)
+
+
+✅ 수정 완료했습니다.
+
+### 변경 내용
+- header.js에서 헤더 네비게이션 클릭 시
+  - 현재 페이지에 해당 `id`가 없으면 기본 링크 동작을 유지하도록 변경
+  - 현재 페이지에 섹션이 있을 때만 부드러운 스크롤로 이동
+
+### 결과
+- case-study.html 같은 상세 페이지에서
+  - `href="/index.html#about"` 등 외부 페이지 링크는 정상 이동
+  - 현재 페이지 내 앵커가 존재하는 경우엔 부드러운 스크롤 적용
+
+필요하면 동일한 로직을 index.html 쪽에도 적용 확인해 드릴게요.
+
+Made changes.
 
 
 **User**
 
+외부페이지 링크이동이 왜 안된거에요?
 
 ---
 
 **VS-CODE**
+
+외부 페이지 이동이 안된 이유는 header.js의 클릭 처리 로직 때문입니다.
+
+- `handleNavClick()`에서 `e.preventDefault()`를 항상 먼저 실행했습니다.
+- 그 다음 `data-scroll-to` 또는 `href`에서 ID를 찾아 현재 페이지에서 섹션을 찾으려 했습니다.
+- case-study.html에는 `#about`, `#works`, `#contact` 같은 섹션이 없어서 스크롤 이동 대상이 없었습니다.
+- 하지만 이미 `preventDefault()`가 실행되어 있어서, 브라우저는 기본 링크 이동을 하지 않았습니다.
+
+즉, 외부 페이지로 가야 할 링크를 자바스크립트가 잘못 가로챈 셈입니다.
 
 
 **User**
 
+그럼 기존에서 어떻게 수정된건지 알려주세요
 
 ---
 
 **VS-CODE**
+
+## 수정된 부분
+
+header.js에서 변경한 함수는 `handleNavClick()`입니다.
+
+### 원래 동작
+1. 클릭 시 `e.preventDefault()`가 무조건 실행됨
+2. `data-scroll-to` 또는 `href`에서 타겟 ID를 추출
+3. 페이지에서 해당 `id` 섹션을 찾음
+4. 없으면 그냥 종료
+
+이 때문에 case-study.html처럼 현재 페이지에 `#about`, `#works`, `#contact` 섹션이 없으면,
+자바스크립트가 기본 이동을 막아버리고 외부 페이지 이동이 실행되지 않았습니다.
+
+---
+
+### 수정된 동작
+1. 클릭한 링크의 `href`와 `data-scroll-to`를 먼저 읽음
+2. `targetId`를 구함
+3. `document.getElementById(targetId)` 또는 `[data-section="targetId"]`로 현재 페이지에 섹션이 있는지 확인
+4. 섹션이 없으면 `return`만 하고 `preventDefault()`는 실행하지 않음 → 브라우저가 기본 링크 이동 수행
+5. 섹션이 있으면 `e.preventDefault()` 후 부드러운 스크롤 실행
+
+---
+
+### 핵심 변경 코드
+- `e.preventDefault()` 위치가 바뀌었습니다
+- `targetSection` 존재 여부를 먼저 검사하도록 했습니다
+
+```js
+const targetSection = document.getElementById(targetId) ||
+    document.querySelector(`[data-section="${targetId}"]`);
+
+if (!targetSection) {
+    return;
+}
+
+e.preventDefault();
+```
+
+이제 같은 `header__nav-link`라도:
+- 현재 페이지에 이동 대상 섹션이 있으면 스크롤
+- 없으면 외부 페이지로 정상 이동합니다
 
 
 **User**

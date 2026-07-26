@@ -92,12 +92,22 @@ class Header {
      * Handle navigation link clicks
      */
     handleNavClick(e) {
-        e.preventDefault();
-
         const link = e.currentTarget;
-        const targetId = link.getAttribute('data-scroll-to') || link.getAttribute('href')?.replace('#', '');
+        const href = link.getAttribute('href') || '';
+        const targetId = link.getAttribute('data-scroll-to') || href.replace(/^.*#/, '');
 
         if (!targetId) return;
+
+        const targetSection = document.getElementById(targetId) ||
+            document.querySelector(`[data-section="${targetId}"]`);
+
+        if (!targetSection) {
+            // Allow normal navigation when the target section does not exist on the current page
+            // (for example, header links on a detail page that point back to index anchors).
+            return;
+        }
+
+        e.preventDefault();
 
         // Close mobile menu if open
         if (this.isMenuOpen) {

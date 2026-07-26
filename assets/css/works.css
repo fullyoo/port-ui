@@ -8,7 +8,7 @@
 .works {
     position: relative;
     min-height: 100vh;
-    padding: var(--space-32) var(--container-padding);
+    padding: var(--space-24) var(--container-padding);
     background: var(--color-gray-900);
     overflow: hidden;
     display: flex;
@@ -244,6 +244,7 @@
     max-width: var(--container-xl);
     margin: 0 auto;
     gap: var(--space-8);
+    align-items: center;
 }
 
 .works__tabs {
@@ -450,8 +451,8 @@
 .works__card {
     position: relative;
     padding: var(--space-6);
-    background: var(--color-gray-900);
     background: transparent;
+    background: var(--color-gray-900);
     border: 1px solid var(--color-gray-800);
     border-radius: var(--radius-xl);
     transition: all var(--duration-normal) var(--ease-out-expo);
@@ -642,7 +643,7 @@
 /* ===== More Works Section ===== */
 .more-works {
     position: relative;
-    padding: var(--space-32) var(--container-padding);
+    padding: var(--space-24) var(--container-padding);
     background: var(--color-dark);
     overflow: hidden;
 }
@@ -809,9 +810,14 @@
     position: relative;
     max-width: var(--container-xl);
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-10);
 }
 
 .more-works__list {
+    width: 100%;
     display: grid;
     gap: var(--space-4);
 }
@@ -823,7 +829,7 @@
     align-items: center;
     gap: var(--space-5);
     padding: var(--space-5) var(--space-6);
-    background: var(--color-gray-800);
+    background: var(--color-gray-900);
     border: 1px solid var(--color-gray-800);
     border-radius: var(--radius-xl);
     overflow: hidden;
@@ -1058,10 +1064,6 @@
 
     .works__description br {
         display: none;
-    }
-
-    .works__card-roles {
-        gap: var(--space-1);
     }
 
     .works__card-title {

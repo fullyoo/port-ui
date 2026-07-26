@@ -7,7 +7,7 @@
 /* ===== About Section Layout ===== */
 .about {
     position: relative;
-    padding: var(--space-32) var(--container-padding);
+    padding: var(--space-24) var(--container-padding);
     background: var(--color-dark);
     /* height: 100vh; */
     /* max-height: 100vh; */
@@ -88,7 +88,7 @@
 
 .about__title-line {
     display: block;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .about__title-text {

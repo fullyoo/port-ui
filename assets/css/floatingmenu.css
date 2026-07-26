@@ -6,7 +6,7 @@
 .floating-menu {
     position: fixed;
     right: var(--space-6);
-    bottom: var(--space-10);
+    bottom: var(--space-16);
     z-index: var(--z-tooltip);
     display: flex;
     flex-direction: column;
@@ -44,16 +44,20 @@ button.floating-menu__item {
 }
 
 .floating-menu__item:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.2);
+    background: rgba(5, 0, 253, 0.4);
     border-color: var(--color-accent);
+    border-color: var(--color-primary);
     color: var(--color-accent);
     transform: scale(1.08);
 }
 
 .floating-menu__item-wrap:hover .floating-menu__item,
 .floating-menu__item-wrap:focus-within .floating-menu__item {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.2);
+    background: rgba(5, 0, 253, 0.4);
     border-color: var(--color-accent);
+    border-color: var(--color-primary);
     color: var(--color-accent);
     transform: scale(1.08);
 }

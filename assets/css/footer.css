@@ -1,0 +1,69 @@
+/**
+ * footer.css
+ * Footer 전용 스타일
+ * 공통 컴포넌트로 사용
+ */
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+.footer {
+    padding: var(--space-8) 0;
+    background: var(--color-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer__container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-secondary);
+    text-transform: capitalize;
+}
+
+.footer__copyright {
+    font-size: var(--text-sm);
+    color: var(--color-gray-500);
+}
+
+.footer__copyright-highlight {
+    color: var(--color-light);
+    text-transform: uppercase;
+}
+
+.footer__links {
+    display: flex;
+    gap: var(--space-6);
+}
+
+.footer__link {
+    font-size: var(--text-sm);
+    color: var(--color-gray-500);
+    text-decoration: none;
+    transition: color var(--duration-normal) var(--ease-out-expo);
+}
+
+.footer__link:hover {
+    color: var(--color-light);
+}
+
+
+/* ===== Responsive Styles ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .footer {
+        padding: var(--space-8) var(--container-padding);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer__container {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+    }
+}

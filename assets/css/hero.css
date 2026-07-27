@@ -946,6 +946,10 @@
         font-size: var(--text-sm);
     }
 
+    .hero__subtitle br {
+        display: none;
+    }
+
     .hero__cta {
         width: 80%;
     }

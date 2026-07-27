@@ -67,8 +67,14 @@
     font-size: var(--text-2xl);
     font-weight: var(--weight-bold);
     color: var(--color-light);
+    color: var(--color-primary);
+    color: var(--color-accent);
     letter-spacing: var(--tracking-tight);
     text-transform: uppercase;
+}
+
+.header__logo-text span {
+    color: var(--color-primary);
 }
 
 /* ===== Navigation ===== */

@@ -9,23 +9,12 @@
     <meta name="author" content="Designer Name">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Case Study | Fullyoo UI Design Portfolio">
+    <meta property="og:title" content="Case Study | UI/UX 디자이너 포트폴리오">
     <meta property="og:description" content="문제 정의부터 해결까지, 디자인 사고 과정을 보여드립니다.">
-    <meta property="og:image" content="https://port-fully.netlify.app/assets/images/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
     <meta property="og:type" content="website">
 
-    <!-- ================== 아이콘 및 리소스 링크 ================== -->
     <!-- Favicon -->
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
-    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-
-    <!-- Apple Touch Icon (iOS 전용) -->
-    <link rel="apple-touch-icon" href="/assets/images/favicon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,18 +22,10 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/variables.css">
-    <link rel="stylesheet" href="/assets/css/common.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
-    <link rel="stylesheet" href="/assets/css/hero.css">
-    <link rel="stylesheet" href="/assets/css/about.css">
-    <link rel="stylesheet" href="/assets/css/works.css">
-    <link rel="stylesheet" href="/assets/css/selectedWorks.css">
-    <link rel="stylesheet" href="/assets/css/contact.css">
-    <link rel="stylesheet" href="/assets/css/floatingMenu.css">
-    <link rel="stylesheet" href="/assets/css/case-study.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/case-study.css">
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -56,77 +37,8 @@
     <!-- Noise Overlay -->
     <div class="noise-overlay" aria-hidden="true"></div>
 
-    <!-- Header / Navigation -->
-    <header class="header" id="header">
-        <div class="header__container">
-            <!-- Logo / Brand -->
-            <h1 class="header__logo">
-                <a href="#hero" class="header__logo-link" data-scroll-to="hero">
-                    <span class="header__logo-text">Fullyoo</span>
-                </a>
-            </h1>
-
-            <!-- Navigation Menu -->
-            <nav class="header__nav" aria-label="메인 네비게이션">
-                <ul class="header__nav-list">
-                    <li class="header__nav-item">
-                        <a href="/index.html" class="header__nav-link" data-scroll-to="hero">
-                            <span class="header__nav-text">Home</span>
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="/index.html#about" class="header__nav-link" data-scroll-to="about">
-                            <span class="header__nav-text">About</span>
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="/index.html#works" class="header__nav-link" data-scroll-to="works">
-                            <span class="header__nav-text">Work</span>
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="/index.html#contact" class="header__nav-link" data-scroll-to="contact">
-                            <span class="header__nav-text">Contact</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="header__actions" aria-label="빠른 링크">
-                <div class="header__action-group">
-                    <a href="https://notion.so" class="header__action-link header__action-link--icon" target="_blank"
-                        rel="noopener noreferrer" aria-label="Notion 바로가기">
-                        <span class="header__action-icon">
-                            <svg class="icon-notion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                                fill="currentColor">
-                                <path
-                                    d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096ZM23.816 4.43331C23.2877 4.02552 22.5835 3.55846 21.2343 3.67528L5.15507 4.84121C4.56875 4.89903 4.45158 5.19046 4.68509 5.42409L6.97519 7.23083C7.91323 7.98837 8.26511 7.93069 10.0265 7.81388L26.632 6.82259C26.9842 6.82259 26.6915 6.47348 26.5739 6.41536L23.816 4.43331Z"
-                                    fill="var(--notion-logo-fill, var(--color-black))">
-                                </path>
-                            </svg>
-                        </span>
-                    </a>
-                    <a href="https://notion.so" class="header__action-popover" target="_blank" rel="noopener noreferrer"
-                        role="tooltip">
-                        More Works
-                    </a>
-                </div>
-                <a href="#contact" class="header__action-link header__action-link--support" data-scroll-to="contact">
-                    <span class="header__action-text">Resume</span>
-                </a>
-            </div>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="header__menu-toggle" aria-label="메뉴 열기/닫기" aria-expanded="false">
-                <span class="header__menu-toggle-line"></span>
-                <span class="header__menu-toggle-line"></span>
-                <span class="header__menu-toggle-line"></span>
-            </button>
-        </div>
-    </header>
-
     <!-- Back Navigation -->
-    <!-- <nav class="case-nav">
+    <nav class="case-nav">
         <a href="../index.html" class="case-nav__back">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -137,13 +49,12 @@
         <div class="case-nav__progress">
             <div class="case-nav__progress-bar"></div>
         </div>
-    </nav> -->
+    </nav>
 
     <main class="case-study">
         <!-- ========================================
              1. Case Hero
              ======================================== -->
-        <img src="/assets/images/case-study_01.jpg" alt="Case Study Image">
         <section class="case-hero" id="case-hero">
             <div class="case-hero__container">
                 <!-- 카테고리 & 연도 -->
@@ -184,8 +95,8 @@
                 <!-- 메인 비주얼 -->
                 <div class="case-hero__visual">
                     <div class="case-hero__image-wrapper">
-                        <img src="/assets/images/case-study_01.jpg" alt="Case Study Image" alt="프로젝트 메인 비주얼"
-                            class="case-hero__image" loading="eager">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop"
+                            alt="프로젝트 메인 비주얼" class="case-hero__image" loading="eager">
                         <div class="case-hero__image-overlay"></div>
                     </div>
                 </div>
@@ -792,84 +703,26 @@
                 </a>
             </div>
         </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer__container">
-                <p class="footer__copyright">© 2026 <span class="footer__copyright-highlight">Fullyoo </span>Portfolio.
-                    All rights reserved.</p>
-                <div class="footer__links">
-                    <a href="/index.html#hero" class="footer__link">Home</a>
-                    <a href="/index.html#about" class="footer__link">About</a>
-                    <a href="/index.html#works" class="footer__link">Work</a>
-                    <a href="/index.html#contact" class="footer__link">Contact</a>
-                </div>
-                <!-- <div class="footer__links">
-                    <a href="mailto:fullyoo19@gmail.com" target="_blank" rel="noopener noreferrer"
-                        class="footer__link">Email</a>
-                    <a href="#" class="footer__link">Resume</a>
-                    <a href="#" class="footer__link">notion</a>
-                    <a href="#" class="footer__link">figma</a>
-                </div> -->
-            </div>
-        </footer>
     </main>
 
-    <!-- Floating Menu (탑 버튼, 노션) -->
-    <nav class="floating-menu" aria-label="플로팅 메뉴">
-        <button type="button" class="floating-menu__item floating-menu__item--top" id="floating-menu-top"
-            aria-label="맨 위로">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 15l-6-6-6 6" />
-            </svg>
-        </button>
-        <div class="floating-menu__item-wrap">
-            <a href="https://notion.so" target="_blank" rel="noopener noreferrer" class="floating-menu__item"
-                aria-label="노션 포트폴리오">
-                <svg class="icon-notion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
-                    <path
-                        d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096ZM23.816 4.43331C23.2877 4.02552 22.5835 3.55846 21.2343 3.67528L5.15507 4.84121C4.56875 4.89903 4.45158 5.19046 4.68509 5.42409L6.97519 7.23083C7.91323 7.98837 8.26511 7.93069 10.0265 7.81388L26.632 6.82259C26.9842 6.82259 26.6915 6.47348 26.5739 6.41536L23.816 4.43331Z"
-                        fill="var(--notion-logo-fill, var(--color-black))">
-                    </path>
-                </svg>
-            </a>
-            <a href="https://notion.so" class="floating-menu__tooltip" target="_blank" rel="noopener noreferrer"
-                role="tooltip">
-                More Works
-            </a>
+    <!-- Footer -->
+    <footer class="case-footer">
+        <div class="case-footer__container">
+            <p class="case-footer__copyright">© 2024 Designer Portfolio. All rights reserved.</p>
+            <div class="case-footer__links">
+                <a href="#" class="case-footer__link">LinkedIn</a>
+                <a href="#" class="case-footer__link">Behance</a>
+                <a href="#" class="case-footer__link">Email</a>
+            </div>
         </div>
-    </nav>
+    </footer>
 
     <!-- Scripts -->
-    <!-- GSAP Core + Plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
-    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Custom Scripts -->
-    <script src="/assets/js/common.js"></script>
-    <script src="/assets/js/header.js"></script>
-    <script src="/assets/js/gsap/heroAnimation.js"></script>
-    <script src="/assets/js/gsap/aboutAnimation.js"></script>
-    <script src="/assets/js/gsap/worksAnimation.js"></script>
-    <script src="/assets/js/gsap/selectedWorksAnimation.js"></script>
-    <script src="/assets/js/gsap/contactAnimation.js"></script>
-    <script src="/assets/js/swiper/heroSwiper.js"></script>
-    <script src="/assets/js/swiper/worksSwiper.js"></script>
-    <script src="/assets/js/swiper/selectedWorksSwiper.js"></script>
-    <script src="/assets/js/floatingMenu.js"></script>
-    <script src="/assets/js/main.js"></script>
-
-
-    <script src="/assets/js/gsap/caseStudyAnimation.js"></script>
-    <script src="/assets/js/caseStudy.js"></script>
-
+    <script src="../assets/js/gsap/caseStudyAnimation.js"></script>
+    <script src="../assets/js/caseStudy.js"></script>
 </body>
 
 </html>

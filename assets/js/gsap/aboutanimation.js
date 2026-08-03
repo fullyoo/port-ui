@@ -193,6 +193,10 @@ class AboutAnimation {
                         yPercent: 0,
                         clearProps: 'all'
                     });
+                    this.elements.titleLines.forEach(line => {
+                        line.style.transform = 'translate(0px, 0px)';
+                        line.style.opacity = '1';
+                    });
                 }
             }, 0.2);
         }

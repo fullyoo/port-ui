@@ -167,7 +167,8 @@
     pointer-events: auto;
     /* 좌우 빈 여백 방지 - 보이는 영역만 표시 */
     overflow: hidden;
-    max-width: var(--container-2xl);
+    width: var(--container-2xl);
+    max-width: 100%;
     margin: 50px auto;
     padding: 0 var(--container-padding);
 }

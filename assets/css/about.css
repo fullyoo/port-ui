@@ -25,9 +25,8 @@
 }
 
 .about__container {
-    max-width: var(--container-xl);
+    max-width: var(--container-2xl);
     margin: 0 auto;
-    /* padding: 0 var(--container-padding); */
     display: flex;
     flex-direction: row;
     gap: var(--space-24);
@@ -97,6 +96,7 @@
     visibility: visible;
     transform: none;
     position: relative;
+    transform: translate(0px, 0px) !important;
 }
 
 /* Main Statement */
@@ -135,6 +135,7 @@
     background: var(--color-accent);
     transform: scaleX(0);
     transform-origin: left;
+    opacity: 0.7;
 }
 
 /* Description */
@@ -219,7 +220,7 @@
 
 /* ===== Visual Area (Right) ===== */
 .about__visual {
-    flex: 0.8;
+    /* flex: 0.8; */
     display: flex;
     justify-content: flex-end;
 }
@@ -346,7 +347,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none;
+    /* display: none; */
 }
 
 /* ===== Responsive Styles ===== */
@@ -581,8 +582,6 @@
         min-width: 100%;
     }
 }
-
-
 
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {

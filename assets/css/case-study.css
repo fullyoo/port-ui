@@ -198,7 +198,8 @@
 
 
 .case-top__container {
-    width: min(100%, var(--container-2xl));
+    /* width: min(100%, var(--container-2xl)); */
+    width: var(--container-2xl);
     max-width: 100%;
     margin: 0 auto;
     padding: 0 var(--container-padding);
@@ -312,7 +313,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-8);
-    padding: var(--space-16) 0;
+    margin: var(--space-16) 0;
 }
 
 .case-top__info-item {
@@ -1367,7 +1368,7 @@
 @media (max-width: 1024px) {
     .case-top__container {
         width: 100%;
-        top: 45%;
+        top: 40%;
     }
 
     .case-hero__visual {

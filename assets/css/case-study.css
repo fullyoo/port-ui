@@ -131,12 +131,11 @@
 /* ==========================================================
    0. Case Top
    ========================================================== */
-.case-top {
-    /* margin-top: -64px; */
-}
+.case-top {}
 
 .case-top__visual {
     position: relative;
+    height: 100vh;
 }
 
 .case-top__visual:before {
@@ -284,7 +283,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-8);
-    margin: var(--space-16) 0;
+    padding: var(--space-16) 0;
 }
 
 .case-top__info-item {
@@ -1337,6 +1336,10 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
+    .case-top__container {
+        width: 100%;
+    }
+
     .case-hero__visual {
         width: 100%;
         height: auto;
@@ -1479,7 +1482,11 @@
     }
 
     .case-top__info {
-        gap: var(--space-6);
+        gap: var(--space-3) var(--space-6);
+    }
+
+    .case-top__info-item {
+        gap: 0;
     }
 
 }

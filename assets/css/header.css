@@ -333,6 +333,7 @@
 /* Tablet */
 @media (max-width: 1024px) {
     .header__container {
+        width: 100%;
         padding: var(--space-3) var(--container-padding);
         grid-template-columns: 1fr 1fr auto;
         gap: var(--space-2);

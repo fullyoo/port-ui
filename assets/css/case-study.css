@@ -86,7 +86,18 @@
     position: relative;
 }
 
+.case-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gray-800), transparent);
+}
+
 .case-section__container {
+    width: 100%;
     width: var(--container-2xl);
     max-width: 100%;
     margin: 0 auto;
@@ -94,9 +105,14 @@
 }
 
 .case-section__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin-bottom: var(--space-16);
 }
+
+.case-section__header .works__card-roles {}
 
 .case-section__number {
     display: inline-block;
@@ -369,15 +385,17 @@
     display: flex;
     align-items: center;
     padding: var(--space-32) 0 var(--space-16);
-    background-image: url(/assets/images/case_01_bg.jpg);
     background-color: var(--color-dark);
     background-size: cover;
     background-position: center;
+    /* background-image: url(/assets/images/case_01_bg.jpg); */
     /* background: linear-gradient(180deg, #007aff 0%, #0083CA 100%); */
 
 }
 
 .case-hero__container {
+    display: flex;
+    flex-direction: column;
     width: var(--container-2xl);
     max-width: 100%;
     margin: 0 auto;
@@ -419,8 +437,10 @@
 }
 
 .case-hero__title {
-    /* font-family: var(--font-primary); */
+    font-family: var(--font-primary);
     font-size: clamp(1.6rem, 2vw, 1.8rem);
+    font-weight: var(--weight-light);
+
     line-height: var(--leading-normal);
     max-width: 640px;
     margin: 0 auto;
@@ -434,8 +454,8 @@
     position: relative;
     font-size: clamp(2.4rem, 4vw, 3.2rem);
     font-weight: var(--weight-extrabold);
-    color: var(--color-accent);
-    color: var(--color-primary);
+    /* color: var(--color-accent); */
+    /* color: var(--color-primary); */
     letter-spacing: var(--tracking-tight);
     margin: var(--space-20) 0 var(--space-5);
 }
@@ -451,7 +471,7 @@
 
 .case-hero__info {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-8);
     margin: var(--space-16) 0;
 }
@@ -508,16 +528,20 @@
 .case-hero__role--primary {
     background: rgba(5, 0, 253, 0.15);
     border-color: var(--color-primary);
-    border-color: rgba(5, 0, 253, 0.4);
+    border-color: rgba(5, 0, 253, .6);
     color: var(--color-light);
+}
+
+.case-hero__visual-container {
+    position: relative;
 }
 
 .case-hero__visual {
     margin-top: var(--space-12);
     position: relative;
-    width: 1280px;
+    width: 1024px;
     height: auto;
-    aspect-ratio: 16 / 9;
+    /* aspect-ratio: 16 / 9; */
     flex-shrink: 0;
     margin: 0 auto;
     border: 12px solid var(--color-gray-900);
@@ -528,6 +552,7 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     /* overflow: hidden; */
+    /* order: 2; */
 }
 
 .case-hero__image-wrapper {
@@ -549,6 +574,33 @@
     pointer-events: none;
 }
 
+.case-hero__visual-mo {
+    width: 360px;
+    height: auto;
+    border: 8px solid var(--color-gray-900);
+    border-radius: var(--radius-lg);
+    background: transparent;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.4);
+    /* overflow: hidden; */
+    position: absolute;
+    right: 0;
+    top: 20%;
+    transform: translateY(-50%);
+    z-index: 4;
+}
+
+.case-hero__image-wrapper-mo {
+    position: relative;
+    overflow: hidden;
+    /* aspect-ratio: 9 / 16; */
+}
+
+.case-hero__image-mo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .case-hero-video {
     position: relative;
     width: 100%;
@@ -566,11 +618,19 @@
 }
 
 /* ==========================================================
-   2. Project Overview
+   2. Design System
    ========================================================== */
-.case-overview {
+.case-system {
     background: var(--color-dark);
     background-image: url(/assets/images/case_01_bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.case-system__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(5, 0, 253, 0.5) 100%);
 }
 
 .case-overview__grid {

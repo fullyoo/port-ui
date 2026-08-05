@@ -3217,18 +3217,98 @@ Made changes.
 
 **User**
 
+As-Is vs. To-Be (기존 화면 vs. 개선 화면) / Before & After
+섹션을 하나 추가 하려고 합니다.
+예를 들어, # 02. Before & After
+
+(기존 사이트 캡처 + 리뉴얼 화면)
+
+As Is
+오래된 비주얼 구성
+정보 전달력이 다소 부족한 레이아웃
+브랜드 아이덴티티 표현 부족
+모바일 사용성을 고려한 화면 구성의 한계
+To Be
+금융기업에 맞는 신뢰감 있는 비주얼
+콘텐츠 중심의 레이아웃 개선
+직관적인 정보 구조
+반응형 기반 사용자 경험 개선
+(여기는 카드형 4개 정도면 충분합니다.)
+
+구분****As-Is (기선 전)*To-Be (개선 후)*비주얼 & 톤노후화된 레이아웃 및 파편화된 디자인 요소브랜드 컬러 중심의 깔끔하고 현대적인 금융 UI 구현*정보 전달텍스트 중심의 답답한 메인 화면 구성핵심 정보 카드화 및 비주얼 요소 배치를 통한 가독성 증대*사용성모바일/다양한 해상도 대응 부족그리드 기반의 완벽한 반응형 웹(PC & Mobile) 구현
+
+해당내용이 들어가도록 하려고 하는데 기존에 있는 건 그대로 두고 섹션을 하나 추가해주세요
 
 ---
 
 **VS-CODE**
+
+디자인 시스템 뒤에 새 `Before & After` 섹션을 추가하고 관련 스타일을 함께 작성하겠습니다.
+
+Replacing 30 lines with 286 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/works/case-study.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/case-study.css)
+
+
+새 섹션은 추가되었고 CSS 삽입 위치를 정확히 찾아서 마무리하겠습니다.
+
+Searched for regex `case-system__card-title|case-system__card-description|case-system__card-label` (`**/assets/css/case-study.css`), 3 results
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/case-study.css#650-650), lines 650 to 860
+
+섹션이 제대로 들어갔는지 확인하고, 새 스타일을 case-study.css에 추가하겠습니다.
+
+Searched for regex `case-before-after|case-before-after__preview|case-before-after__comparison` (`**/works/case-study.html`), 36 results
+
+이제 새 섹션에 필요한 CSS를 추가하겠습니다.
+
+Replacing 11 lines with 160 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/case-study.css)
+
+
+✅ `Before & After` 섹션용 CSS가 정상적으로 추가되었습니다.
+
+추가 사항:
+- `preview` 카드 2개 레이아웃
+- 4개 `As-Is / To-Be` 카드
+- 비교 테이블 형태 `구분 / As-Is / To-Be`
+- 반응형 처리 포함
+
+필요하면 실제 이미지 캡처를 넣을 수 있도록 `case-before-after__preview-screenshot`에 배경 이미지를 추가해드릴게요.
+
+Made changes.
 
 
 **User**
 
+after__preview-screenshot에 배경 이미지를 추가해주고,
+.case-before-after__comparison와 .case-before-after__comparison 도 좀더 가독성 좋게 포인트를 넣어서 꾸며주세요. .case-before-after__comparison도 다른 섹션처럼 중요한 문장에 컬러효과를 넣어주세요
+
 
 ---
 
 **VS-CODE**
+
+현재 `case-before-after` 섹션 HTML과 CSS를 확인하고 배경 이미지 및 강조 스타일을 적용하겠습니다.
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/works/case-study.html#400-400), lines 400 to 510
+
+Searched for regex `case-before-after__preview-screenshot|case-before-after__comparison|case-before-after__card-label` (`**/assets/css/case-study.css`), 13 results
+
+Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/case-study.css#840-840), lines 840 to 1000
+
+확인했습니다. 새 배경 이미지와 비교 테이블 강조 스타일을 동시에 업데이트하겠습니다.
+
+Replacing 45 lines with 64 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/works/case-study.html), [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/case-study.css)
+
+✅ 요청하신 내용 반영 완료했습니다.
+
+적용 내용:
+- `.case-before-after__preview-screenshot--after`에 배경 이미지 추가
+- `after` 섹션 텍스트에 반투명 배경으로 가독성 보강
+- `.case-before-after__comparison`에 그림자, 테두리, row hover 효과 추가
+- 비교 항목 중 중요한 문장에 `case-before-after__comparison-key` 클래스 삽입으로 컬러 강조
+
+필요하면 강조 컬러를 더 밝은 톤이나 포인트 아이콘으로도 확장할 수 있습니다.
+
+Made changes.
 
 
 **User**

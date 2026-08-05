@@ -112,7 +112,9 @@
     margin-bottom: var(--space-16);
 }
 
-.case-section__header .works__card-roles {}
+.case-section__header .works__card-roles {
+    margin-top: var(--space-4);
+}
 
 .case-section__number {
     display: inline-block;
@@ -128,7 +130,6 @@
     font-size: clamp(2.4rem, 5vw, 3.6rem);
     font-weight: var(--weight-bold);
     line-height: var(--leading-tight);
-    margin-bottom: var(--space-4);
     text-transform: uppercase;
 }
 
@@ -147,11 +148,11 @@
 
 
 /* ==========================================================
-   0. Case Top
+   0. Case hero
    ========================================================== */
-.case-top {}
+.case-hero {}
 
-.case-top__visual {
+.case-hero__visual {
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -160,7 +161,7 @@
     overflow: hidden;
 }
 
-.case-top__visual .bg01 {
+.case-hero__visual .bg01 {
     position: absolute;
     top: 0;
     right: 0;
@@ -177,7 +178,7 @@
     animation: scale 2s 0.5s forwards;
 }
 
-.case-top__visual:before {
+.case-hero__visual:before {
     content: "";
     position: absolute;
     top: 0;
@@ -188,7 +189,7 @@
     z-index: 1;
 }
 
-.case-top__image {
+.case-hero__image {
     width: 100%;
     height: 100vh;
     object-fit: cover;
@@ -216,7 +217,7 @@
 }
 
 
-.case-top__container {
+.case-hero__container {
     /* width: min(100%, var(--container-2xl)); */
     width: var(--container-2xl);
     max-width: 100%;
@@ -230,18 +231,18 @@
     overflow: hidden;
 }
 
-.case-top__overlay {
+.case-hero__overlay {
     max-width: 100%;
     overflow: hidden;
 }
 
-.case-top__meta {
+.case-hero__meta {
     display: flex;
     align-items: center;
     gap: var(--space-4);
 }
 
-.case-top__category {
+.case-hero__category {
     font-family: var(--font-mono);
     font-size: var(--text-sm);
     /* color: var(--color-gray-500); */
@@ -249,26 +250,26 @@
     letter-spacing: var(--tracking-wider);
 }
 
-.case-top__divider {
+.case-hero__divider {
     width: 40px;
     height: 1px;
     background: var(--color-gray-500);
 }
 
-.case-top__year {
+.case-hero__year {
     font-family: var(--font-mono);
     font-size: var(--text-sm);
     color: var(--color-gray-100);
 }
 
-.case-top__title {
+.case-hero__title {
     font-family: var(--font-primary);
     font-size: clamp(2.8rem, 6vw, 6.4rem);
     font-weight: var(--weight-extrabold);
     line-height: var(--leading-none);
 }
 
-.case-top__title-line {
+.case-hero__title-line {
     display: flex;
     align-items: center;
     max-width: 100%;
@@ -277,11 +278,11 @@
     overflow-wrap: anywhere;
 }
 
-.case-top__title-link {
+.case-hero__title-link {
     display: flex;
 }
 
-.case-top__title-link svg {
+.case-hero__title-link svg {
     width: 72px;
     height: 72px;
     /* margin-left: var(--space-1); */
@@ -289,14 +290,14 @@
     transition: transform var(--duration-normal) var(--ease-out-expo);
 }
 
-.case-top__title-link:hover svg {
+.case-hero__title-link:hover svg {
     transform: translateX(4px);
     color: var(--color-primary);
 }
 
-.case-top__title-link img {}
+.case-hero__title-link img {}
 
-.case-top__title-highlight {
+.case-hero__title-highlight {
     color: var(--color-accent);
     position: relative;
     display: inline-block;
@@ -304,11 +305,11 @@
     padding-top: var(--space-3);
 }
 
-.case-top__title-highlight:hover {
+.case-hero__title-highlight:hover {
     color: var(--color-accent);
 }
 
-.case-top__title-highlight::after {
+.case-hero__title-highlight::after {
     content: '';
     position: absolute;
     bottom: -4px;
@@ -334,21 +335,20 @@
     }
 }
 
-.case-top__title-highlight::after {
+.case-hero__title-highlight::after {
     /* transform: scaleX(var(--highlight-scale)); */
 }
 
-.case-top__description {
+.case-hero__description {
     font-family: var(--font-primary);
     font-size: var(--text-lg);
     font-weight: var(--weight-medium);
     color: var(--color-gray-100);
     line-height: var(--leading-relaxed);
-    max-width: 700px;
     margin: var(--space-2) 0 var(--space-10);
 }
 
-.case-top__info {
+.case-hero__info {
     font-family: var(--font-primary);
     display: flex;
     flex-wrap: wrap;
@@ -356,13 +356,13 @@
     margin: var(--space-16) 0;
 }
 
-.case-top__info-item {
+.case-hero__info-item {
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
 }
 
-.case-top__info-label {
+.case-hero__info-label {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     color: var(--color-gray-500);
@@ -370,7 +370,7 @@
     letter-spacing: var(--tracking-wider);
 }
 
-.case-top__info-value {
+.case-hero__info-value {
     font-size: var(--text-base);
     color: var(--color-light);
     font-weight: var(--weight-medium);
@@ -378,9 +378,9 @@
 
 
 /* ==========================================================
-   1. Case Hero
+   1. Case Overview
    ========================================================== */
-.case-hero {
+.case-overview {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -390,10 +390,9 @@
     background-position: center;
     /* background-image: url(/assets/images/case_01_bg.jpg); */
     /* background: linear-gradient(180deg, #007aff 0%, #0083CA 100%); */
-
 }
 
-.case-hero__container {
+.case-overview__container {
     display: flex;
     flex-direction: column;
     width: var(--container-2xl);
@@ -402,41 +401,11 @@
     padding: 0 var(--container-padding);
 }
 
-.case-hero__meta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-4);
-    margin-bottom: var(--space-8);
-}
-
-.case-hero__category {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    color: var(--color-gray-100);
-    color: var(--color-light);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-wider);
-}
-
-.case-hero__divider {
-    width: 40px;
-    height: 1px;
-    background: var(--color-gray-400);
-}
-
-.case-hero__num {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    color: var(--color-gray-500);
-    color: var(--color-light);
-}
-
-.case-hero__overlay {
+.case-overview__overlay {
     text-align: center;
 }
 
-.case-hero__title {
+.case-section__title-sub {
     font-family: var(--font-primary);
     font-size: clamp(1.6rem, 2vw, 1.8rem);
     font-weight: var(--weight-light);
@@ -446,97 +415,34 @@
     margin: 0 auto;
 }
 
-.case-hero__title-line {
+.case-section__title-sub-line {
     display: block;
 }
 
-.case-hero__title-highlight {
+.case-section__title-sub-highlight {
     position: relative;
     font-size: clamp(2.4rem, 4vw, 3.2rem);
     font-weight: var(--weight-extrabold);
     /* color: var(--color-accent); */
     /* color: var(--color-primary); */
     letter-spacing: var(--tracking-tight);
-    margin: var(--space-20) 0 var(--space-5);
+    margin: var(--space-20) 0 0;
 }
 
-.case-hero__description {
-    font-size: var(--text-xl);
+.case-section__title-sub-line-description {
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
     color: var(--color-gray-300);
     line-height: var(--leading-relaxed);
     max-width: 700px;
-    margin-bottom: var(--space-12);
-    display: none;
+    margin: var(--space-6) 0 0;
 }
 
-.case-hero__info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
-    margin: var(--space-16) 0;
-}
 
-.case-hero__info-item {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    padding: var(--space-6) var(--space-4);
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius-lg);
-    transition: border-color var(--duration-normal) var(--ease-out-expo), background var(--duration-normal) var(--ease-out-expo);
-}
-
-.case-hero__info-item:hover {
-    border-color: rgba(5, 0, 253, 0.3);
-    background: rgba(5, 0, 253, 0.03);
-}
-
-.case-hero__info-label {
-    font-family: var(--font-mono);
-    font-family: var(--font-primary);
-    font-size: var(--text-xs);
-    color: var(--color-gray-300);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-wider);
-}
-
-.case-hero__info-value {
-    font-family: var(--font-primary);
-    font-size: var(--text-base);
-    color: var(--color-light);
-    font-weight: var(--weight-medium);
-}
-
-.case-hero__roles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-}
-
-.case-hero__role {
-    padding: var(--space-1) var(--space-4);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-full);
-    color: var(--color-gray-400);
-    width: calc(50% - var(--space-1));
-}
-
-.case-hero__role--primary {
-    background: rgba(5, 0, 253, 0.15);
-    border-color: var(--color-primary);
-    border-color: rgba(5, 0, 253, .6);
-    color: var(--color-light);
-}
-
-.case-hero__visual-container {
+.case-overview__visual-container {
     position: relative;
 }
 
-.case-hero__visual {
+.case-overview__visual {
     margin-top: var(--space-12);
     position: relative;
     width: 1024px;
@@ -555,26 +461,26 @@
     /* order: 2; */
 }
 
-.case-hero__image-wrapper {
+.case-overview__image-wrapper {
     position: relative;
     /* overflow: hidden; */
     aspect-ratio: 16 / 9;
 }
 
-.case-hero__image {
+.case-overview__image {
     width: 100%;
     /* height: 100%; */
     object-fit: cover;
 }
 
-.case-hero__image-overlay {
+.case-overview__image-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, transparent 50%, rgba(10, 10, 10, 0.5) 100%);
     pointer-events: none;
 }
 
-.case-hero__visual-mo {
+.case-overview__visual-mo {
     width: 360px;
     height: auto;
     border: 8px solid var(--color-gray-900);
@@ -589,19 +495,19 @@
     z-index: 4;
 }
 
-.case-hero__image-wrapper-mo {
+.case-overview__image-wrapper-mo {
     position: relative;
     overflow: hidden;
     /* aspect-ratio: 9 / 16; */
 }
 
-.case-hero__image-mo {
+.case-overview__image-mo {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.case-hero-video {
+.case-overview-video {
     position: relative;
     width: 100%;
     /* max-width: 420px; */
@@ -610,36 +516,23 @@
     border-radius: var(--radius-lg);
 }
 
-.case-hero-video video {
+.case-overview-video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform var(--duration-slower) var(--ease-out-expo);
 }
 
-/* ==========================================================
-   2. Design System
-   ========================================================== */
-.case-system {
-    background: var(--color-dark);
-    background-image: url(/assets/images/case_01_bg.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.case-system__image-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(5, 0, 253, 0.5) 100%);
-}
-
 .case-overview__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-12);
+    gap: var(--space-8);
+    width: var(--container-xl);
+    margin: var(--space-16) auto 0;
 }
 
 .case-overview__item {
+    text-align: left;
     padding: var(--space-8);
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -696,8 +589,8 @@
 }
 
 .case-overview__roles {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-2);
 }
 
@@ -709,12 +602,33 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-full);
     color: var(--color-gray-400);
+    text-align: center;
+    width: 100%;
 }
 
 .case-overview__role--primary {
     background: rgba(5, 0, 253, 0.1);
     border-color: var(--color-primary);
 }
+
+
+/* ==========================================================
+   2. Design System
+   ========================================================== */
+.case-system {
+    background: var(--color-dark);
+    background-image: url(/assets/images/case_01_bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.case-system__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(5, 0, 253, 0.5) 100%);
+}
+
+
 
 /* ==========================================================
    3. Problem Definition
@@ -1495,17 +1409,17 @@
 }
 
 
-
+case-hero
 /* ===== Responsive Styles ===== */
 
 /* Tablet */
 @media (max-width: 1024px) {
-    .case-top__container {
+    .case-hero__container {
         width: 100%;
         top: 40%;
     }
 
-    .case-hero__visual {
+    .case-overview__visual {
         width: 100%;
         height: auto;
         border-width: 6px;
@@ -1577,32 +1491,32 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-    .case-top__visual {
+    .case-hero__visual {
         min-height: 100svh;
         max-width: 100vw;
     }
 
-    .case-top__container {
+    .case-hero__container {
         width: calc(100% - 2.4rem);
         padding: 0 var(--space-4);
         max-width: 100%;
     }
 
-    .case-top__meta,
-    .case-top__info {
+    .case-hero__meta,
+    .case-hero__info {
         flex-wrap: wrap;
         max-width: 100%;
     }
 
-    .case-top__meta {
+    .case-hero__meta {
         gap: var(--space-3);
     }
 
-    .case-top__divider {
+    .case-hero__divider {
         width: 30px;
     }
 
-    .case-top__title {
+    .case-hero__title {
         line-height: var(--leading-tight);
     }
 
@@ -1618,12 +1532,12 @@
         margin-bottom: var(--space-10);
     }
 
-    .case-hero {
+    .case-overview {
         min-height: auto;
         padding: var(--space-24) 0 var(--space-12);
     }
 
-    .case-hero__info {
+    .case-overview__info {
         flex-direction: column;
         gap: var(--space-4);
     }
@@ -1655,19 +1569,19 @@
 
 /* Small Mobile */
 @media (max-width: 480px) {
-    .case-top__title {
+    .case-hero__title {
         line-height: var(--leading-snug);
     }
 
-    .case-top__description {
+    .case-hero__description {
         font-size: var(--text-md);
     }
 
-    .case-top__info {
+    .case-hero__info {
         gap: var(--space-3) var(--space-6);
     }
 
-    .case-top__info-item {
+    .case-hero__info-item {
         gap: 0;
     }
 
@@ -1676,11 +1590,11 @@
 /* ==========================================================
    Animation States (Initial)
    ========================================================== */
-.case-hero__meta,
-.case-hero__title-line,
-.case-hero__description,
-.case-hero__info,
-.case-hero__visual,
+.case-overview__meta,
+.case-section__title-sub-line,
+.case-overview__description,
+.case-overview__info,
+.case-overview__visual,
 .case-overview__item,
 .case-problem__card,
 .case-problem__quote,

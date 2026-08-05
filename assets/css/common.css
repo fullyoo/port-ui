@@ -31,6 +31,19 @@ body {
     max-width: 100%;
 }
 
+.main-section {
+    position: relative;
+    padding: var(--space-24) 0;
+}
+
+.main-section__container {
+    width: var(--container-2xl);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+
 /* ===== Typography Classes ===== */
 .text-primary {
     color: var(--color-primary);
@@ -240,6 +253,28 @@ body {
     background: var(--color-primary);
     transition: width var(--duration-slow) var(--ease-out-expo);
 }
+
+
+/* ===== Responsive Styles ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .main-section {
+        padding: var(--space-20) 0;
+    }
+
+    .main-section__container {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .main-section {
+        padding: var(--space-16) 0;
+    }
+}
+
 
 /* ===== Cursor Custom (Desktop Only) ===== */
 @media (hover: hover) and (pointer: fine) {

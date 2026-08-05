@@ -6,16 +6,14 @@
 
 /* ===== Works Section Layout ===== */
 .works {
-    position: relative;
     min-height: 100vh;
-    padding: var(--space-24) var(--container-padding);
     background: var(--color-gray-900);
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     /* background:
         radial-gradient(ellipse at 0% 0%, rgba(5, 0, 253, 0.2) 0%, transparent 30%),
         radial-gradient(ellipse at 20% 50%, rgba(240, 255, 54, 0.2) 0%, transparent 20%); */
+    overflow: hidden;
 }
 
 /* ===== Section Number (Decorative) ===== */
@@ -131,21 +129,11 @@
 /* ===== Section Header ===== */
 
 .works__header {
-    width: var(--container-2xl);
-    max-width: 100%;
-    margin: 0 auto;
     display: flex;
     flex-shrink: 0;
     box-sizing: border-box;
     flex-direction: column;
     z-index: 1;
-}
-
-.works__header-content {
-    flex: 1;
-    padding: 0;
-    margin: 0;
-    min-width: 0;
 }
 
 .works__label {
@@ -235,17 +223,16 @@
 /* ===== Works Grid Container ===== */
 .works__swiper-container {
     position: relative;
-    width: 100%;
+    width: var(--container-2xl);
+    max-width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    overflow: hidden;
-    width: var(--container-2xl);
-    max-width: 100%;
-    margin: 0 auto;
     gap: var(--space-8);
     align-items: center;
+    overflow: hidden;
 }
 
 .works__tabs {
@@ -454,7 +441,7 @@
     position: relative;
     padding: var(--space-6);
     background: transparent;
-    background: var(--color-gray-900);
+    background: var(--color-gray-800);
     border: 1px solid var(--color-gray-800);
     border-radius: var(--radius-xl);
     transition: all var(--duration-normal) var(--ease-out-expo);
@@ -644,8 +631,6 @@
 
 /* ===== More Works Section ===== */
 .more-works {
-    position: relative;
-    padding: var(--space-24) var(--container-padding);
     background: var(--color-dark);
     overflow: hidden;
 }
@@ -734,11 +719,7 @@
     opacity: 0.2;
 }
 
-.more-works__header {
-    width: var(--container-2xl);
-    max-width: 100%;
-    margin: 0 auto;
-}
+.more-works__header {}
 
 .more-works__label {
     display: inline-flex;
@@ -922,10 +903,6 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
-    .works {
-        padding: var(--space-20) var(--container-padding);
-    }
-
     .works__header {
         flex-direction: column;
         align-items: flex-start;
@@ -961,10 +938,6 @@
 
 
     /*  */
-    .more-works {
-        padding: var(--space-20) var(--container-padding);
-    }
-
     .more-works__title {
         font-size: var(--text-6xl);
         font-size: clamp(2.5rem, 8vw, 4.8rem);
@@ -986,10 +959,6 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-    .works {
-        padding: var(--space-16) var(--container-padding)
-    }
-
     .works__title {
         font-size: var(--text-5xl);
         font-size: clamp(2rem, 8vw, 4rem);
@@ -1040,10 +1009,6 @@
     }
 
     /*  */
-    .more-works {
-        padding: var(--space-16) var(--container-padding)
-    }
-
     .more-works__title {
         font-size: var(--text-5xl);
         font-size: clamp(2rem, 8vw, 4rem);

@@ -153,7 +153,7 @@
                     loading="eager">
             </div>
             <div class="case-hero__container">
-                <div class="case-hero__overlay" data-aos="fade-up" data-aos-delay="400">
+                <div class="case-hero__content" data-aos="fade-up" data-aos-delay="400">
                     <!-- 카테고리 & 연도 -->
                     <div class="case-hero__meta">
                         <span class="case-hero__category">Responsive website</span>
@@ -201,8 +201,8 @@
         <!-- ========================================
              1. Case Overview
              ======================================== -->
-        <section class="case-overview" id="case-overview">
-            <div class="case-overview__container">
+        <section class="case-section case-overview" id="case-overview">
+            <div class="case-section__container">
                 <div class="case-section__header">
                     <span class="case-section__number">01</span>
                     <h2 class="case-section__title">Project Overview</h2>
@@ -224,6 +224,19 @@
                 </div>
                 <!-- 메인 비주얼 -->
                 <div class="case-overview__visual-container" data-aos="fade-up" data-aos-delay="600">
+
+                    <div class="case-overview__visual">
+                        <div class="case-overview__image-wrapper">
+                            <!-- <div class="case-overview-video">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="/assets/images/work_01.mp4" type="video/mp4">
+                            </video>
+                        </div> -->
+                            <img src="/assets/images/case_main_01.webp" alt="Case Study Image" alt="프로젝트 메인 비주얼"
+                                class="case-overview__image" loading="eager">
+                            <div class="case-overview__image-overlay"></div>
+                        </div>
+                    </div>
                     <div class="case-overview__visual-mo">
                         <div class="case-overview__image-wrapper-mo">
                             <img src="/assets/images/case_main_01_mo.jpg" alt="Case Study Image" alt="프로젝트 메인 비주얼"
@@ -231,33 +244,8 @@
                             <div class="case-overview__image-overlay"></div>
                         </div>
                     </div>
-
-                    <div class="case-overview__visual">
-                        <div class="case-overview__image-wrapper">
-
-                            <!-- <div class="case-overview-video">
-                            <video autoplay muted loop playsinline preload="auto">
-                                <source src="/assets/images/work_01.mp4" type="video/mp4">
-                            </video>
-                        </div> -->
-
-                            <img src="/assets/images/case_main_01.webp" alt="Case Study Image" alt="프로젝트 메인 비주얼"
-                                class="case-overview__image" loading="eager">
-                            <div class="case-overview__image-overlay"></div>
-                        </div>
-                    </div>
                 </div>
-                <div class="case-overview__overlay">
-                    <!-- 프로젝트 타이틀 -->
-                    <h2 class="case-section__title-sub" style="display: none;">
-                        <span class="case-section__title-sub-line case-section__title-sub-highlight">우리펀드서비스 리뉴얼 & 반응형 웹
-                            구축</span>
-                        <span class="case-section__title-sub-line">금융 전문성과 신뢰성을 강화하기 위해 기존 웹사이트의 정보 구조와 UI를 개선하고,<br>
-                            <b class="
-                                text-highlight">반응형 환경에 최적화된 웹사이트</b>로 리뉴얼하였습니다.
-                        </span>
-                    </h2>
-
+                <div class="case-overview__content">
                     <!-- Role / Duration / Tools -->
                     <div class="case-overview__grid">
                         <!-- 기간 -->
@@ -267,14 +255,6 @@
                                 2026.05 - 2026.07 / 3개월
                             </strong>
                         </div>
-
-                        <!-- 타겟 사용자 -->
-                        <div class="case-overview__item" data-aos="fade-up" data-aos-delay="400">
-                            <h3 class="case-overview__subtitle">Skills</h3>
-                            <p class="case-overview__text">
-                                Figma / Photoshop / HTML / CSS / JavaScript
-                            </p>
-                        </div>
                         <!-- 나의 역할 -->
                         <div class="case-overview__item" data-aos="fade-up" data-aos-delay="200">
                             <h3 class="case-overview__subtitle">Contribution</h3>
@@ -283,6 +263,15 @@
                                 <span class="case-overview__role case-overview__role--primary">Publishing 50%</span>
                             </div>
                         </div>
+
+                        <!-- 스킬 툴 -->
+                        <div class="case-overview__item" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="case-overview__subtitle">Skills</h3>
+                            <p class="case-overview__text">
+                                Figma / Photoshop / HTML / CSS / JavaScript
+                            </p>
+                        </div>
+
                         <!-- 프로젝트 목표 -->
                         <div class="case-overview__item" data-aos="fade-up" data-aos-delay="400">
                             <h3 class="case-overview__subtitle">Project Goals</h3>
@@ -293,7 +282,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 
@@ -307,22 +295,101 @@
                     <h2 class="case-section__title">Design System</h2>
                     <h2 class="case-section__title-sub" data-aos="fade-up" data-aos-delay="400">
                         <span class="case-section__title-sub-line case-section__title-sub-highlight">디자인 시스템</span>
-                        <span class="case-section__title-sub-line case-section__title-sub-line-description">금융 전문성과 신뢰성을
-                            강화하기 위해 기존 웹사이트의 정보 구조와 UI를 개선하고,<br>
-                            <b class="
-                                text-highlight">반응형 환경에 최적화된 웹사이트</b>로 리뉴얼하였습니다.
+                        <span class="case-section__title-sub-line case-section__title-sub-line-description">타이포그래피, 컬러,
+                            레이아웃 스케일을 하나의 규칙으로 정리하여
+                            일관된 브랜드 경험을 제공합니다.<br>
+                            <b class="text-highlight">재사용 가능한 UI 원칙</b>을 바탕으로 안정적이고 직관적인 디자인을 구축합니다.
                         </span>
                     </h2>
                 </div>
 
                 <div class="case-system__visual" data-aos="fade-up" data-aos-delay="400">
-                    <img src="/assets/images/case_01_design_system.png" alt="프로젝트 디자인시스템 이미지" class="case-system__image"
-                        loading="eager">
-                    <div class="case-system__image-overlay"></div>
+
+                    <!-- 이미지 -->
+                    <div class="case-system__image-wrapper" style="display: none;">
+                        <img src="/assets/images/case_01_design_system.png" alt="프로젝트 디자인시스템 이미지"
+                            class="case-system__image" loading="eager">
+                        <div class="case-system__image-overlay"></div>
+                    </div>
+
+                    <!-- 콘텐츠 -->
+                    <div class="case-system__content" data-aos="fade-up" data-aos-delay="400">
+                        <div class="case-system__cards">
+                            <article class="case-system__card case-system__card--typography">
+                                <span class="case-system__card-label">Typography</span>
+                                <h3 class="case-system__card-title">Pretendard</h3>
+                                <p class="case-system__card-description">일관된 읽기 경험을 위해 제목과 본문 모두에서 Pretendard를
+                                    사용합니다.</p>
+                                <div class="case-system__type-samples">
+                                    <p class="case-system__type-display">Aa</p>
+                                    <p class="case-system__type-heading">Heading / Title</p>
+                                    <p class="case-system__type-body">Pretendard를 사용한 본문 텍스트 예시입니다.</p>
+                                </div>
+                            </article>
+                            <article class="case-system__card case-system__card--color">
+                                <span class="case-system__card-label">Color Palette</span>
+                                <h3 class="case-system__card-title">White · Black · Primary · Secondary</h3>
+                                <p class="case-system__card-description">기본 컬러 시스템은 명시적 대비와 신뢰성을 제공합니다.</p>
+                                <div class="case-system__color-grid">
+                                    <div class="case-system__color-chip case-system__color-chip--white">
+                                        <span>White</span>
+                                        <small>#FFFFFF</small>
+                                    </div>
+                                    <div class="case-system__color-chip case-system__color-chip--black">
+                                        <span>Dark</span>
+                                        <small>#333333</small>
+                                    </div>
+                                    <div class="case-system__color-chip case-system__color-chip--primary">
+                                        <span>Primary</span>
+                                        <small>#0083CA</small>
+                                    </div>
+                                    <div class="case-system__color-chip case-system__color-chip--secondary">
+                                        <span>Secondary</span>
+                                        <small>#C9EBFC</small>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="case-system__card case-system__card--layout">
+                                <span class="case-system__card-label">Grid & Spacing</span>
+                                <h3 class="case-system__card-title">8px 기반 레이아웃</h3>
+                                <p class="case-system__card-description">12컬럼 그리드와 일정한 여백으로 반응형 레이아웃을 안정적으로 구성합니다.
+                                </p>
+                                <div class="case-system__grid-demo" aria-hidden="true">
+                                    <div class="case-system__grid-row">
+                                        <div class="case-system__grid-col">1</div>
+                                        <div class="case-system__grid-col">2</div>
+                                        <div class="case-system__grid-col">3</div>
+                                        <div class="case-system__grid-col">4</div>
+                                        <div class="case-system__grid-col">5</div>
+                                        <div class="case-system__grid-col">6</div>
+                                        <div class="case-system__grid-col">7</div>
+                                        <div class="case-system__grid-col">8</div>
+                                        <div class="case-system__grid-col">9</div>
+                                        <div class="case-system__grid-col">10</div>
+                                        <div class="case-system__grid-col">11</div>
+                                        <div class="case-system__grid-col">12</div>
+                                    </div>
+                                </div>
+                                <ul class="case-system__space-scale">
+                                    <li><strong>8</strong><span>px</span></li>
+                                    <li><strong>16</strong><span>px</span></li>
+                                    <li><strong>24</strong><span>px</span></li>
+                                    <li><strong>32</strong><span>px</span></li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="hero__cta">
+                        <a href="#more-works" class="hero__cta-btn">
+                            <span>더 보러가기</span>
+                            <svg class="hero__cta-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <!-- //CTA Area -->
+                    </div>
                 </div>
-
-
-
             </div>
         </section>
 

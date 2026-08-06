@@ -17,7 +17,7 @@ class AboutAnimation {
             description: document.querySelector('.about__description'),
             keywords: document.querySelectorAll('.about__keyword'),
             imageWrapper: document.querySelector('.about__image-wrapper'),
-            image: document.querySelector('.about__image'),
+            images: document.querySelectorAll('.about__image, .about__video'),
             stats: document.querySelectorAll('.about__stat'),
             number: document.querySelector('.about__number'),
             decos: document.querySelectorAll('.about__deco')
@@ -297,8 +297,8 @@ class AboutAnimation {
         // Title parallax removed - keep titles always visible
         // Only apply parallax to non-essential elements
 
-        // Image parallax - moves up faster
-        gsap.to(this.elements.image, {
+        // Image/video parallax - moves up slightly
+        gsap.to(this.elements.images, {
             //yPercent: -10,
             ease: 'none',
             scrollTrigger: {
@@ -428,7 +428,7 @@ class AboutAnimation {
             const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
             const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
 
-            gsap.to(this.elements.image, {
+            gsap.to(this.elements.images, {
                 x: x * 10,
                 y: y * 10,
                 duration: 0.5,

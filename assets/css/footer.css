@@ -43,12 +43,15 @@
     font-size: var(--text-sm);
     color: var(--color-gray-500);
     text-decoration: none;
+    text-transform: none;
     transition: color var(--duration-normal) var(--ease-out-expo);
 }
 
 .footer__link:hover {
     color: var(--color-light);
 }
+
+.footer__tel {}
 
 
 /* ===== Responsive Styles ===== */

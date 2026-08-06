@@ -13,11 +13,13 @@ class CaseStudyApp {
     constructor() {
         this.animation = null;
         this.isInitialized = false;
+        this.scrollSpyItems = [];
 
         // 바인딩
         this.init = this.init.bind(this);
         this.onReady = this.onReady.bind(this);
         this.onResize = this.onResize.bind(this);
+        this.updateScrollSpy = this.updateScrollSpy.bind(this);
     }
 
     /**
@@ -52,6 +54,9 @@ class CaseStudyApp {
         // 스무스 스크롤 (앵커 링크)
         this.setupSmoothScroll();
 
+        // 스크롤 스파이
+        this.setupScrollSpy();
+
         // 네비게이션 백 버튼 효과
         this.setupBackNavigation();
 
@@ -64,8 +69,12 @@ class CaseStudyApp {
      */
     initAnimation() {
         if (typeof CaseStudyAnimation !== 'undefined') {
-            this.animation = new CaseStudyAnimation();
-            this.animation.init();
+            try {
+                this.animation = new CaseStudyAnimation();
+                this.animation.init();
+            } catch (error) {
+                console.warn('⚠️ CaseStudyAnimation failed to initialize', error);
+            }
         } else {
             console.warn('⚠️ CaseStudyAnimation not found');
         }
@@ -106,21 +115,21 @@ class CaseStudyApp {
      */
     setupLazyLoading() {
         const images = document.querySelectorAll('img[loading="lazy"]');
-        
+
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const img = entry.target;
-                        
+
                         // 이미지 로드 완료 시 페이드인 효과
                         img.style.opacity = '0';
                         img.style.transition = 'opacity 0.5s ease';
-                        
+
                         img.onload = () => {
                             img.style.opacity = '1';
                         };
-                        
+
                         observer.unobserve(img);
                     }
                 });
@@ -145,19 +154,127 @@ class CaseStudyApp {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
-                    
-                    // GSAP 스무스 스크롤
-                    gsap.to(window, {
-                        duration: 1,
-                        scrollTo: {
-                            y: targetElement,
-                            offsetY: 80 // 네비게이션 높이 고려
-                        },
-                        ease: 'power3.inOut'
-                    });
+                    this.scrollToSection(targetElement, 80);
                 }
             });
         });
+    }
+
+    /**
+     * 스크롤 스파이 설정
+     */
+    setupScrollSpy() {
+        const scrollSpy = document.querySelector('.case-scrollspy');
+        const list = document.querySelector('.case-scrollspy__list');
+
+        if (!scrollSpy || !list) return;
+
+        const sections = Array.from(document.querySelectorAll('#case-study > section[id]'));
+        if (!sections.length) return;
+
+        list.innerHTML = '';
+
+        this.scrollSpyItems = sections.map(section => {
+            const title = section.dataset.scrollspyTitle
+                || section.getAttribute('data-scrollspy-label')
+                || section.querySelector('h2, h3')?.textContent?.trim()
+                || section.id;
+            const item = document.createElement('li');
+            item.className = 'case-scrollspy__item';
+
+            const link = document.createElement('a');
+            link.className = 'case-scrollspy__link';
+            link.href = `#${section.id}`;
+            link.setAttribute('data-label', title);
+            link.setAttribute('aria-label', title);
+            link.dataset.target = section.id;
+
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // 클릭한 점을 누르면 해당 섹션으로 부드럽게 이동합니다.
+                // 이동 위치는 아래 scrollToSection()의 offset 값으로 조절할 수 있습니다.
+                this.scrollToSection(section);
+            });
+
+            item.appendChild(link);
+            list.appendChild(item);
+
+            return { section, link };
+        });
+
+        this.updateScrollSpy();
+        scrollSpy.classList.add('is-visible');
+
+        window.addEventListener('scroll', this.updateScrollSpy, { passive: true });
+        window.addEventListener('resize', this.updateScrollSpy);
+    }
+
+    /**
+     * 현재 섹션 활성화
+     */
+    updateScrollSpy() {
+        if (!this.scrollSpyItems.length) return;
+
+        const scrollTop = window.scrollY;
+        const viewportMiddle = scrollTop + window.innerHeight * 0.5;
+        const offset = 100;
+
+        let currentItem = null;
+        let activeIndex = -1;
+
+        this.scrollSpyItems.forEach(({ section, link }, index) => {
+            link.classList.remove('is-active');
+            link.removeAttribute('aria-current');
+
+            const sectionTop = section.offsetTop - offset;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            const isInView = viewportMiddle >= sectionTop && viewportMiddle < sectionBottom;
+
+            if (isInView) {
+                currentItem = { section, link };
+                activeIndex = index;
+            }
+        });
+
+        if (!currentItem) {
+            const lastSection = this.scrollSpyItems[this.scrollSpyItems.length - 1];
+            const lastSectionTop = lastSection.section.offsetTop - offset;
+            currentItem = scrollTop + window.innerHeight >= lastSectionTop ? lastSection : this.scrollSpyItems[0];
+        }
+
+        currentItem.link.classList.add('is-active');
+        currentItem.link.setAttribute('aria-current', 'true');
+    }
+
+    /**
+     * 섹션으로 스크롤 (클릭 시 이동 위치)
+     */
+    scrollToSection(section, offset = 50) {
+        const targetY = Math.max(0, section.getBoundingClientRect().top + window.scrollY - offset);
+        // (클릭 시 이동 위치)
+        // offset 값을 바꾸면 됩니다.
+        // 값이 작을수록 더 위로 올라감
+        // 값이 클수록 더 아래로 내려감
+
+        if (typeof window.scrollTo === 'function') {
+            window.scrollTo({
+                top: targetY,
+                behavior: 'smooth'
+            });
+            return;
+        }
+
+        if (typeof gsap !== 'undefined' && gsap.to) {
+            gsap.to(window, {
+                duration: 0.8,
+                scrollTo: {
+                    y: targetY
+                },
+                ease: 'power3.inOut'
+            });
+        } else {
+            window.scrollTo(0, targetY);
+        }
     }
 
     /**

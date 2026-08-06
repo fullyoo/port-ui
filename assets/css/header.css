@@ -149,7 +149,7 @@
     letter-spacing: var(--tracking-tight);
 }
 
-.header__action-icon .icon-notion {
+.header__action-icon .icon {
     display: block;
     width: 20px;
     height: 20px;

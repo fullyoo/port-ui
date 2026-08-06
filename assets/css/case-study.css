@@ -19,6 +19,109 @@
     overflow-x: hidden;
 }
 
+/* ===== Scrollspy ===== */
+.case-scrollspy {
+    position: fixed;
+    left: clamp(1rem, 2vw, 2rem);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.case-scrollspy.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.case-scrollspy__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-2);
+    /* border: 1px solid rgba(255, 255, 255, 0.12); */
+    border-radius: var(--radius-full);
+    /* background: rgba(10, 10, 10, 0.6); */
+    backdrop-filter: blur(16px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+}
+
+.case-scrollspy__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-gray-500);
+    padding-left: var(--space-2);
+    display: none;
+}
+
+.case-scrollspy__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.case-scrollspy__link {
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid transparent;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.case-scrollspy__link::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 1rem;
+    color: var(--color-gray-400);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.case-scrollspy__link:hover,
+.case-scrollspy__link.is-active {
+    transform: scale(1.2);
+    background: var(--color-accent);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.case-scrollspy__link:hover::after,
+.case-scrollspy__link.is-active::after {
+    opacity: 1;
+    color: var(--color-light);
+}
+
+@media (max-width: 1024px) {
+    .case-scrollspy {
+        left: 0.75rem;
+    }
+
+    .case-scrollspy__label {
+        display: none;
+    }
+
+    .case-scrollspy__link::after {
+        /* display: none; */
+    }
+}
+
+@media (max-width: 768px) {
+    .case-scrollspy {
+        display: none;
+    }
+}
+
 /* ===== Back Navigation ===== */
 .case-nav {
     position: fixed;

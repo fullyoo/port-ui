@@ -478,6 +478,23 @@
     font-weight: var(--weight-medium);
 }
 
+.case-hero__tools {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.case-hero__tools span {
+    opacity: .8;
+}
+
+.case-hero__tools-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-gray-100);
+    transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
 
 /* ==========================================================
    1. Case Overview

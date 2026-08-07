@@ -215,9 +215,16 @@ class CaseStudyApp {
     updateScrollSpy() {
         if (!this.scrollSpyItems.length) return;
 
+        // 스크롤시 변하는 위치 값(현재 섹션 값)
+
         const scrollTop = window.scrollY;
         const viewportMiddle = scrollTop + window.innerHeight * 0.5;
-        const offset = 100;
+        const offset = 150;
+
+        // 이동 위치는 window.innerHeight * 0.5 값으로 조절할 수 있습니다.
+        // offset 값을 바꾸면 됩니다.
+        // 값이 작을수록 더 위로 올라감
+        // 값이 클수록 더 아래로 내려감
 
         let currentItem = null;
         let activeIndex = -1;

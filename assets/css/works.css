@@ -122,8 +122,10 @@
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 0% 0%, rgba(5, 0, 253, 0.2) 0%, transparent 30%),
-        radial-gradient(ellipse at 20% 50%, rgba(240, 255, 54, 0.1) 0%, transparent 20%);
+        radial-gradient(ellipse at 0% 0%, rgba(5, 0, 253, 0.4) 0%, transparent 40%),
+        radial-gradient(ellipse at 0% 100%, rgba(5, 0, 253, 0.2) 0%, transparent 60%);
+
+    /* background: radial-gradient(ellipse at 50% 100%, rgba(5, 0, 253, 0.2) 0%, transparent 60%), radial-gradient(ellipse at 20% 50%, rgba(240, 255, 54, 0.2) 0%, transparent 60%); */
 }
 
 /* ===== Section Header ===== */
@@ -265,16 +267,17 @@
     white-space: nowrap;
 }
 
-.works__tab:hover,
 .works__tab:focus {
     border-color: rgba(255, 255, 255, 0.22);
+    border-color: var(--color-accent);
     color: var(--color-light);
     outline: none;
 }
 
+.works__tab:hover,
 .works__tab--active {
     color: var(--color-gray-100);
-    background: rgba(240, 255, 54, 0.2);
+    background: rgba(240, 255, 54, 0.3);
     border-color: var(--color-accent);
     box-shadow: 0 10px 30px rgba(41, 255, 145, 0.08);
 }
@@ -302,7 +305,7 @@
     color: var(--color-accent);
     font-size: var(--text-2xl);
     letter-spacing: var(--tracking-tight);
-    font-weight: var(--weight-medium);
+    font-weight: var(--weight-bold);
 }
 
 .works__tabs-label::before {
@@ -360,8 +363,8 @@
     letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-    text-stroke: 1px rgba(255, 255, 255, 0.2);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    text-stroke: 1px rgba(255, 255, 255, 0.4);
     /* text-shadow:
         0 0 1px rgba(255, 255, 255, 0.15),
         0 0 2px rgba(255, 255, 255, 0.1); */
@@ -515,7 +518,8 @@
     font-family: var(--font-primary);
     font-size: var(--text-3xl);
     font-weight: var(--weight-bold);
-    color: var(--color-gray-200);
+    color: var(--color-gray-100);
+    color: var(--color-accent);
     transition: color var(--duration-fast) var(--ease-smooth);
     line-height: var(--leading-tight);
 }
@@ -572,7 +576,7 @@
 .works__card-role {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
-    color: var(--color-gray-400);
+    color: var(--color-gray-200);
     padding: var(--space-1) var(--space-3);
     border-radius: var(--radius-full);
     border: 1px solid;
@@ -634,6 +638,8 @@
 .more-works {
     background: var(--color-dark);
     overflow: hidden;
+    background: radial-gradient(ellipse at 50% 100%, rgba(5, 0, 253, 0.2) 0%, transparent 60%), radial-gradient(ellipse at 20% 50%, rgba(240, 255, 54, 0.2) 0%, transparent 60%);
+    /* pointer-events: none; */
 }
 
 /* ===== Section Number (Decorative) ===== */

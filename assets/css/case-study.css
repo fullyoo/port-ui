@@ -747,7 +747,7 @@
     background-position: center;
     /* background-image: url(/assets/images/case_01_bg.jpg); */
 
-    background: radial-gradient(at 20% 10%, rgba(5, 0, 253, 0.2) 0%, transparent 30%), radial-gradient(at 20% 80%, rgba(240, 255, 54, 0.2) 0%, transparent 20%);
+    background: radial-gradient(ellipse at 50% 100%, rgba(5, 0, 253, 0.2) 0%, transparent 60%), radial-gradient(ellipse at 20% 40%, rgba(240, 255, 54, 0.2) 0%, transparent 60%);
 }
 
 .case-system__visual {

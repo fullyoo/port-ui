@@ -134,10 +134,15 @@ button.floating-menu__item {
     color: var(--color-accent);
 }
 
+
+
+/* ===== Responsive Styles ===== */
+
+/* Mobile */
 @media (max-width: 768px) {
     .floating-menu {
         right: var(--space-4);
-        bottom: var(--space-8);
+        bottom: var(--space-24);
     }
 
     .floating-menu__item {

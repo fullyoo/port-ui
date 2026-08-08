@@ -266,9 +266,16 @@
     opacity: 0;
 }
 
-.header__nav-link:hover,
+.header__nav-link:hover {
+    color: var(--color-primary);
+    color: var(--color-accent);
+    color: var(--color-light);
+}
+
 .header__nav-link.is-active {
     color: var(--color-light);
+    color: var(--color-primary);
+    color: var(--color-accent);
 }
 
 .header__nav-link:hover,

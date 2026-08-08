@@ -380,9 +380,19 @@
     width: 100%;
     padding: var(--space-4) var(--space-6);
     background: var(--color-dark);
-    /* border: 1px solid var(--color-gray-800); */
+    border: 1px solid var(--color-gray-900);
+    border-color: transparent;
     border-radius: var(--radius-lg);
     text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.about__stat:hover {
+    border-color: var(--color-primary);
 }
 
 .about__stat-number {
@@ -471,9 +481,7 @@
 /* Tablet */
 @media (max-width: 1024px) {
     .about__container {
-        flex-direction: column;
-        gap: var(--space-16);
-        min-height: auto;
+        gap: var(--space-12);
     }
 
     .about__content {
@@ -498,12 +506,6 @@
         min-height: auto;
     }
 
-    .about__image-wrapper {
-        margin: 0 auto var(--space-8);
-        display: block;
-        top: 0;
-    }
-
     .about__keywords {
         /* max-width: 500px; */
         margin: 0 auto;
@@ -514,14 +516,6 @@
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .about__stats {
-        /* position: relative; */
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: var(--space-8);
-        width: 84%;
     }
 
     .about__number {
@@ -551,9 +545,13 @@
         margin: var(--space-6) 0 var(--space-8) 0;
     }
 
+    .about__container {
+        gap: var(--space-10);
+    }
+
     .about__keywords {
         justify-content: center;
-        gap: var(--space-3);
+        gap: var(--space-4);
     }
 
     .about__keyword {
@@ -566,6 +564,10 @@
 
     .about__stat-number {
         font-size: var(--text-2xl);
+    }
+
+    .about__image-wrapper {
+        max-width: 80%;
     }
 
     .about__image-frame {
@@ -636,18 +638,19 @@
     }
 
     .about__image-wrapper {
-        max-width: 80%;
+        max-width: 100%;
+        padding: var(--space-4);
+        border-radius: var(--radius-xl);
+    }
+
+    .about__media-item {
+        border-radius: var(--radius-lg);
+        margin-bottom: var(--space-1);
     }
 
     .about__stat-number {
         font-size: var(--text-xl);
         line-height: var(--leading-tight);
-    }
-
-    .about__stats {
-        width: 92%;
-        gap: var(--space-2);
-        bottom: var(--space-2);
     }
 
     .about__stat {
@@ -678,6 +681,7 @@
     }
 
     .about__media-stage {
+        column-gap: var(--space-3);
         /* grid-template-columns: 1fr; */
     }
 }

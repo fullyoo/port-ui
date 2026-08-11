@@ -13,7 +13,6 @@
 
 /* ===== Page Base ===== */
 .case-study-page {
-    font-family: var(--font-secondary);
     background-color: var(--color-dark);
     color: var(--color-light);
     overflow-x: hidden;
@@ -971,15 +970,21 @@
 .case-before-after__preview-card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-xl);
     overflow: hidden;
 }
 
+.case-before-after__preview-card.asis {
+    height: 700px;
+}
+
+.case-before-after__preview-card.tobe {}
+
 .case-before-after__preview-screenshot {
-    min-height: 260px;
+    /* min-height: 800px; */
+    position: relative;
     display: grid;
     place-items: center;
     text-align: center;
@@ -988,22 +993,42 @@
     background: rgba(255, 255, 255, 0.04);
 }
 
+.case-before-after__preview-screenshot span {
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-full);
+}
+
 .case-before-after__preview-screenshot--before {
     background: linear-gradient(180deg, rgba(30, 30, 30, 0.95), rgba(30, 30, 30, 0.85));
 }
 
 .case-before-after__preview-screenshot--after {
-    background-image: linear-gradient(180deg, rgba(5, 0, 253, 0.82), rgba(0, 95, 255, 0.55)), url('/assets/images/case_01_design_system.png');
+    /* background: linear-gradient(0deg, rgba(5, 0, 253, 0.82) 0%, transparent 60%),
+        linear-gradient(0deg, rgba(0, 95, 255, 0.55) 0%, transparent 100%),
+        url('/assets/images/case_01_tobe.jpg'); */
+
+    /* background-image: url(/assets/images/case_01_tobe.jpg); */
+
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
 }
 
-.case-before-after__preview-screenshot--after span {
-    background: rgba(0, 0, 0, 0.55);
-    padding: 0.6rem 1rem;
-    border-radius: var(--radius-full);
+.case-before-after__preview-screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
+
+.case-before-after__preview-screenshot--after span {}
 
 .case-before-after__preview-card figcaption {
     padding: var(--space-4);
@@ -1127,6 +1152,10 @@
 
     .case-before-after__comparison-row span {
         display: block;
+    }
+
+    .case-before-after__preview-card.asis {
+        height: auto;
     }
 }
 

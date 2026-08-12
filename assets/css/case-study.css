@@ -788,6 +788,10 @@
     transition-delay: 0s !important;
 }
 
+.case-system__card:hover .case-system__card-label {
+    background-color: var(--color-primary);
+}
+
 .case-system__card-label {
     display: inline-flex;
     align-items: center;
@@ -1076,6 +1080,7 @@
 
 .case-before-after__card:hover .case-before-after__card-label--to {
     border: 1px solid var(--color-accent);
+    /* background: rgba(240, 255, 54, 0.1); */
 }
 
 
@@ -1084,7 +1089,7 @@
     gap: var(--space-3);
     align-items: center;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
     padding-bottom: var(--space-4);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -1096,11 +1101,12 @@
     align-items: center;
     justify-content: center;
     background: var(--color-dark);
-    border: 2px solid var(--color-primary);
+    border: 1px solid var(--color-primary);
     border-radius: var(--radius-full);
     position: relative;
     z-index: 1;
     transition: all var(--duration-normal) var(--ease-out-expo);
+    display: none;
 }
 
 .case-before-after__card-number {

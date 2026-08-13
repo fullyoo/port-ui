@@ -3815,9 +3815,6 @@ Read [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/in
 Replacing 10 lines with 9 lines in [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/about.css)
 
 
-```
-
-```
 ✅ 수정 완료했습니다.
 
 - about.css에서 `.about__media-item:nth-child(3)`의 `margin-top: -110px`를 제거했습니다.
@@ -3844,9 +3841,6 @@ Searched for regex `align-items: start|align-self: start|justify-items|align-ite
 Replacing 41 lines with 23 lines in [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/about.css)
 
 
-```
-
-```
 ## 수정 내용
 
 about.css를 다음과 같이 변경했습니다.
@@ -3888,9 +3882,6 @@ Searched for regex `about__media-item|about__media-stage|grid-auto-rows|masonry|
 Replacing 16 lines with 22 lines in [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/about.css)
 
 
-```
-
-```
 ## 수정 완료
 
 about.css에 다음 변경을 적용했습니다:
@@ -3913,18 +3904,76 @@ Made changes.
 
 **User**
 
+case-before-after__preview 에서
+.case-before-after__preview-card.asis 와 .case-before-after__preview-card.tobe 사이에 화살표 아이콘을 넣어주세요
 
 ---
 
 **VS-CODE**
+
+이제 해당 섹션의 구조와 스타일을 확인해서 화살표를 자연스럽게 넣고 바로 반영하겠습니다.
+
+Searched for regex `case-before-after__preview-card|case-before-after__preview` (`**/*.{html,css,js}`), 32 results
+
+Read , lines 520 to 575
+
+Read , lines 960 to 1065
+
+두 카드 사이에 중앙 화살표를 넣는 형태로 정리해서, 기존 레이아웃을 건드리지 않고 스타일만 보강하겠습니다.
+
+Replacing 37 lines with 53 lines in , 
+
+
+나머지 미리보기 묶음도 같은 패턴으로 맞춰서 적용하겠습니다.
+
+Replacing 30 lines with 32 lines in 
+
+
+## ✅ 반영 완료
+
+`case-study.html` 에서 각 before/after 비교 섹션 사이에 화살표를 추가했고,  
+`case-study.css` 에서 화살표 스타일을 맞춰서 자연스럽게 보이도록 정리했습니다.
+
+- 화살표 위치: asis와 tobe 카드 사이
+- 아이콘 형태: → 스타일
+- 적용 범위: 모든 비교 미리보기 블록
+
+원하시면 다음도 바로 맞춰드릴 수 있습니다.
+- 화살표 크기 조정
+- 색상/배경 강조
+- 아이콘을 ⇄ 또는 ⟶ 로 변경
+
+Made changes.
 
 
 **User**
 
+모바일에서는 화살표 방향이 아래로 해야합니다
 
 ---
 
 **VS-CODE**
+
+모바일에서만 세로 방향으로 바뀌도록 반응형 스타일을 추가하겠습니다.
+
+Replacing 17 lines with 30 lines in 
+
+
+## ✅ 수정 완료
+
+모바일에서는 화살표가 아래로 보이도록 반응형 스타일을 추가했습니다.
+
+- 적용 파일: `case-study.css`
+- 변경 내용: 모바일 기준에서 flex 방향을 세로로 바꾸고, 화살표를 90도 회전해서 아래 방향으로 보이게 처리
+
+필요하면 다음 단계로
+- 화살표를 더 둥글게
+- 중앙 간격 더 넓게
+- 모바일에서 “AS IS → TO BE” 느낌으로 텍스트까지 보강
+
+이런 식으로도 더 정리해드릴 수 있습니다.
+
+Made changes.
 
 
 **User**

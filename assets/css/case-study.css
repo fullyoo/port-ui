@@ -997,6 +997,10 @@
 
 .case-before-after__preview-card.tobe {}
 
+.case-before-after__preview-card.tobe figcaption {
+    /* background: rgba(0, 0, 0, 0.2); */
+}
+
 .case-before-after__preview-screenshot {
     /* min-height: 800px; */
     position: relative;
@@ -1049,6 +1053,7 @@
     text-align: center;
     color: var(--color-gray-300);
     background: rgba(0, 0, 0, 0.2);
+    background: var(--color-gray-800);
 }
 
 .case-before-after__cards {
@@ -2083,9 +2088,8 @@
     }
 
     .case-before-after__preview-screenshot span {
-        top: 48px;
-        top: clamp(2.4rem, 4vw, 4.8rem);
-        ;
+        /* top: 48px; */
+        top: clamp(1.6rem, 4vw, 4.8rem);
     }
 
     .case-problem__cards {

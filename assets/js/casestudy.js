@@ -51,6 +51,9 @@ class CaseStudyApp {
         // 이미지 지연 로딩
         this.setupLazyLoading();
 
+        // 서브 페이지 롤링 갤러리
+        this.setupSubPageMarquee();
+
         // 스무스 스크롤 (앵커 링크)
         this.setupSmoothScroll();
 
@@ -145,6 +148,24 @@ class CaseStudyApp {
     /**
      * 스무스 스크롤 설정 (앵커 링크)
      */
+    setupSubPageMarquee() {
+        const marquees = document.querySelectorAll('.case-responsive__visual-sub');
+
+        marquees.forEach((marquee) => {
+            const track = marquee.querySelector('.case-responsive__visual-sub-track');
+            if (!track) return;
+
+            const items = Array.from(track.children);
+            if (items.length === 0) return;
+
+            items.forEach((item) => {
+                const clone = item.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                track.appendChild(clone);
+            });
+        });
+    }
+
     setupSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {

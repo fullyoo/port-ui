@@ -31,10 +31,6 @@ Read [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C%EC%9A%94/p
 Replacing 14 lines with 8 lines in [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C%EC%9A%94/port-ui/assets/js/gsap/heroanimation.js)
 
 
-```
-
-```
-
 
 Checked [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C%EC%9A%94/port-ui/assets/js/gsap/heroanimation.js), no problems found
 
@@ -83,17 +79,7 @@ hero 섹션 높이를 강제로 전체 화면 이상으로 확장하고, 시각 
 Replacing 14 lines with 13 lines in [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C%EC%9A%94/port-ui/assets/css/hero.css)
 
 
-```
-
-```
-
-
 Replacing 12 lines with 12 lines in [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C%EC%9A%94/port-ui/assets/css/hero.css)
-
-
-```
-
-```
 
 
 Checked [](file:///c%3A/Users/user/Downloads/%EA%B9%83%ED%97%88%EB%B8%8C%EC%9A%94/port-ui/assets/css/hero.css), no problems found
@@ -146,10 +132,6 @@ Opened browser page at file:///C:/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%
 Replacing 55 lines with 58 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/hero.css)
 
 
-```
-
-```
-
 
 Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/hero.css), no problems found
 
@@ -200,10 +182,6 @@ hero__slide-inner 가 슬라이드 되면서 크기가 커지는데 첫화면에
 
 Replacing 13 lines with 39 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/swiper/heroswiper.js)
 
-
-```
-
-```
 
 
 Checked [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/js/swiper/heroswiper.js), no problems found
@@ -1430,7 +1408,7 @@ I’ll update the mobile header stacking rules now so the top container stays ab
 
 Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/header.css#1-1), lines 1 to 120
 
-Searched for regex `header__nav|header__menu-toggle|@media \(max-width: 768px\)|z-index` (`**/assets/css/header.css`), 31 results
+Searched for regex `header__nav|header__menu-toggle|edia \(max-width: 768px\)|z-index` (`**/assets/css/header.css`), 31 results
 
 I found the mobile drawer rule set, and I’m adjusting the header layer stack specifically where the menu opens on small screens.
 
@@ -2014,10 +1992,6 @@ Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A
 
 Replacing 17 lines with 18 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/works.css)
 
-
-```
-
-```
 ✅ `more-works__preview`에 `z-index: 10;`를 추가했습니다.
 
 이제 `more-works__item` 배경색이 `var(--color-dark)`로 바뀌어도 프리뷰 이미지가 항목 위에 표시됩니다.
@@ -2039,10 +2013,6 @@ Response cleared due to possible match to public code, retrying with modified pr
 
 Replacing 18 lines with 18 lines in [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/works.css)
 
-
-```
-
-```
 ✅ 수정했습니다.
 
 - works.css
@@ -3175,7 +3145,7 @@ Made changes.
 
 **User**
 
-@media (max-width: 1024px) {
+edia (max-width: 1024px) {
 .case-overview__visual-container 에서
 .case-overview__visual-mo {
 
@@ -3195,7 +3165,7 @@ margin-top: 40rem;
 
 현재 `case-overview__visual-mo` 관련 미디어 쿼리와 레이아웃을 확인해서 바로 조정하겠습니다.
 
-Searched for regex `@media (max-width: 1024px)|case-overview__visual-mo|case-overview__visual-container` (`**/assets/css/case-study.css`), 5 results
+Searched for regex `edia (max-width: 1024px)|case-overview__visual-mo|case-overview__visual-container` (`**/assets/css/case-study.css`), 5 results
 
 Read [](file:///c%3A/Users/%EC%A7%84%EC%84%A0%EC%9C%A0/Downloads/-%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BD%94%EB%93%9C/-%EA%B9%83%ED%97%88%EB%B8%8C/port-ui/assets/css/case-study.css#1580-1580), lines 1580 to 1685
 
@@ -3978,40 +3948,354 @@ Made changes.
 
 **User**
 
+case-responsive__visual-sub 영역에 서브이미지들을 넣어놨어요. 이걸 가로로 계속 롤링되는 형태의 기능을 넣고 싶어요.
+
 
 ---
 
 **VS-CODE**
+
+case-responsive__visual-sub 영역의 롤링 동작을 어떻게 연결할지 먼저 확인한 뒤, 필요한 CSS와 JS를 바로 맞춰서 넣겠습니다.
+
+Searched for regex `case-responsive__visual-sub|visual-sub` (`**/*.{html,css,js}`), 7 results
+
+Read , lines 720 to 800
+
+Read , lines 1280 to 1405
+
+서브 이미지 영역이 정적인 그리드 형태라서, 무한 롤링을 위해 트랙을 복제해서 애니메이션을 걸는 방식이 가장 안정적입니다. 이 구조로 맞춰서 페이지에 바로 반영하겠습니다.
+
+Searched for text `casestudy.js|case-study.js|caseStudy` (`**/*.{html,js}`), 23 results
+
+Read , lines 1 to 220
+
+Read , lines 220 to 342
+
+Read , lines 2350 to 2405
+
+Replacing 73 lines with 131 lines in , , 
+
+모바일 기준 스타일이 기존 45% 고정값을 덮고 있어서, 롤링이 깨지지 않도록 그 부분만 정리하고 실제 페이지도 확인하겠습니다.
+
+Replacing 10 lines with 10 lines in 
+
+
+Ran terminal command: cd "c:/Users/진선유/Downloads/-비주얼코드/-깃허브/port-ui"; python -m http.server 8000
+
+Opened browser page at http://localhost:8000/works/case-study.html
+
+Checked terminal output
+
+Read , lines 744 to 790
+
+Read , lines 1298 to 1388
+
+Read , lines 20 to 180
+
+서버가 기동 상태를 다시 확인해 보고, 실제 렌더링까지 바로 점검하겠습니다.
+
+Ran terminal command: cd "c:/Users/진선유/Downloads/-비주얼코드/-깃허브/port-ui"; py -m http.server 8000
+
+Ran terminal command: curl -I http://localhost:8000/works/case-study.html
+
+## ✅ 롤링형 서브 이미지 적용해두었습니다
+
+다음 파일들에 반영했습니다.
+
+- `case-study.html`
+- `case-study.css`
+- `casestudy.js`
+
+### 변경 내용
+- 서브 이미지 영역을 무한 가로 롤링용 트랙 구조로 변경
+- 이미지를 복제해서 이어지는 형태로 만들어 끊김 없이 흐르도록 구성
+- CSS에서 translate3d 기반의 marquee 애니메이션 적용
+- 모바일에서도 폭이 깨지지 않도록 조정
+- prefers-reduced-motion 환경에서는 애니메이션 비활성화 처리
+
+### 동작 방식
+- JS가 각 서브 이미지 묶음을 기준으로 복제본을 자동 생성
+- CSS의 애니메이션이 한쪽 방향으로 계속 이동
+- 끝에 도달하면 이어지는 이미지를 자연스럽게 이어서 무한 루프
+
+### 조정 포인트
+원하면 다음도 바로 바꿀 수 있습니다.
+- 속도: `case-responsive-sub-marquee`의 `28s` 값 조절
+- 방향: `translate3d`의 음수/양수 변경
+- 카드 폭: `width: clamp(...)` 값 조절
+- 마스킹 효과: 좌우 fade 처리 강도 조절
+
+원하시면 다음 단계로
+1. 느리게 천천히 흐르는 버전
+2. 더 빠른 느낌의 버전
+3. hover 시 멈추는 버전
+
+이렇게까지 맞춰드릴게요.
+
+Made changes.
 
 
 **User**
 
+1번과 3번 적용해주세요
 
 ---
 
 **VS-CODE**
+
+이전 제안 중에서 속도와 방향을 각각 원하는 톤으로 맞추는 옵션이 있었고, 지금은 1번과 3번을 적용하는 방향으로 바로 정리하겠습니다.
+
+Read , lines 1300 to 1368
+
+1번은 느리게, 3번은 마우스 올렸을 때 멈추는 상태로 맞춰서 최종 톤을 정리하고 있습니다.
+
+Replacing 34 lines with 38 lines in 
+
+## ✅ 1번 + 3번 적용 완료
+
+다음 두 가지 특성을 반영했습니다.
+
+- 느리게 계속 흐르는 롤링
+- 마우스 올리면 멈추는 hover pause
+
+적용 위치:
+- `case-study.css`
+
+변경 내용:
+- 애니메이션 속도: 42s로 느리게 조정
+- `.case-responsive__visual-sub:hover .case-responsive__visual-sub-track` 에서 `animation-play-state: paused;` 적용
+
+원하면 다음으로도 바로 조정할 수 있어요.
+- 더 천천히
+- 더 빠르게
+- 좌우 반전
+- 처음 진입 시 딜레이 추가
+
+원하시면 제가 바로 그 설정까지 맞춰드릴게요.
+
+Made changes.
 
 
 **User**
 
+만약 이 기능을 사용하지 않고 기존처럼 이미지를 나열하려면 주석처리 어디를 하면 될까요?
+
 
 ---
 
 **VS-CODE**
+
+기존 정적 배열 형태로 돌리려면, 롤링용 트랙과 애니메이션을 비활성화하면 됩니다. 가장 안전한 건 CSS와 JS의 해당 블록만 주석 처리하는 방식입니다.
+
+Read , lines 748 to 790
+
+Read , lines 30 to 130
+
+Read , lines 130 to 220
+
+Read , lines 1300 to 1365
+
+## 기존처럼 이미지 나열로 되돌리려면
+
+가장 안전한 건 3군데를 비활성화하는 것입니다.
+
+1) HTML에서 롤링 트랙 감싸기 제거
+2) JS에서 복제/롤링 실행 함수 비활성화
+3) CSS에서 애니메이션 제거
+
+---
+
+### 1) HTML
+`case-study.html:750-778`
+
+현재 구조는 아래처럼 트랙 안에 이미지를 넣고 있습니다.
+
+```html
+<div class="case-responsive__visual-sub" aria-label="Sub page design rolling gallery">
+    <div class="case-responsive__visual-sub-track">
+        <img ...>
+        <img ...>
+        ...
+    </div>
+</div>
+```
+
+기존처럼 그냥 나열하려면 이렇게 바꾸면 됩니다.
+
+```html
+<div class="case-responsive__visual-sub">
+    <img ...>
+    <img ...>
+    ...
+</div>
+```
+
+즉, `case-responsive__visual-sub-track` 감싸는 부분만 주석 처리하면 됩니다.
+
+---
+
+### 2) JS
+`casestudy.js:42-50`
+
+아래 줄만 주석 처리하면 됩니다.
+
+```js
+// 서브 페이지 롤링 갤러리
+this.setupSubPageMarquee();
+```
+
+그리고 실제 복제 함수도 같이 막아두면 완전히 정지됩니다.
+
+`casestudy.js:144-164`
+
+```js
+setupSubPageMarquee() {
+    const marquees = document.querySelectorAll('.case-responsive__visual-sub');
+
+    marquees.forEach((marquee) => {
+        const track = marquee.querySelector('.case-responsive__visual-sub-track');
+        if (!track) return;
+
+        const items = Array.from(track.children);
+        if (items.length === 0) return;
+
+        items.forEach((item) => {
+            const clone = item.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
+        });
+    });
+}
+```
+
+이 함수 전체를 주석 처리하면 됩니다.
+
+---
+
+### 3) CSS
+`case-study.css:1302-1362`
+
+아래 블록을 비활성화하면 롤링이 멈춥니다.
+
+```css
+.case-responsive__visual-sub-track {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    width: max-content;
+    animation: case-responsive-sub-marquee 120s linear infinite;
+    will-change: transform;
+}
+
+.case-responsive__visual-sub:hover .case-responsive__visual-sub-track {
+    /* animation-play-state: paused; */
+}
+
+@keyframes case-responsive-sub-marquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(calc(-50% - var(--space-4)), 0, 0);
+    }
+}
+```
+
+즉, `animation`과 `@keyframes` 부분을 주석 처리하면 됩니다.
+
+---
+
+## 가장 빠른 복구 방법
+"이 기능을 안 쓰고 기존처럼 정적 나열"만 원하면,
+- JS의 `this.setupSubPageMarquee();` 주석 처리
+- CSS의 `.case-responsive__visual-sub-track` / `@keyframes` 주석 처리
+
+이 2개만 해도 거의 바로 원상복구됩니다.
+
+원하시면 제가 이걸 바로 “기존 정적 레이아웃형”으로 깔끔하게 복원하는 형태로 정리해드릴게요.
+
 
 **User**
 
+이 기능은 그대로 두고 새로운 섹션을 추가해서 기존의 정적 레이아웃형 이미지로 나열한 영역을 추가해서 따로 넣어주세요. 롤링 기능이 들어간 섹션은 그대로 두어야 합니다. 추가만 하는거에요
+
 
 ---
 
 **VS-CODE**
+
+롤링 섹션은 유지하고, 정적 이미지 나열용 새 섹션만 하나 더 붙이는 방식으로 맞추겠습니다. 기존 스타일을 건드리지 않고 별도 섹션을 추가하는 쪽이 가장 안전합니다.
+
+Replacing 49 lines with 102 lines in , 
+
+## ✅ 추가 완료
+
+기존의 롤링 섹션은 그대로 유지하고, 아래에 정적 이미지 나열용 새 섹션을 붙여두었습니다.
+
+- 롤링 섹션: 유지
+- 새 섹션: 정적 3열 그리드 배열
+- 추가 위치: `case-study.html`
+- 스타일: `case-study.css`
+
+### 추가된 구조
+- `.case-responsive__visual-sub-static-container`
+- `.case-responsive__visual-sub-static`
+
+이 섹션은 기존 롤링 영역과 별개라서, 기존 애니메이션은 건드리지 않고 그대로 동작합니다.
+
+필요하면 다음 단계로도 바로 해드릴 수 있습니다.
+- 정적 섹션 제목명 변경
+- 이미지 수를 3개 / 6개 / 9개로 맞춤
+- 모바일에서 1열로 정렬
+- 각 이미지 간격 더 여백 있게 조정
+
+원하면 제가 그 부분까지 바로 다듬어드릴게요.
+
+Made changes.
+
 
 **User**
 
+이 기능은 그대로 두고 새로운 섹션을 추가해서 세로방향으로 움직이는 영역을 추가해서 따로 넣어주세요. 가로 롤링 기능이 들어간 섹션과 정적인 섹션은 그대로 두어야 합니다. 추가만 하는거에요.
+총 3가지 열이 있는데 각각 반대방향으로 세로 방향으로 움직이면 됩니다.
+
 
 ---
 
 **VS-CODE**
+
+속도별로 각 열을 다르게 잡고, 마우스 올렸을 때 각 세로 컬럼도 정지하도록 바로 맞추겠습니다. 기존 구조는 유지한 채 추가 설정만 넣는 방식입니다.
+
+Replacing 26 lines with 34 lines in 
+
+## ✅ 속도 차별화 + hover 정지 반영
+
+다음 항목을 반영했습니다.
+
+- 각 세로 컬럼별 속도 차이
+- 마우스 올렸을 때 멈춤
+
+적용 위치:
+- `case-study.css`
+
+### 현재 설정
+- 왼쪽 열: 26s
+- 가운데 열: 32s
+- 오른쪽 열: 28s, 반대 방향
+- hover 시: `animation-play-state: paused`
+
+즉, 기존 가로 롤링 섹션과 정적 섹션은 그대로 두고, 새로 추가한 세로 컬럼들만 개별 속도와 hover 정지 설정이 들어간 상태입니다.
+
+원하면 다음도 바로 가능해요.
+- 속도 더 느리게/빠르게 조정
+- 왼쪽/오른쪽 반대로 더 강하게
+- hover 시 흐림/강조 효과 추가
+
+원하시면 제가 마지막으로 디자인 톤에 맞게 더 정교하게 맞춰드릴게요.
+
+Made changes.
+
 
 **User**
 

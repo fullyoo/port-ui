@@ -88,14 +88,23 @@
     transition: opacity 0.25s ease;
 }
 
-.case-scrollspy__link:hover,
+.case-scrollspy__link:hover {
+    transform: scale(1.2);
+    background: var(--color-primary);
+    /* border-color: rgba(255, 255, 255, 0.3); */
+}
+
 .case-scrollspy__link.is-active {
     transform: scale(1.2);
     background: var(--color-accent);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.case-scrollspy__link:hover::after,
+.case-scrollspy__link:hover::after {
+    opacity: 1;
+    color: var(--color-gray-500);
+}
+
 .case-scrollspy__link.is-active::after {
     opacity: 1;
     color: var(--color-light);
@@ -494,11 +503,17 @@
 
 .case-section__title-sub {
     font-family: var(--font-primary);
-    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    /* font-size: clamp(1.6rem, 2vw, 1.8rem); */
     font-weight: var(--weight-light);
     line-height: var(--leading-normal);
     max-width: 720px;
     margin: 0 auto;
+    text-align: center;
+}
+
+.title-third .case-section__title-sub-highlight {
+    /* font-size: var(--text-2xl); */
+    font-size: clamp(2rem, 3vw, 2.8rem);
 }
 
 .case-section__title-sub-line {
@@ -956,6 +971,20 @@
     font-size: var(--text-sm);
 }
 
+
+/* ==========================================================
+   3. Before & After
+   ========================================================== */
+
+.case-before-after {
+    /* background: linear-gradient(180deg, rgba(10, 10, 10, 0.96) 0%, rgba(10, 10, 10, 0.9) 100%); */
+    /* background-color: var(--color-dark); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-image: url(/assets/images/case_01_bg.jpg); */
+    background: radial-gradient(ellipse at 50% 100%, rgba(5, 0, 253, 0.2) 0%, transparent 60%), radial-gradient(ellipse at 20% 40%, rgba(240, 255, 54, 0.2) 0%, transparent 60%);
+}
+
 .case-before-after__preview {
     display: flex;
     align-items: center;
@@ -1234,7 +1263,62 @@
 
 
 /* ==========================================================
-   3. Problem Definition
+   4. Responsive Design
+   ========================================================== */
+.case-responsive {
+    background-color: var(--color-dark);
+    /* background: linear-gradient(180deg, rgba(10, 10, 10, 0.96) 0%, rgba(10, 10, 10, 0.9) 100%); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-image: url(/assets/images/case_01_bg.jpg); */
+    /* background: radial-gradient(ellipse at 50% 100%,  rgba(5, 0, 253, 0.2)0%, transparent 60%), radial-gradient(ellipse at 20% 40%, rgba(240, 255, 54, 0.2) 0%, transparent 60%); */
+}
+
+.case-responsive__visual-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+}
+
+.case-responsive__visual {
+    position: relative;
+    width: 1024px;
+    height: auto;
+    /* aspect-ratio: 16 / 9; */
+    flex-shrink: 0;
+    margin: 0 auto;
+    border: 12px solid var(--color-gray-900);
+    border-color: rgba(5, 0, 253, 0.2);
+    border-radius: var(--radius-xl);
+    background: transparent;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.4);
+    z-index: 3;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.case-responsive__visual-sub-container {}
+
+.case-responsive__visual-sub {
+    margin-top: var(--space-16);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    justify-content: space-between;
+    justify-content: center;
+
+    /* display: grid; */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.case-responsive__visual-sub img {
+    width: 30%;
+    height: 100%;
+}
+
+
+/* ==========================================================
+   5. Problem Definition
    ========================================================== */
 .case-problem {
     background: linear-gradient(180deg, var(--color-dark) 0%, rgba(5, 0, 253, 0.02) 50%, var(--color-dark) 100%);
@@ -1328,6 +1412,10 @@
     color: var(--color-gray-500);
     font-style: normal;
 }
+
+
+
+
 
 /* ==========================================================
    4. Process & Approach
@@ -2051,7 +2139,19 @@
         top: 20px;
         font-size: var(--text-base);
     }
+
+    .case-responsive__visual-container {
+        gap: var(--space-10);
+    }
+
+    .case-responsive__visual {
+        width: 80%;
+        height: auto;
+        border-width: 8px;
+        border-radius: var(--radius-lg);
+    }
 }
+
 
 /* Tablet */
 @media (max-width: 1024px) {
@@ -2273,6 +2373,14 @@
         padding: 0.4rem 1rem;
     }
 
+    .case-responsive__visual-sub {
+        gap: var(--space-4);
+    }
+
+    .case-responsive__visual-sub img {
+        width: 45%;
+    }
+
     .case-process__timeline {
         grid-template-columns: 1fr;
         gap: var(--space-8);
@@ -2339,7 +2447,10 @@
 
     .case-before-after__preview-screenshot span {
         font-size: var(--text-sm);
+    }
 
+    .case-responsive__visual {
+        width: 100%;
     }
 }
 

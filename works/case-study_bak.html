@@ -9,12 +9,23 @@
     <meta name="author" content="Designer Name">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Case Study | UI/UX 디자이너 포트폴리오">
+    <meta property="og:title" content="Case Study | Fullyoo UI Design Portfolio">
     <meta property="og:description" content="문제 정의부터 해결까지, 디자인 사고 과정을 보여드립니다.">
+    <meta property="og:image" content="https://port-fully.netlify.app/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
     <meta property="og:type" content="website">
 
+    <!-- ================== 아이콘 및 리소스 링크 ================== -->
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+
+    <!-- Apple Touch Icon (iOS 전용) -->
+    <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,13 +41,16 @@
     <link rel="stylesheet" href="/assets/css/hero.css">
     <link rel="stylesheet" href="/assets/css/about.css">
     <link rel="stylesheet" href="/assets/css/works.css">
-    <link rel="stylesheet" href="/assets/css/selectedWorks.css">
+    <link rel="stylesheet" href="/assets/css/selectedworks.css">
     <link rel="stylesheet" href="/assets/css/contact.css">
-    <link rel="stylesheet" href="/assets/css/floatingMenu.css">
+    <link rel="stylesheet" href="/assets/css/floatingmenu.css">
     <link rel="stylesheet" href="/assets/css/case-study.css">
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!--aos  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>Case Study | UI/UX 디자이너 포트폴리오</title>
 </head>
@@ -50,7 +64,7 @@
         <div class="header__container">
             <!-- Logo / Brand -->
             <h1 class="header__logo">
-                <a href="#hero" class="header__logo-link" data-scroll-to="hero">
+                <a href="/" class="header__logo-link" data-scroll-to="hero">
                     <span class="header__logo-text">Fullyoo</span>
                 </a>
             </h1>
@@ -86,7 +100,7 @@
                     <a href="https://notion.so" class="header__action-link header__action-link--icon" target="_blank"
                         rel="noopener noreferrer" aria-label="Notion 바로가기">
                         <span class="header__action-icon">
-                            <svg class="icon-notion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
                                 fill="currentColor">
                                 <path
                                     d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096ZM23.816 4.43331C23.2877 4.02552 22.5835 3.55846 21.2343 3.67528L5.15507 4.84121C4.56875 4.89903 4.45158 5.19046 4.68509 5.42409L6.97519 7.23083C7.91323 7.98837 8.26511 7.93069 10.0265 7.81388L26.632 6.82259C26.9842 6.82259 26.6915 6.47348 26.5739 6.41536L23.816 4.43331Z"
@@ -97,7 +111,7 @@
                     </a>
                     <a href="https://notion.so" class="header__action-popover" target="_blank" rel="noopener noreferrer"
                         role="tooltip">
-                        More Works
+                        Project
                     </a>
                 </div>
                 <a href="#contact" class="header__action-link header__action-link--support" data-scroll-to="contact">
@@ -128,109 +142,1125 @@
         </div>
     </nav> -->
 
-    <main class="case-study">
+    <nav class="case-scrollspy" aria-label="Case section navigation">
+        <div class="case-scrollspy__inner">
+            <span class="case-scrollspy__label">On this page</span>
+            <ul class="case-scrollspy__list"></ul>
+        </div>
+    </nav>
+
+    <main id="case-study">
         <!-- ========================================
-             1. Case Hero
+             0. Case hero
              ======================================== -->
-        <section class="case-hero" id="case-hero">
+        <section class="case-hero" id="case-hero" data-scrollspy-title="Intro">
+            <div class="case-hero__visual">
+                <!-- <div class="bg01"></div> -->
+                <img src="/assets/images/case_01_1_1.webp" alt="Case Study Image" class="case-hero__image"
+                    loading="eager">
+            </div>
             <div class="case-hero__container">
-                <!-- 카테고리 & 연도 -->
-                <div class="case-hero__meta">
-                    <span class="case-hero__category">Mobile App Redesign</span>
-                    <span class="case-hero__divider"></span>
-                    <span class="case-hero__year">2024</span>
-                </div>
-
-                <!-- 프로젝트 타이틀 -->
-                <h1 class="case-hero__title">
-                    <span class="case-hero__title-line">사용자 이탈률 40% 감소를 위한</span>
-                    <span class="case-hero__title-line case-hero__title-highlight">온보딩 UX 혁신</span>
-                </h1>
-
-                <!-- 한 줄 설명 -->
-                <p class="case-hero__description">
-                    복잡한 가입 절차로 인한 사용자 이탈 문제를 해결하고,
-                    직관적인 온보딩 경험을 설계한 프로젝트입니다.
-                </p>
-
-                <!-- Role / Duration / Tools -->
-                <div class="case-hero__info">
-                    <div class="case-hero__info-item">
-                        <span class="case-hero__info-label">Role</span>
-                        <span class="case-hero__info-value">Lead UX Designer</span>
+                <div class="case-hero__content" data-aos="fade-up" data-aos-delay="400">
+                    <!-- 카테고리 & 연도 -->
+                    <div class="case-hero__meta">
+                        <span class="case-hero__category">Responsive website</span>
+                        <span class="case-hero__divider"></span>
+                        <span class="case-hero__year">2026</span>
                     </div>
-                    <div class="case-hero__info-item">
-                        <span class="case-hero__info-label">Duration</span>
-                        <span class="case-hero__info-value">3 Months</span>
-                    </div>
-                    <div class="case-hero__info-item">
-                        <span class="case-hero__info-label">Tools</span>
-                        <span class="case-hero__info-value">Figma, Maze, Hotjar</span>
-                    </div>
-                </div>
+                    <!-- 한 줄 설명 -->
+                    <p class="case-hero__description">웹사이트 반응형 리뉴얼</p>
+                    <!-- 프로젝트 타이틀 -->
+                    <h2 class="case-hero__title">
+                        <span class="case-hero__title-line">woorifund service
+                            <a href="https://www.woorifs.co.kr/" target="_blank" title="새창열림" rel="noopener noreferrer"
+                                class="case-hero__title-link">
+                                <svg width="72" height="72" viewBox="0 0 72 72" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M54.1712 18.5247L17.2227 55.4733" stroke="currentColor" stroke-width="6" />
+                                    <path d="M30.3711 16.8794L55.4152 17.2911L55.8269 42.3352" stroke="currentColor"
+                                        stroke-width="6" />
+                                </svg>
+                                <!-- <img src="/assets/images/ico-popol-go-link.svg" alt=""> --></a></span>
+                        <span class="case-hero__title-line">
+                            <span class="case-hero__title-line case-hero__title-highlight">우리펀드서비스 </span>
+                        </span>
+                    </h2>
 
-                <!-- 메인 비주얼 -->
-                <div class="case-hero__visual">
-                    <div class="case-hero__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop"
-                            alt="프로젝트 메인 비주얼" class="case-hero__image" loading="eager">
-                        <div class="case-hero__image-overlay"></div>
+                    <!-- Role / Duration / Tools -->
+                    <div class="case-hero__info">
+                        <div class="case-hero__info-item">
+                            <span class="case-hero__info-label">Role</span>
+                            <span class="case-hero__info-value">UI Design · Publishing</span>
+                        </div>
+                        <div class="case-hero__info-item">
+                            <span class="case-hero__info-label">Duration</span>
+                            <span class="case-hero__info-value">3 Months</span>
+                        </div>
+                        <div class="case-hero__info-item">
+                            <span class="case-hero__info-label">Tools</span>
+                            <!-- <span class="case-hero__info-value">Figma, Photoshop, Html, Css, jquery</span> -->
+
+                            <div class="case-hero__tools">
+                                <!-- 피그마 -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="45" height="45" viewBox="0 0 45 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22.5 22.4999C22.5 18.3579 25.8578 14.9999 30 14.9999C34.1421 14.9999 37.5 18.3579 37.5 22.4999C37.5 26.6421 34.1421 29.9999 30 29.9999C25.8578 29.9999 22.5 26.6421 22.5 22.4999Z"
+                                            fill="#1ABCFE" />
+                                        <path
+                                            d="M7.5 37.4999C7.5 33.3579 10.8579 29.9999 15 29.9999H22.5V37.4999C22.5 41.6421 19.1422 44.9999 15 44.9999C10.8579 44.9999 7.5 41.6421 7.5 37.4999Z"
+                                            fill="#0ACF83" />
+                                        <path
+                                            d="M22.5 0V15H30C34.1422 15 37.5 11.6421 37.5 7.49999C37.5 3.35787 34.1422 0 30 0H22.5Z"
+                                            fill="#FF7262" />
+                                        <path
+                                            d="M7.5 7.5C7.5 11.6421 10.8579 15 15 15H22.5V0H15C10.8579 0 7.5 3.35786 7.5 7.5Z"
+                                            fill="#F24E1E" />
+                                        <path
+                                            d="M7.5 22.4999C7.5 26.6421 10.8579 29.9999 15 29.9999H22.5V14.9999H15C10.8579 14.9999 7.5 18.3579 7.5 22.4999Z"
+                                            fill="#A259FF" />
+                                    </svg>
+                                </span>
+                                <!-- 포토샵 -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="45" height="45" viewBox="0 0 45 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_42_13)">
+                                            <path
+                                                d="M0 5C0 2.23875 2.23875 0 5 0H40C42.7613 0 45 2.23875 45 5V40C45 42.7613 42.7613 45 40 45H5C2.23875 45 0 42.7613 0 40V5Z"
+                                                fill="#03A9F4" />
+                                            <path
+                                                d="M17.52 16.4675H15.0175V22.01H17.4838C18.1675 22.01 18.6963 21.7863 19.0713 21.3388C19.4463 20.8913 19.6325 20.24 19.6325 19.385C19.6325 18.4975 19.4413 17.7925 19.0588 17.2675C18.6763 16.7425 18.1625 16.4763 17.52 16.4675Z"
+                                                fill="#020F16" />
+                                            <path
+                                                d="M3.75 3.75V41.25H41.25V3.75H3.75ZM21.7062 23.4862C20.6737 24.4962 19.2412 25 17.41 25H15.0175V31.25H11.4287V13.4763H17.4837C19.2412 13.4763 20.6437 14.0225 21.6887 15.1125C22.7337 16.2025 23.2575 17.6188 23.2575 19.36C23.2575 21.1013 22.74 22.4762 21.7062 23.4862ZM33.3525 30.42C32.4662 31.1363 31.3012 31.4937 29.8612 31.4937C28.8925 31.4937 28.0375 31.305 27.2975 30.9262C26.5575 30.5475 25.9762 30.02 25.5575 29.345C25.1387 28.67 24.9288 27.9413 24.9288 27.16H28.2125C28.23 27.7613 28.3687 28.2138 28.6337 28.515C28.8987 28.8163 29.3313 28.9663 29.9338 28.9663C30.8613 28.9663 31.325 28.5475 31.325 27.7087C31.325 27.4162 31.185 27.145 30.9037 26.8975C30.6225 26.65 30 26.315 29.0313 25.8912C27.6075 25.3137 26.6287 24.7163 26.095 24.0963C25.5612 23.4763 25.295 22.7087 25.295 21.7887C25.295 20.6325 25.7125 19.6788 26.5462 18.9263C27.38 18.1738 28.4863 17.7975 29.86 17.7975C31.3075 17.7975 32.4675 18.1725 33.3388 18.92C34.21 19.6675 34.645 20.6738 34.645 21.935H31.19C31.19 20.8613 30.7438 20.3238 29.8475 20.3238C29.4813 20.3238 29.1813 20.4375 28.9438 20.665C28.7063 20.8925 28.59 21.2113 28.59 21.6175C28.59 21.91 28.72 22.1687 28.9812 22.3925C29.2425 22.6162 29.855 22.9362 30.825 23.3512C32.2337 23.8725 33.2275 24.4525 33.81 25.0912C34.3925 25.73 34.6825 26.5587 34.6825 27.575C34.6825 28.7562 34.2387 29.7038 33.3525 30.42Z"
+                                                fill="#020F16" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_42_13">
+                                                <rect width="45" height="45" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </span>
+                                <!-- html -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="41" height="45" viewBox="0 0 41 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_42_22)">
+                                            <path d="M40.2632 0H0L3.55263 40.2632L20.1316 45L36.7105 40.2632L40.2632 0Z"
+                                                fill="#E65100" />
+                                            <path d="M20.1316 3.55261V41.3289L33.3947 37.5395L36.3553 3.55261H20.1316Z"
+                                                fill="#FF6D00" />
+                                            <path
+                                                d="M20.1316 23.6842V18.9474H30.3158L29.4869 32.5658L20.1316 35.6447V30.6711L24.9869 29.0132L25.3421 23.6842H20.1316ZM30.6711 14.2105L31.0263 9.47369H20.1316V14.2105H30.6711Z"
+                                                fill="white" />
+                                            <path
+                                                d="M20.1316 30.6711V35.6447L10.7763 32.5658L10.3026 26.0526H15.0395L15.2763 29.0132L20.1316 30.6711ZM14.3289 14.2105H20.1316V9.47369H9.35526L10.1842 23.6842H20.1316V18.9474H14.6842L14.3289 14.2105Z"
+                                                fill="#EEEEEE" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_42_22">
+                                                <rect width="40.2632" height="45" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </span>
+                                <!-- css3 -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="41" height="45" viewBox="0 0 41 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_42_17)">
+                                            <path d="M40.2632 0H0L3.55263 40.2632L20.1316 45L36.7105 40.2632L40.2632 0Z"
+                                                fill="#0277BD" />
+                                            <path d="M20.1316 3.55261V41.3289L33.3947 37.5395L36.3553 3.55261H20.1316Z"
+                                                fill="#039BE5" />
+                                            <path
+                                                d="M30.9079 9.47363H20.1316V14.2105H25.9342L25.579 18.9473H20.1316V23.6842H25.3421L24.9869 29.0131L20.1316 30.671V35.6447L29.4869 32.5657L30.3158 18.9473L30.9079 9.47363Z"
+                                                fill="white" />
+                                            <path
+                                                d="M20.1316 9.47363V14.2105H9.59208L9.23682 9.47363H20.1316ZM14.6842 18.9473L14.921 23.6842H20.1316V18.9473H14.6842ZM15.1579 26.0526H10.421L10.7763 32.5657L20.1316 35.6447V30.671L15.2763 29.0131L15.1579 26.0526Z"
+                                                fill="#EEEEEE" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_42_17">
+                                                <rect width="40.2632" height="45" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </span>
+                                <!-- 제이쿼리 -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="45" height="45" viewBox="0 0 45 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.21403 6.88697C6.51892 10.7599 6.85434 15.7993 8.91343 19.9153L9.0641 20.2078L9.16051 20.3933L9.22063 20.5L9.32804 20.6921C9.39182 20.8046 9.45744 20.9164 9.52453 21.029L9.6367 21.2137C9.71112 21.3332 9.787 21.452 9.86471 21.5704L9.96186 21.7203C10.0693 21.8805 10.1789 22.04 10.2921 22.1973L10.3017 22.2094L10.3574 22.2845C10.4553 22.4194 10.5561 22.5528 10.6584 22.6852L10.7716 22.8292C10.8629 22.944 10.9557 23.0576 11.0499 23.1716L11.1562 23.2985C11.2827 23.4473 11.4121 23.5961 11.5437 23.7413L11.5514 23.7494L11.5664 23.7659C11.6951 23.9063 11.8267 24.0437 11.9605 24.1812L12.0866 24.3084C12.1899 24.4125 12.2951 24.5148 12.4011 24.6167L12.5298 24.7391C12.6716 24.8726 12.8146 25.0038 12.9609 25.1314L12.9675 25.1372L13.0426 25.201C13.1713 25.3128 13.3021 25.4228 13.4341 25.5317L13.5961 25.6611C13.7039 25.7472 13.8128 25.8326 13.9224 25.9162L14.0973 26.0486C14.2182 26.1376 14.3403 26.2253 14.4635 26.3114L14.5966 26.406L14.6336 26.4324C14.7501 26.513 14.87 26.5904 14.9892 26.6677L15.1431 26.7704C15.3264 26.8858 15.5123 27.0006 15.7 27.1113L15.8539 27.1982C15.9921 27.2777 16.1311 27.3562 16.2718 27.4324L16.5031 27.5519L16.8023 27.7073L16.8712 27.7407L16.9936 27.7997C17.1502 27.8745 17.3082 27.9482 17.4676 28.0193L17.5677 28.064C17.7503 28.1439 17.9346 28.2206 18.1205 28.2942L18.2554 28.347C18.4273 28.4137 18.6018 28.4786 18.777 28.5402L18.8427 28.5629C19.0348 28.6304 19.229 28.6923 19.4244 28.7536L19.5648 28.7954C19.7635 28.8555 19.9604 28.9266 20.1653 28.9647C33.1984 31.3413 36.9841 21.1331 36.9841 21.1331C33.8043 25.2754 28.1608 26.3679 22.8135 25.1515C22.6108 25.1057 22.4143 25.0423 22.2167 24.9844L22.0679 24.9389C21.875 24.8799 21.6833 24.8179 21.4931 24.752L21.4142 24.7237C21.2438 24.6636 21.0755 24.6006 20.9076 24.5357L20.7654 24.48C20.5817 24.4074 20.3988 24.3315 20.2184 24.2527L20.1092 24.2039C19.9541 24.1339 19.8005 24.0632 19.6477 23.9895L19.5142 23.9253C19.3944 23.867 19.276 23.8051 19.1572 23.7439L18.9193 23.6189C18.7745 23.5419 18.6326 23.4612 18.4915 23.3791L18.347 23.2988C18.159 23.1878 17.9735 23.0734 17.7898 22.9572L17.6395 22.8571C17.5065 22.7713 17.3738 22.6837 17.2433 22.5935L17.1153 22.5037C16.9892 22.415 16.8642 22.3245 16.7407 22.2332L16.5746 22.1074C16.461 22.0206 16.3481 21.933 16.2366 21.8431L16.086 21.7222C15.9437 21.6056 15.8033 21.4876 15.6648 21.3669L15.6186 21.3285C15.4686 21.1969 15.3213 21.0616 15.1757 20.926L15.0511 20.8057C14.9433 20.7034 14.837 20.6001 14.7329 20.4938L14.6083 20.3691C14.4756 20.2335 14.3454 20.096 14.2179 19.9563L14.1984 19.9354C14.0635 19.7881 13.9316 19.6374 13.8025 19.4849L13.6988 19.3617C13.6024 19.2459 13.5071 19.1279 13.414 19.0095L13.3095 18.8793C13.1969 18.7338 13.0877 18.5886 12.9803 18.4413C10.0117 14.3916 8.94496 8.80639 11.3178 4.21972M17.5794 3.62366C15.6307 6.42801 15.7363 10.1829 17.2568 13.1486C17.5116 13.6456 17.7983 14.1284 18.1187 14.5874C18.4105 15.0064 18.7345 15.5042 19.122 15.8404C19.2624 15.9951 19.4094 16.1461 19.5593 16.2942L19.6744 16.4082C19.82 16.5493 19.9681 16.6883 20.1209 16.8232L20.1393 16.8389L20.1437 16.8433C20.313 16.9918 20.4879 17.1344 20.6653 17.2752L20.7837 17.3675C20.9619 17.5039 21.1433 17.6381 21.3296 17.766L21.3453 17.7781L21.5946 17.942L21.7126 18.0201C21.8457 18.1055 21.9802 18.1883 22.1173 18.2679L22.1745 18.3016C22.2926 18.3694 22.4121 18.4361 22.5319 18.5014L22.6591 18.5674L22.9092 18.6971L22.9469 18.7144C23.1188 18.7987 23.2919 18.8804 23.4689 18.9574L23.584 19.0051C23.7255 19.0648 23.8681 19.1235 24.0118 19.1785L24.1951 19.2459C24.3256 19.2943 24.4561 19.3387 24.5881 19.3826L24.7655 19.4395C24.9529 19.4974 25.1383 19.5711 25.3334 19.6037C35.396 21.2705 37.7191 13.5228 37.7191 13.5228C35.6251 16.5391 31.5696 17.9779 27.2422 16.8547C27.0501 16.8041 26.8602 16.7491 26.6721 16.6901L26.5009 16.6347C26.3671 16.5919 26.2341 16.5457 26.1025 16.4976L25.9225 16.4306C25.778 16.3748 25.6351 16.3173 25.4932 16.2572L25.3777 16.2084C25.1999 16.1311 25.0251 16.0493 24.8528 15.9643L24.5896 15.8305L24.4378 15.7524C24.3256 15.6915 24.2142 15.6285 24.1046 15.564L24.025 15.5189C23.8887 15.4393 23.7545 15.3576 23.6218 15.2725L23.5001 15.1915L23.2391 15.0185C23.0536 14.8905 22.8729 14.7567 22.6951 14.6207L22.5726 14.524C20.6785 13.0287 19.177 10.9846 18.4633 8.66709C17.7151 6.26341 17.8764 3.56537 19.1726 1.37541M24.6152 1.18553C23.4664 2.8762 23.3535 4.97635 24.1508 6.84371C24.9913 8.82582 26.7139 10.3805 28.7246 11.1181L28.9746 11.2042L29.0846 11.2394C29.203 11.2768 29.3207 11.32 29.4431 11.3428C34.9994 12.4165 36.5064 8.49187 36.9074 7.91377C35.5874 9.81449 33.3688 10.2709 30.6466 9.60994C30.4318 9.55788 30.1953 9.48017 29.9882 9.40649C29.7224 9.31154 29.4607 9.20377 29.2059 9.0817C28.7228 8.84928 28.262 8.56775 27.8345 8.24516C25.3986 6.39685 23.8857 2.87143 25.4752 0"
+                                            fill="#0868AC" />
+                                        <path
+                                            d="M23.3644 34.9908H21.8153C21.7295 34.9908 21.6441 35.0597 21.6257 35.1437L21.0759 37.6878L20.526 40.2318C20.508 40.3158 20.4226 40.3847 20.3368 40.3847H19.2404C18.1557 40.3847 18.281 39.6343 18.5032 38.6064L18.5098 38.5753L18.534 38.4455L18.5384 38.4213L18.5879 38.1574L18.641 37.8747L18.6975 37.587L18.9475 36.3655L19.1979 35.1441C19.2151 35.0597 19.1586 34.9905 19.0729 34.9905H17.483C17.3972 34.9905 17.3122 35.0594 17.2946 35.1437L16.9526 36.7655L16.6109 38.3876L16.6102 38.3898L16.5786 38.5408C16.1849 40.3382 16.289 42.0527 18.4291 42.1065L18.4915 42.1076H21.8505C21.9362 42.1076 22.0216 42.0387 22.0396 41.9548L22.764 38.5496L23.4883 35.1441C23.5063 35.0597 23.4506 34.9912 23.3644 34.9908ZM6.77441 34.9729H5.07347C4.98733 34.9729 4.90155 35.0418 4.88249 35.1254L4.72119 35.8373L4.55989 36.5492C4.5412 36.6331 4.59582 36.7017 4.68197 36.7017H6.3961C6.48225 36.7017 6.56766 36.6327 6.58599 36.5488L6.74179 35.8373L6.89759 35.1257C6.91555 35.0418 6.86056 34.9729 6.77441 34.9729ZM6.281 37.1885H4.56649C4.48071 37.1885 4.39457 37.2574 4.3755 37.341L4.13466 38.4077L3.89418 39.4741L3.8271 39.7799L3.59578 40.8686L3.36484 41.9577C3.34688 42.0417 3.30985 42.1773 3.28236 42.2587C3.28236 42.2587 2.96197 43.2118 2.42346 43.2008L2.35601 43.1993L1.89008 43.1909C1.8043 43.1898 1.71779 43.2569 1.69762 43.3401L1.51983 44.0876L1.34241 44.8346C1.32225 44.9182 1.3765 44.9871 1.46191 44.9886C1.76728 44.9923 2.45132 45 2.86519 45C4.21018 45 4.91951 44.2547 5.37371 42.1102L5.90562 39.649L6.40453 37.3406C6.4225 37.2574 6.36678 37.1885 6.281 37.1885ZM37.8499 36.6115L37.7788 36.3179L37.7088 36.0173L37.6732 35.8655C37.5339 35.3241 37.1252 35.0121 36.2373 35.0121L34.8553 35.0106L33.5825 35.0088H32.1503C32.0645 35.0088 31.9795 35.0777 31.9615 35.1617L31.8981 35.4608L31.8233 35.8142L31.8024 35.9135L31.1576 38.9341L30.5454 41.8015C30.5271 41.8859 30.5212 41.9892 30.5315 42.031C30.5417 42.0732 30.7071 42.1076 30.7928 42.1076H32.0847C32.1708 42.1076 32.2797 42.0922 32.3266 42.0732C32.3735 42.0541 32.4428 41.8851 32.4601 41.8012L32.6895 40.6651L32.9194 39.5287L32.9198 39.5269L32.9505 39.3755L33.2291 38.0705L33.4751 36.9179C33.4935 36.834 33.5781 36.7655 33.6639 36.7651L37.7289 36.7632C37.8151 36.764 37.8693 36.6954 37.8499 36.6115ZM43.0829 33.9574L42.7698 33.9585H41.4688C41.3827 33.9585 41.2723 34.0168 41.2243 34.0879L38.347 38.3029C38.2986 38.374 38.2432 38.3637 38.2242 38.2802L38.0123 37.3516C37.9932 37.2677 37.9071 37.1991 37.8209 37.1991H35.9715C35.8854 37.1991 35.8344 37.2666 35.8579 37.349L36.6867 40.2527C36.7102 40.3356 36.712 40.4712 36.6908 40.5548L36.3297 41.9599C36.3081 42.0435 36.3609 42.1113 36.447 42.1113H38.2751C38.3609 42.1113 38.4489 42.0431 38.4702 41.9599L38.8316 40.5548C38.8529 40.4709 38.9126 40.347 38.9647 40.278L43.6357 34.0788C43.6877 34.0099 43.6595 33.9538 43.5737 33.9545L43.0829 33.9574ZM28.3881 37.5936V37.5921C28.3774 37.6852 28.2913 37.7538 28.2051 37.7538H25.8601C25.7787 37.7538 25.7377 37.6988 25.7498 37.6306L25.752 37.6251L25.7505 37.6258L25.7516 37.6181L25.7622 37.5782C25.9862 36.9828 26.4423 36.5921 27.2997 36.5921C28.2653 36.5917 28.4537 37.0631 28.3881 37.5936ZM27.7 34.8867C24.69 34.8867 23.9766 36.7138 23.5763 38.558C23.1764 40.4379 23.2105 42.1949 26.3257 42.1949H26.7033L26.7971 42.1945H26.8191L27.193 42.1934H27.1996C28.0222 42.1901 28.8474 42.1839 29.1813 42.1813C29.2668 42.1799 29.3503 42.1113 29.3679 42.0274L29.494 41.4111L29.5186 41.2913L29.6689 40.5559C29.6861 40.472 29.63 40.4027 29.5439 40.4027H26.7436C25.6295 40.4027 25.2989 40.1068 25.421 39.2366H29.8973L29.8969 39.2369L29.8998 39.2366C29.971 39.2355 30.037 39.1864 30.063 39.1211L30.0736 39.0822L30.0732 39.0826C30.7379 36.5756 30.5472 34.8871 27.7 34.8867ZM13.473 37.584L13.4304 37.734L13.0924 38.9323L12.7545 40.1299C12.7314 40.2132 12.6416 40.2806 12.5554 40.2806H10.7665C9.4094 40.2806 9.07875 39.219 9.4094 37.6537C9.73969 36.0524 10.3874 35.0572 11.7233 34.9564C13.5488 34.8185 13.914 36.1023 13.473 37.584ZM14.7003 40.1886C14.7003 40.1886 15.5438 38.1401 15.7351 36.9575C15.9965 35.3743 15.2036 33.0773 12.1412 33.0773C9.09634 33.0773 7.77372 35.2698 7.2693 37.6537C6.76488 40.0548 7.42583 42.1601 10.4534 42.1428L12.8421 42.134L15.0742 42.126C15.16 42.1252 15.2479 42.0571 15.2699 41.9742L15.6589 40.491C15.6805 40.4074 15.6281 40.3393 15.5419 40.3385L15.1691 40.3363L14.7963 40.3341C14.7234 40.3338 14.6816 40.2861 14.6904 40.2234L14.7003 40.1886ZM29.7741 38.8172C29.7741 38.874 29.7283 38.9202 29.6715 38.9202C29.615 38.9202 29.5688 38.874 29.5688 38.8172C29.5688 38.7608 29.6147 38.7149 29.6715 38.7149C29.7283 38.7149 29.7741 38.7608 29.7741 38.8172Z"
+                                            fill="white" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ========================================
-             2. Project Overview
+             1. Case Overview
              ======================================== -->
-        <section class="case-section case-overview" id="case-overview">
+        <section class="case-section case-overview" id="case-overview" data-scrollspy-title="Overview">
             <div class="case-section__container">
                 <div class="case-section__header">
                     <span class="case-section__number">01</span>
                     <h2 class="case-section__title">Project Overview</h2>
+                    <div class="works__card-roles">
+                        <span class="works__card-role">#반응형웹</span>
+                        <span class="works__card-role">#그룹/기업</span>
+                        <span class="works__card-role">#비지니스시스템</span>
+                    </div>
+
+                    <h2 class="case-section__title-sub" data-aos="fade-up" data-aos-delay="400">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">우리펀드서비스 리뉴얼
+                            &amp;<br>
+                            반응형 웹 구축</span>
+                        <span class="case-section__title-sub-line case-section__title-sub-line-description">금융 전문성과 신뢰성을
+                            강화하기 위해 기존 웹사이트의 정보 구조와 UI를 개선하고,<br>
+                            <b class="
+                                text-highlight">반응형 환경에 최적화된 웹사이트</b>로 리뉴얼하였습니다.
+                        </span>
+                    </h2>
+                </div>
+                <!-- 메인 비주얼 -->
+                <div class="case-overview__visual-container" data-aos="fade-up" data-aos-delay="600">
+
+                    <div class="case-overview__visual">
+                        <div class="case-overview__image-wrapper">
+                            <!-- <div class="case-overview-video">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="/assets/images/case_main_pc.mp4" type="video/mp4">
+                            </video>
+                        </div> -->
+                            <img src="/assets/images/case_main_01.webp" alt="Case Study Image" alt="프로젝트 메인 비주얼"
+                                class="case-overview__image" loading="eager">
+                            <div class="case-overview__image-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="case-overview__visual-mo">
+                        <div class="case-overview__image-wrapper-mo">
+                            <div class="case-overview-video">
+                                <video autoplay muted loop playsinline preload="auto">
+                                    <source src="/assets/images/case_main_mo.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <!-- <img src="/assets/images/case_main_01_mo.jpg" alt="Case Study Image" alt="프로젝트 메인 비주얼"
+                                class="case-overview__image-mo" loading="eager"> -->
+                            <div class="case-overview__image-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-overview__content">
+                    <!-- Role / Duration / Tools -->
+                    <div class="case-overview__grid">
+                        <!-- 기간 -->
+                        <div class="case-overview__item" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="case-overview__subtitle">Duration</h3>
+                            <strong class="case-overview__text">
+                                2026.05 - 2026.07 / 3개월
+                            </strong>
+                        </div>
+                        <!-- 나의 역할 -->
+                        <div class="case-overview__item" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="case-overview__subtitle">Contribution</h3>
+                            <div class="case-overview__roles">
+                                <span class="case-overview__role case-overview__role--primary">Design 100%</span>
+                                <span class="case-overview__role case-overview__role--primary">Publishing 50%</span>
+                            </div>
+                        </div>
+
+                        <!-- 스킬 툴 -->
+                        <div class="case-overview__item" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="case-overview__subtitle">Skills</h3>
+                            <p class="case-overview__text">
+                                Figma / Photoshop / HTML / CSS / jquery
+                            </p>
+                        </div>
+
+                        <!-- 프로젝트 목표 -->
+                        <div class="case-overview__item" data-aos="fade-up" data-aos-delay="500">
+                            <h3 class="case-overview__subtitle">Project Goals</h3>
+                            <ul class="case-overview__list">
+                                <li>금융 전문성에 맞춘 신뢰감 있는 비주얼 톤앤매너 구축</li>
+                                <li>PC/모바일 환경 모두에서 직관적인 메뉴 구조 및 정보 접근성 강화</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             2. Design System
+             ======================================== -->
+        <section class="case-section case-system" id="case-system" data-scrollspy-title="System">
+            <div class="case-section__container">
+                <div class="case-section__header">
+                    <span class="case-section__number">02</span>
+                    <h2 class="case-section__title">Design System</h2>
+                    <h2 class="case-section__title-sub" data-aos="fade-up" data-aos-delay="400">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">디자인 시스템</span>
+                        <span class="case-section__title-sub-line case-section__title-sub-line-description">타이포그래피, 컬러,
+                            레이아웃 스케일을 하나의 규칙으로 정리하여
+                            일관된 브랜드 경험을 제공합니다.<br>
+                            <b class="text-highlight">재사용 가능한 UI 원칙</b>을 바탕으로 안정적이고 직관적인 디자인을 구축합니다.
+                        </span>
+                    </h2>
                 </div>
 
-                <div class="case-overview__grid">
-                    <!-- 프로젝트 배경 -->
-                    <div class="case-overview__item">
-                        <h3 class="case-overview__subtitle">프로젝트 배경</h3>
-                        <p class="case-overview__text">
-                            핀테크 스타트업 A사는 출시 6개월 만에 MAU 50만을 달성했지만,
-                            <strong class="text-highlight">온보딩 단계에서 67%의 사용자가 이탈</strong>하는
-                            심각한 문제에 직면했습니다. 경쟁사 대비 2배 높은 이탈률은
-                            비즈니스 성장의 주요 병목이었습니다.
-                        </p>
+                <div class="case-system__visual">
+                    <!-- 이미지 -->
+                    <div class="case-system__image-wrapper" data-aos="fade-up" data-aos-delay="400">
+                        <img src="/assets/images/case_01_design_system.png" alt="프로젝트 디자인시스템 이미지"
+                            class="case-system__image" loading="eager">
+                        <div class="case-system__image-overlay"></div>
                     </div>
 
-                    <!-- 타겟 사용자 -->
-                    <div class="case-overview__item">
-                        <h3 class="case-overview__subtitle">타겟 사용자</h3>
-                        <p class="case-overview__text">
-                            20-35세의 디지털 네이티브 세대로, 간편하고 빠른 서비스를 선호합니다.
-                            복잡한 절차에 대한 인내심이 낮고,
-                            <strong class="text-highlight">3분 이내에 핵심 기능을 경험</strong>하지 못하면
-                            앱을 삭제하는 경향이 있습니다.
-                        </p>
+                    <!-- 콘텐츠 -->
+                    <div class="case-system__content" data-aos="fade-up" data-aos-delay="400">
+                        <div class="case-system__cards">
+                            <article class="case-system__card case-system__card--typography">
+                                <span class="case-system__card-label">Typography</span>
+                                <h3 class="case-system__card-title">Pretendard</h3>
+                                <p class="case-system__card-description">일관된 읽기 경험을 위해 제목과 본문 모두에서 Pretendard를
+                                    사용합니다.</p>
+                                <div class="case-system__type-samples">
+                                    <p class="case-system__type-display">Aa</p>
+                                    <p class="case-system__type-heading">Heading / Title</p>
+                                    <p class="case-system__type-body">Pretendard를 사용한 본문 텍스트 예시입니다.</p>
+                                </div>
+                            </article>
+                            <article class="case-system__card case-system__card--color">
+                                <span class="case-system__card-label">Color Palette</span>
+                                <h3 class="case-system__card-title">White · Black · Primary · Secondary</h3>
+                                <p class="case-system__card-description">기본 컬러 시스템은 명시적 대비와 신뢰성을 제공합니다.</p>
+                                <div class="case-system__color-grid">
+                                    <div class="case-system__color-chip case-system__color-chip--white">
+                                        <span>White</span>
+                                        <small>#FFFFFF</small>
+                                    </div>
+                                    <div class="case-system__color-chip case-system__color-chip--black">
+                                        <span>Dark</span>
+                                        <small>#333333</small>
+                                    </div>
+                                    <div class="case-system__color-chip case-system__color-chip--primary">
+                                        <span>Primary</span>
+                                        <small>#0083CA</small>
+                                    </div>
+                                    <div class="case-system__color-chip case-system__color-chip--secondary">
+                                        <span>Secondary</span>
+                                        <small>#C9EBFC</small>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="case-system__card case-system__card--layout">
+                                <span class="case-system__card-label">Grid & Spacing</span>
+                                <h3 class="case-system__card-title">8px 기반 레이아웃</h3>
+                                <p class="case-system__card-description">12컬럼 그리드와 일정한 여백으로 반응형 레이아웃을 안정적으로 구성합니다.
+                                </p>
+                                <div class="case-system__grid-demo" aria-hidden="true">
+                                    <div class="case-system__grid-row">
+                                        <div class="case-system__grid-col">1</div>
+                                        <div class="case-system__grid-col">2</div>
+                                        <div class="case-system__grid-col">3</div>
+                                        <div class="case-system__grid-col">4</div>
+                                        <div class="case-system__grid-col">5</div>
+                                        <div class="case-system__grid-col">6</div>
+                                        <div class="case-system__grid-col">7</div>
+                                        <div class="case-system__grid-col">8</div>
+                                        <div class="case-system__grid-col">9</div>
+                                        <div class="case-system__grid-col">10</div>
+                                        <div class="case-system__grid-col">11</div>
+                                        <div class="case-system__grid-col">12</div>
+                                    </div>
+                                </div>
+                                <ul class="case-system__space-scale">
+                                    <li><strong>8</strong><span>px</span></li>
+                                    <li><strong>16</strong><span>px</span></li>
+                                    <li><strong>24</strong><span>px</span></li>
+                                    <li><strong>32</strong><span>px</span></li>
+                                </ul>
+                            </article>
+                        </div>
                     </div>
-
-                    <!-- 프로젝트 목표 -->
-                    <div class="case-overview__item">
-                        <h3 class="case-overview__subtitle">프로젝트 목표</h3>
-                        <ul class="case-overview__list">
-                            <li>온보딩 완료율 67% → 85% 달성</li>
-                            <li>가입 소요 시간 5분 → 2분 이내 단축</li>
-                            <li>첫 주 리텐션 30% → 45% 향상</li>
-                        </ul>
+                    <div class="hero__cta">
+                        <a href="#more-works" class="hero__cta-btn">
+                            <span>view more</span>
+                            <svg class="hero__cta-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- 나의 역할 -->
-                    <div class="case-overview__item">
-                        <h3 class="case-overview__subtitle">나의 역할</h3>
-                        <div class="case-overview__roles">
-                            <span class="case-overview__role case-overview__role--primary">UX Research</span>
-                            <span class="case-overview__role case-overview__role--primary">UI Design</span>
-                            <span class="case-overview__role">Prototyping</span>
-                            <span class="case-overview__role">Usability Testing</span>
+        <!-- ========================================
+             3. Before & After
+             ======================================== -->
+        <section class="case-section case-before-after" id="case-before-after" data-scrollspy-title="As Is To be">
+            <div class="case-section__container">
+                <div class="case-section__header">
+                    <span class="case-section__number">03</span>
+                    <h2 class="case-section__title">Before & After</h2>
+                    <h2 class="case-section__title-sub" data-aos="fade-up" data-aos-delay="400">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">기존 화면 vs 개선
+                            화면</span>
+                        <span class="case-section__title-sub-line case-section__title-sub-line-description">기존 사이트의 <b
+                                class="text-highlight">비주얼과
+                                정보 구조를 개선</b>하여 금융 브랜드 신뢰감을 높이고,<br>반응형 경험을 최적화합니다.</span>
+                    </h2>
+                </div>
+                <!-- case-before-after__preview -->
+                <div class="case-before-after__preview" data-aos="fade-up" data-aos-delay="400">
+                    <figure class="case-before-after__preview-card asis">
+                        <div
+                            class="case-before-after__preview-screenshot case-before-after__preview-screenshot--before">
+                            <span>이전 사이트 캡처</span>
+                            <img src="/assets/images/case_01_asis_main.jpg" alt="Case image">
+                        </div>
+                        <figcaption>메인 기존 화면</figcaption>
+                    </figure>
+                    <div class="case-before-after__preview-arrow" aria-hidden="true">→</div>
+                    <figure class="case-before-after__preview-card tobe">
+                        <div class="case-before-after__preview-screenshot case-before-after__preview-screenshot--after">
+                            <span>리뉴얼 화면</span>
+                            <img src="/assets/images/case_01_tobe_main.webp" alt="Case image">
+                        </div>
+                        <figcaption>개선 화면</figcaption>
+                    </figure>
+                </div>
+                <!-- case-before-after__preview -->
+                <div class="case-before-after__preview" data-aos="fade-up" data-aos-delay="400">
+                    <figure class="case-before-after__preview-card asis">
+                        <div
+                            class="case-before-after__preview-screenshot case-before-after__preview-screenshot--before">
+                            <span>이전 사이트 캡처</span>
+                            <img src="/assets/images/case_01_asis_sub_2.jpg" alt="Case image">
+                        </div>
+                        <figcaption>주요업무 기존 화면</figcaption>
+                    </figure>
+                    <div class="case-before-after__preview-arrow" aria-hidden="true">→</div>
+                    <figure class="case-before-after__preview-card tobe">
+                        <div class="case-before-after__preview-screenshot case-before-after__preview-screenshot--after">
+                            <span>리뉴얼 화면</span>
+                            <img src="/assets/images/case_01_tobe_sub_2.webp" alt="Case image">
+                        </div>
+                        <figcaption>개선 화면</figcaption>
+                    </figure>
+                </div>
+                <!-- case-before-after__preview -->
+                <div class="case-before-after__preview" data-aos="fade-up" data-aos-delay="400">
+                    <figure class="case-before-after__preview-card asis">
+                        <div
+                            class="case-before-after__preview-screenshot case-before-after__preview-screenshot--before">
+                            <span>이전 사이트 캡처</span>
+                            <img src="/assets/images/case_01_asis_sub_4.jpg" alt="Case image">
+                        </div>
+                        <figcaption>제공시스템 기존 화면</figcaption>
+                    </figure>
+                    <div class="case-before-after__preview-arrow" aria-hidden="true">→</div>
+                    <figure class="case-before-after__preview-card tobe">
+                        <div class="case-before-after__preview-screenshot case-before-after__preview-screenshot--after">
+                            <span>리뉴얼 화면</span>
+                            <img src="/assets/images/case_01_tobe_sub_4.webp" alt="Case image">
+                        </div>
+                        <figcaption>개선 화면</figcaption>
+                    </figure>
+                </div>
+
+                <div class="case-solution__comparison" style="display: none;">
+                    <h3 class="case-solution__comparison-title">Before & After</h3>
+                    <div class="case-solution__comparison-slider">
+                        <div class="case-solution__comparison-item">
+                            <span
+                                class="case-solution__comparison-label case-solution__comparison-label--before">Before</span>
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=600&fit=crop"
+                                alt="기존 온보딩 화면" loading="lazy">
+                            <ul class="case-solution__comparison-points">
+                                <li>12개 필수 입력 항목</li>
+                                <li>진행 상황 불명확</li>
+                                <li>일괄 에러 표시</li>
+                            </ul>
+                        </div>
+                        <div class="case-solution__comparison-item">
+                            <span
+                                class="case-solution__comparison-label case-solution__comparison-label--after">After</span>
+                            <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=400&h=600&fit=crop"
+                                alt="개선된 온보딩 화면" loading="lazy">
+                            <ul class="case-solution__comparison-points">
+                                <li>4개 필수 + 8개 선택</li>
+                                <li>명확한 프로그레스 바</li>
+                                <li>실시간 인라인 가이드</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-before-after__cards">
+                    <article class="case-before-after__card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="case-before-after__card-title">
+                            <div class="case-before-after__card-marker">
+                                <span class="case-before-after__card-number">1</span>
+                            </div>
+                            <span class="case-before-after__card-tag">Visual & Tone</span>
+                        </div>
+
+                        <div class="case-before-after__card-content asis">
+                            <p class="case-before-after__card-label case-before-after__card-label--as">As Is</p>
+                            <p class="txt">노후화된 레이아웃 및 파편화된 디자인 요소</p>
+                        </div>
+                        <div class="case-before-after__card-content tobe">
+                            <p class="case-before-after__card-label case-before-after__card-label--to">To Be</p>
+                            <p class="txt">브랜드 컬러 중심의 깔끔하고 현대적인 금융 UI 구현</p>
+                        </div>
+                    </article>
+                    <article class="case-before-after__card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="case-before-after__card-title">
+                            <div class="case-before-after__card-marker">
+                                <span class="case-before-after__card-number">2</span>
+                            </div>
+                            <span class="case-before-after__card-tag">Information</span>
+                        </div>
+
+                        <div class="case-before-after__card-content asis">
+                            <p class="case-before-after__card-label case-before-after__card-label--as">As Is</p>
+                            <p class="txt">텍스트 중심의 답답한 메인 화면 구성</p>
+                        </div>
+                        <div class="case-before-after__card-content tobe">
+                            <p class="case-before-after__card-label case-before-after__card-label--to">To Be</p>
+                            <p class="txt">핵심 정보 카드화 및 비주얼 요소 배치를 통한 가독성 증대</p>
+                        </div>
+                    </article>
+                    <article class="case-before-after__card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="case-before-after__card-title">
+                            <div class="case-before-after__card-marker">
+                                <span class="case-before-after__card-number">3</span>
+                            </div>
+                            <span class="case-before-after__card-tag">Usability</span>
+                        </div>
+
+                        <div class="case-before-after__card-content asis">
+                            <p class="case-before-after__card-label case-before-after__card-label--as">As Is</p>
+                            <p class="txt">모바일/다양한 해상도 대응 부족</p>
+                        </div>
+                        <div class="case-before-after__card-content tobe">
+                            <p class="case-before-after__card-label case-before-after__card-label--to">To Be</p>
+                            <p class="txt">그리드 기반의 완벽한 반응형 웹(PC & Mobile) 구현</p>
+                        </div>
+                    </article>
+                    <article class="case-before-after__card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="case-before-after__card-title">
+                            <div class="case-before-after__card-marker">
+                                <span class="case-before-after__card-number">4</span>
+                            </div>
+                            <span class="case-before-after__card-tag">Brand Identity</span>
+                        </div>
+                        <div class="case-before-after__card-content asis">
+                            <p class="case-before-after__card-label case-before-after__card-label--as">As Is</p>
+                            <p class="txt">브랜드 아이덴티티 표현 부족</p>
+                        </div>
+                        <div class="case-before-after__card-content tobe">
+                            <p class="case-before-after__card-label case-before-after__card-label--to">To Be</p>
+                            <p class="txt">일관된 브랜드 톤과 구조적 디자인 시스템 적용</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="case-before-after__comparison" data-aos="fade-up" data-aos-delay="800">
+                    <div class="case-before-after__comparison-row case-before-after__comparison-row--head">
+                        <span>구분</span>
+                        <span>As-Is (기존 전)</span>
+                        <span>To-Be (개선 후)</span>
+                    </div>
+                    <div class="case-before-after__comparison-row">
+                        <span>비주얼 & 톤</span>
+                        <span>노후화된 레이아웃 및 파편화된 디자인 요소</span>
+                        <span><strong class="case-before-after__comparison-key">브랜드 컬러 중심의 깔끔하고 현대적인 금융 UI
+                                구현</strong></span>
+                    </div>
+                    <div class="case-before-after__comparison-row">
+                        <span>정보 전달</span>
+                        <span>텍스트 중심의 답답한 레이아웃 화면 구성</span>
+                        <span><strong class="case-before-after__comparison-key">핵심 정보 카드화 및 비주얼 요소 배치를 통한 가독성
+                                증대</strong></span>
+                    </div>
+                    <div class="case-before-after__comparison-row">
+                        <span>사용성</span>
+                        <span>모바일/다양한 해상도 대응 부족</span>
+                        <span><strong class="case-before-after__comparison-key">그리드 기반의 완벽한 반응형 웹(PC & Mobile)
+                                구현</strong></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================================
+             4. Responsive Design
+             ======================================== -->
+        <section class="case-section case-responsive" id="case-responsive" data-scrollspy-title="Responsive">
+            <div class="case-section__container">
+                <div class="case-section__header">
+                    <span class="case-section__number">04</span>
+                    <h2 class="case-section__title">Responsive Design</h2>
+                    <h2 class="case-section__title-sub case-overview__image" data-aos="fade-up" data-aos-delay="400">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">Desktop</span>
+                        <span class="case-section__title-sub-line case-section__title-sub-line-description">
+                            1920px (min-width:1440px) / 12 columns 32 gutter
+                        </span>
+                        <div class="works__card-roles">
+                            <span class="works__card-role">#Grid-System</span>
+                            <span class="works__card-role">#Desktop</span>
+                            <span class="works__card-role">#PC-Screen</span>
+                        </div>
+                    </h2>
+                </div>
+                <!-- 메인 비주얼 -->
+                <div class="case-responsive__visual-container" data-aos="fade-up" data-aos-delay="600">
+                    <div class="case-overview__visual ">
+                        <div class="case-overview__image-wrapper">
+                            <div class="case-overview-video">
+                                <video autoplay muted loop playsinline preload="auto">
+                                    <source src="/assets/images/case_main_pc.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="case-overview__image-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="case-responsive__visual" data-aos="fade-up" data-aos-delay="400">
+                        <img src="/assets/images/case_01_grid_pc.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                    </div>
+                </div>
+
+                <!-- 서브페이지 -->
+                <div class="case-responsive__visual-sub-static-container">
+                    <h3 class="case-section__title-sub title-third case-overview__image" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">Sub Page
+                            Design</span>
+                    </h3>
+                    <div class="case-responsive__visual-sub-static case-overview__image" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <img src="/assets/images/case_01_sub_pc_1.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_pc_2.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_pc_3.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_pc_4.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_pc_5.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_pc_6.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_pc_7.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_pc_8.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_pc_9.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                    </div>
+                </div>
+
+                <!-- add  -->
+                <!-- <div class="case-responsive__visual-sub-container">
+                    <h3 class="case-section__title-sub title-third case-overview__image" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">Sub Page
+                            Gallery</span>
+                    </h3>
+                    <div class="case-responsive__visual-sub" aria-label="Sub page design rolling gallery"
+                        data-aos="fade-up" data-aos-delay="400">
+                        <div class="case-responsive__visual-sub-track">
+                            <img src="/assets/images/case_01_sub_pc_1.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_2.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_3.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_4.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_5.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_6.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_7.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_8.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_9.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_10.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_11.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_pc_12.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-responsive__visual-vertical-container">
+                    <h3 class="case-section__title-sub title-third case-overview__image" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">Sub Page
+                            Motion Gallery</span>
+                    </h3>
+                    <div class="case-responsive__visual-vertical case-overview__image" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <div class="case-responsive__visual-vertical-column column-left">
+                            <div class="case-responsive__visual-vertical-track">
+                                <img src="/assets/images/case_01_sub_pc_1.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_2.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_3.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_4.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_1.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_2.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_3.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_4.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                            </div>
+                        </div>
+                        <div class="case-responsive__visual-vertical-column column-center">
+                            <div class="case-responsive__visual-vertical-track">
+                                <img src="/assets/images/case_01_sub_pc_5.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_6.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_7.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_8.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_5.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_6.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_7.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_8.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                            </div>
+                        </div>
+                        <div class="case-responsive__visual-vertical-column column-right">
+                            <div class="case-responsive__visual-vertical-track">
+                                <img src="/assets/images/case_01_sub_pc_9.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_10.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_11.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_12.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_9.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_10.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_11.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_pc_12.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- //add -->
+            </div>
+        </section>
+
+        <!-- ========================================
+             4-2. Responsive Design-mobile
+             ======================================== -->
+        <section class="case-section case-responsive mo" id="case-mobile" data-scrollspy-title="Mobile">
+            <div class="case-section__container">
+                <!-- <div class="case-section__header">
+                    <span class="case-section__number">04</span>
+                    <h2 class="case-section__title">Mobile Design</h2>
+                </div> -->
+                <!-- 모바일 -->
+                <div class="case-section__header" id="case-responsive-mo" data-scrollspy-title="모바일" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <h2 class="case-section__title-sub case-overview__image">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">Mobile
+                            Design</span>
+                        <span class="case-section__title-sub-line case-section__title-sub-line-description">
+                            390px (man-width:599px) / 4 columns 8 gutter
+                        </span>
+                    </h2>
+                    <div class="works__card-roles">
+                        <span class="works__card-role">#Grid-System</span>
+                        <span class="works__card-role">#Responsive Design</span>
+                        <!-- <span class="works__card-role">#Mobile</span> -->
+                    </div>
+                </div>
+                <div class="case-responsive__visual-container mo" data-aos="fade-up" data-aos-delay="600">
+                    <!-- <img src="/assets/images/case_01_sub_mo_(2).webp" alt="Case Study Image"
+                        class="case-overview__image" loading="eager"> -->
+                    <!-- <img src="/assets/images/case_01_sub_mo_(1).webp" alt="Case Study Image"
+                        class="case-overview__image" loading="eager"> -->
+
+                    <!-- 새로운 4개 네모칸 레이아웃 -->
+                    <div class="case-responsive__visual-gallery mo">
+                        <!-- 좌측: 위 1개, 아래 2개 -->
+                        <div class="case-responsive__visual-left">
+                            <!-- 좌상단 1개 -->
+                            <div class="case-responsive__visual-item item-top">
+                                <img src="/assets/images/logo_white.svg" alt="Case Study Image" loading="eager">
+                            </div>
+                            <!-- 좌하단 좌 -->
+                            <div class="case-responsive__visual-item item-bottom-left">
+                                <img src="/assets/images/case_01_grid_mo.jpg" alt="Case Study Image" loading="eager">
+                            </div>
+                            <!-- 좌하단 우 -->
+                            <div class="case-responsive__visual-item item-bottom-right">
+                                <img src="/assets/images/case_01_mo_2.jpg" alt="Case Study Image" loading="eager">
+                                <!-- <img src="/assets/images/case_01_qrcode.png" alt="Case Study Image" loading="eager"> -->
+                            </div>
+                        </div>
+                        <!-- 우측: 크게 1개 (mp4) -->
+                        <div class="case-responsive__visual-right">
+                            <div class="case-overview__visual-mo">
+                                <div class="case-overview__image-wrapper-mo">
+                                    <div class="case-overview-video">
+                                        <video autoplay muted loop playsinline preload="auto">
+                                            <source src="/assets/images/case_main_mo.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="case-overview__image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="/assets/images/case_01_mockup_1.webp" alt="Case Study Image" class="case-overview__image"
+                    loading="eager">
+
+                <!-- 서브페이지-mo -->
+                <div class="case-responsive__visual-sub-static-container">
+                    <h3 class="case-section__title-sub title-third case-overview__image" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">Sub Page
+                            Design</span>
+                    </h3>
+                    <div class="case-responsive__visual-sub-static case-overview__image mo" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <img src="/assets/images/case_01_sub_mo_main.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_1.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_2.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_3.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_4.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_5.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_6.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_7.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_8.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_9.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_10.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                        <img src="/assets/images/case_01_sub_mo_11.jpg" alt="Case Study Image"
+                            class="case-overview__image" loading="eager">
+                    </div>
+                </div>
+
+                <!-- add-mo -->
+                <div class="case-responsive__visual-sub-container mo">
+                    <h3 class="case-section__title-sub title-third case-overview__image" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <!-- <span class="case-section__title-sub-line case-section__title-sub-highlight">Sub Page
+                            Gallery</span> -->
+                    </h3>
+                    <div class="case-responsive__visual-sub" aria-label="Sub page design rolling gallery"
+                        data-aos="fade-up" data-aos-delay="400">
+                        <div class="case-responsive__visual-sub-track">
+                            <img src="/assets/images/case_01_sub_mo_main.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_mo_1.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_mo_2.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_mo_3.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_mo_4.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_mo_5.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_mo_6.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <!-- <img src="/assets/images/case_01_sub_mo_7.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager"> -->
+                            <img src="/assets/images/case_01_sub_mo_8.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_mo_9.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_mo_10.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                            <img src="/assets/images/case_01_sub_mo_11.jpg" alt="Case Study Image"
+                                class="case-overview__image" loading="eager">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-responsive__visual-vertical-container">
+                    <h3 class="case-section__title-sub title-third case-overview__image" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <span class="case-section__title-sub-line case-section__title-sub-highlight">Sub Page
+                            Motion Gallery</span>
+                    </h3>
+                    <div class="case-responsive__visual-vertical case-overview__image" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <div class="case-responsive__visual-vertical-column column-left">
+                            <div class="case-responsive__visual-vertical-track">
+                                <img src="/assets/images/case_01_sub_mo_1.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_2.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_3.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_4.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_1.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_2.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_3.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_4.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                            </div>
+                        </div>
+                        <div class="case-responsive__visual-vertical-column column-center">
+                            <div class="case-responsive__visual-vertical-track">
+                                <img src="/assets/images/case_01_sub_mo_5.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_6.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_7.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_8.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_5.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_6.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_7.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_8.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                            </div>
+                        </div>
+                        <div class="case-responsive__visual-vertical-column column-right">
+                            <div class="case-responsive__visual-vertical-track">
+                                <img src="/assets/images/case_01_sub_mo_9.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_10.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_11.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_12.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_9.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_10.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_11.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                                <img src="/assets/images/case_01_sub_mo_12.jpg" alt="Case Study Image"
+                                    class="case-overview__image" loading="eager">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //add -->
+            </div>
+        </section>
+
+        <!-- ========================================
+             5. Mockup
+             ======================================== -->
+
+        <section class="case-hero" id="case-hero" data-scrollspy-title="Intro">
+            <div class="case-hero__visual">
+                <!-- <div class="bg01"></div> -->
+                <img src="/assets/images/case_01_mockup_1.webp" alt="Case Study Image" class="case-overview__image"
+                    loading="eager">
+
+            </div>
+            <div class="case-hero__container">
+                <div class="case-hero__content aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+                    <!-- 카테고리 & 연도 -->
+                    <div class="case-hero__meta">
+                        <span class="case-hero__category">Responsive website</span>
+                        <span class="case-hero__divider"></span>
+                        <span class="case-hero__year">2026</span>
+                    </div>
+                    <!-- 한 줄 설명 -->
+                    <p class="case-hero__description">웹사이트 반응형 리뉴얼</p>
+                    <!-- 프로젝트 타이틀 -->
+                    <h2 class="case-hero__title">
+                        <span class="case-hero__title-line">woorifund service
+                            <a href="https://www.woorifs.co.kr/" target="_blank" title="새창열림" rel="noopener noreferrer"
+                                class="case-hero__title-link">
+                                <svg width="72" height="72" viewBox="0 0 72 72" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M54.1712 18.5247L17.2227 55.4733" stroke="currentColor" stroke-width="6">
+                                    </path>
+                                    <path d="M30.3711 16.8794L55.4152 17.2911L55.8269 42.3352" stroke="currentColor"
+                                        stroke-width="6"></path>
+                                </svg>
+                                <!-- <img src="/assets/images/ico-popol-go-link.svg" alt=""> --></a></span>
+                        <span class="case-hero__title-line">
+                            <span class="case-hero__title-line case-hero__title-highlight">우리펀드서비스 </span>
+                        </span>
+                    </h2>
+
+                    <!-- Role / Duration / Tools -->
+                    <div class="case-hero__info">
+                        <div class="case-hero__info-item">
+                            <span class="case-hero__info-label">Role</span>
+                            <span class="case-hero__info-value">UI Design · Publishing</span>
+                        </div>
+                        <div class="case-hero__info-item">
+                            <span class="case-hero__info-label">Duration</span>
+                            <span class="case-hero__info-value">3 Months</span>
+                        </div>
+                        <div class="case-hero__info-item">
+                            <span class="case-hero__info-label">Tools</span>
+                            <!-- <span class="case-hero__info-value">Figma, Photoshop, Html, Css, jquery</span> -->
+
+                            <div class="case-hero__tools">
+                                <!-- 피그마 -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="45" height="45" viewBox="0 0 45 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22.5 22.4999C22.5 18.3579 25.8578 14.9999 30 14.9999C34.1421 14.9999 37.5 18.3579 37.5 22.4999C37.5 26.6421 34.1421 29.9999 30 29.9999C25.8578 29.9999 22.5 26.6421 22.5 22.4999Z"
+                                            fill="#1ABCFE"></path>
+                                        <path
+                                            d="M7.5 37.4999C7.5 33.3579 10.8579 29.9999 15 29.9999H22.5V37.4999C22.5 41.6421 19.1422 44.9999 15 44.9999C10.8579 44.9999 7.5 41.6421 7.5 37.4999Z"
+                                            fill="#0ACF83"></path>
+                                        <path
+                                            d="M22.5 0V15H30C34.1422 15 37.5 11.6421 37.5 7.49999C37.5 3.35787 34.1422 0 30 0H22.5Z"
+                                            fill="#FF7262"></path>
+                                        <path
+                                            d="M7.5 7.5C7.5 11.6421 10.8579 15 15 15H22.5V0H15C10.8579 0 7.5 3.35786 7.5 7.5Z"
+                                            fill="#F24E1E"></path>
+                                        <path
+                                            d="M7.5 22.4999C7.5 26.6421 10.8579 29.9999 15 29.9999H22.5V14.9999H15C10.8579 14.9999 7.5 18.3579 7.5 22.4999Z"
+                                            fill="#A259FF"></path>
+                                    </svg>
+                                </span>
+                                <!-- 포토샵 -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="45" height="45" viewBox="0 0 45 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_42_13)">
+                                            <path
+                                                d="M0 5C0 2.23875 2.23875 0 5 0H40C42.7613 0 45 2.23875 45 5V40C45 42.7613 42.7613 45 40 45H5C2.23875 45 0 42.7613 0 40V5Z"
+                                                fill="#03A9F4"></path>
+                                            <path
+                                                d="M17.52 16.4675H15.0175V22.01H17.4838C18.1675 22.01 18.6963 21.7863 19.0713 21.3388C19.4463 20.8913 19.6325 20.24 19.6325 19.385C19.6325 18.4975 19.4413 17.7925 19.0588 17.2675C18.6763 16.7425 18.1625 16.4763 17.52 16.4675Z"
+                                                fill="#020F16"></path>
+                                            <path
+                                                d="M3.75 3.75V41.25H41.25V3.75H3.75ZM21.7062 23.4862C20.6737 24.4962 19.2412 25 17.41 25H15.0175V31.25H11.4287V13.4763H17.4837C19.2412 13.4763 20.6437 14.0225 21.6887 15.1125C22.7337 16.2025 23.2575 17.6188 23.2575 19.36C23.2575 21.1013 22.74 22.4762 21.7062 23.4862ZM33.3525 30.42C32.4662 31.1363 31.3012 31.4937 29.8612 31.4937C28.8925 31.4937 28.0375 31.305 27.2975 30.9262C26.5575 30.5475 25.9762 30.02 25.5575 29.345C25.1387 28.67 24.9288 27.9413 24.9288 27.16H28.2125C28.23 27.7613 28.3687 28.2138 28.6337 28.515C28.8987 28.8163 29.3313 28.9663 29.9338 28.9663C30.8613 28.9663 31.325 28.5475 31.325 27.7087C31.325 27.4162 31.185 27.145 30.9037 26.8975C30.6225 26.65 30 26.315 29.0313 25.8912C27.6075 25.3137 26.6287 24.7163 26.095 24.0963C25.5612 23.4763 25.295 22.7087 25.295 21.7887C25.295 20.6325 25.7125 19.6788 26.5462 18.9263C27.38 18.1738 28.4863 17.7975 29.86 17.7975C31.3075 17.7975 32.4675 18.1725 33.3388 18.92C34.21 19.6675 34.645 20.6738 34.645 21.935H31.19C31.19 20.8613 30.7438 20.3238 29.8475 20.3238C29.4813 20.3238 29.1813 20.4375 28.9438 20.665C28.7063 20.8925 28.59 21.2113 28.59 21.6175C28.59 21.91 28.72 22.1687 28.9812 22.3925C29.2425 22.6162 29.855 22.9362 30.825 23.3512C32.2337 23.8725 33.2275 24.4525 33.81 25.0912C34.3925 25.73 34.6825 26.5587 34.6825 27.575C34.6825 28.7562 34.2387 29.7038 33.3525 30.42Z"
+                                                fill="#020F16"></path>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_42_13">
+                                                <rect width="45" height="45" fill="white"></rect>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </span>
+                                <!-- html -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="41" height="45" viewBox="0 0 41 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_42_22)">
+                                            <path d="M40.2632 0H0L3.55263 40.2632L20.1316 45L36.7105 40.2632L40.2632 0Z"
+                                                fill="#E65100"></path>
+                                            <path d="M20.1316 3.55261V41.3289L33.3947 37.5395L36.3553 3.55261H20.1316Z"
+                                                fill="#FF6D00"></path>
+                                            <path
+                                                d="M20.1316 23.6842V18.9474H30.3158L29.4869 32.5658L20.1316 35.6447V30.6711L24.9869 29.0132L25.3421 23.6842H20.1316ZM30.6711 14.2105L31.0263 9.47369H20.1316V14.2105H30.6711Z"
+                                                fill="white"></path>
+                                            <path
+                                                d="M20.1316 30.6711V35.6447L10.7763 32.5658L10.3026 26.0526H15.0395L15.2763 29.0132L20.1316 30.6711ZM14.3289 14.2105H20.1316V9.47369H9.35526L10.1842 23.6842H20.1316V18.9474H14.6842L14.3289 14.2105Z"
+                                                fill="#EEEEEE"></path>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_42_22">
+                                                <rect width="40.2632" height="45" fill="white"></rect>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </span>
+                                <!-- css3 -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="41" height="45" viewBox="0 0 41 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_42_17)">
+                                            <path d="M40.2632 0H0L3.55263 40.2632L20.1316 45L36.7105 40.2632L40.2632 0Z"
+                                                fill="#0277BD"></path>
+                                            <path d="M20.1316 3.55261V41.3289L33.3947 37.5395L36.3553 3.55261H20.1316Z"
+                                                fill="#039BE5"></path>
+                                            <path
+                                                d="M30.9079 9.47363H20.1316V14.2105H25.9342L25.579 18.9473H20.1316V23.6842H25.3421L24.9869 29.0131L20.1316 30.671V35.6447L29.4869 32.5657L30.3158 18.9473L30.9079 9.47363Z"
+                                                fill="white"></path>
+                                            <path
+                                                d="M20.1316 9.47363V14.2105H9.59208L9.23682 9.47363H20.1316ZM14.6842 18.9473L14.921 23.6842H20.1316V18.9473H14.6842ZM15.1579 26.0526H10.421L10.7763 32.5657L20.1316 35.6447V30.671L15.2763 29.0131L15.1579 26.0526Z"
+                                                fill="#EEEEEE"></path>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_42_17">
+                                                <rect width="40.2632" height="45" fill="white"></rect>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </span>
+                                <!-- 제이쿼리 -->
+                                <span>
+                                    <svg class="case-hero__tools-icon" width="45" height="45" viewBox="0 0 45 45"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.21403 6.88697C6.51892 10.7599 6.85434 15.7993 8.91343 19.9153L9.0641 20.2078L9.16051 20.3933L9.22063 20.5L9.32804 20.6921C9.39182 20.8046 9.45744 20.9164 9.52453 21.029L9.6367 21.2137C9.71112 21.3332 9.787 21.452 9.86471 21.5704L9.96186 21.7203C10.0693 21.8805 10.1789 22.04 10.2921 22.1973L10.3017 22.2094L10.3574 22.2845C10.4553 22.4194 10.5561 22.5528 10.6584 22.6852L10.7716 22.8292C10.8629 22.944 10.9557 23.0576 11.0499 23.1716L11.1562 23.2985C11.2827 23.4473 11.4121 23.5961 11.5437 23.7413L11.5514 23.7494L11.5664 23.7659C11.6951 23.9063 11.8267 24.0437 11.9605 24.1812L12.0866 24.3084C12.1899 24.4125 12.2951 24.5148 12.4011 24.6167L12.5298 24.7391C12.6716 24.8726 12.8146 25.0038 12.9609 25.1314L12.9675 25.1372L13.0426 25.201C13.1713 25.3128 13.3021 25.4228 13.4341 25.5317L13.5961 25.6611C13.7039 25.7472 13.8128 25.8326 13.9224 25.9162L14.0973 26.0486C14.2182 26.1376 14.3403 26.2253 14.4635 26.3114L14.5966 26.406L14.6336 26.4324C14.7501 26.513 14.87 26.5904 14.9892 26.6677L15.1431 26.7704C15.3264 26.8858 15.5123 27.0006 15.7 27.1113L15.8539 27.1982C15.9921 27.2777 16.1311 27.3562 16.2718 27.4324L16.5031 27.5519L16.8023 27.7073L16.8712 27.7407L16.9936 27.7997C17.1502 27.8745 17.3082 27.9482 17.4676 28.0193L17.5677 28.064C17.7503 28.1439 17.9346 28.2206 18.1205 28.2942L18.2554 28.347C18.4273 28.4137 18.6018 28.4786 18.777 28.5402L18.8427 28.5629C19.0348 28.6304 19.229 28.6923 19.4244 28.7536L19.5648 28.7954C19.7635 28.8555 19.9604 28.9266 20.1653 28.9647C33.1984 31.3413 36.9841 21.1331 36.9841 21.1331C33.8043 25.2754 28.1608 26.3679 22.8135 25.1515C22.6108 25.1057 22.4143 25.0423 22.2167 24.9844L22.0679 24.9389C21.875 24.8799 21.6833 24.8179 21.4931 24.752L21.4142 24.7237C21.2438 24.6636 21.0755 24.6006 20.9076 24.5357L20.7654 24.48C20.5817 24.4074 20.3988 24.3315 20.2184 24.2527L20.1092 24.2039C19.9541 24.1339 19.8005 24.0632 19.6477 23.9895L19.5142 23.9253C19.3944 23.867 19.276 23.8051 19.1572 23.7439L18.9193 23.6189C18.7745 23.5419 18.6326 23.4612 18.4915 23.3791L18.347 23.2988C18.159 23.1878 17.9735 23.0734 17.7898 22.9572L17.6395 22.8571C17.5065 22.7713 17.3738 22.6837 17.2433 22.5935L17.1153 22.5037C16.9892 22.415 16.8642 22.3245 16.7407 22.2332L16.5746 22.1074C16.461 22.0206 16.3481 21.933 16.2366 21.8431L16.086 21.7222C15.9437 21.6056 15.8033 21.4876 15.6648 21.3669L15.6186 21.3285C15.4686 21.1969 15.3213 21.0616 15.1757 20.926L15.0511 20.8057C14.9433 20.7034 14.837 20.6001 14.7329 20.4938L14.6083 20.3691C14.4756 20.2335 14.3454 20.096 14.2179 19.9563L14.1984 19.9354C14.0635 19.7881 13.9316 19.6374 13.8025 19.4849L13.6988 19.3617C13.6024 19.2459 13.5071 19.1279 13.414 19.0095L13.3095 18.8793C13.1969 18.7338 13.0877 18.5886 12.9803 18.4413C10.0117 14.3916 8.94496 8.80639 11.3178 4.21972M17.5794 3.62366C15.6307 6.42801 15.7363 10.1829 17.2568 13.1486C17.5116 13.6456 17.7983 14.1284 18.1187 14.5874C18.4105 15.0064 18.7345 15.5042 19.122 15.8404C19.2624 15.9951 19.4094 16.1461 19.5593 16.2942L19.6744 16.4082C19.82 16.5493 19.9681 16.6883 20.1209 16.8232L20.1393 16.8389L20.1437 16.8433C20.313 16.9918 20.4879 17.1344 20.6653 17.2752L20.7837 17.3675C20.9619 17.5039 21.1433 17.6381 21.3296 17.766L21.3453 17.7781L21.5946 17.942L21.7126 18.0201C21.8457 18.1055 21.9802 18.1883 22.1173 18.2679L22.1745 18.3016C22.2926 18.3694 22.4121 18.4361 22.5319 18.5014L22.6591 18.5674L22.9092 18.6971L22.9469 18.7144C23.1188 18.7987 23.2919 18.8804 23.4689 18.9574L23.584 19.0051C23.7255 19.0648 23.8681 19.1235 24.0118 19.1785L24.1951 19.2459C24.3256 19.2943 24.4561 19.3387 24.5881 19.3826L24.7655 19.4395C24.9529 19.4974 25.1383 19.5711 25.3334 19.6037C35.396 21.2705 37.7191 13.5228 37.7191 13.5228C35.6251 16.5391 31.5696 17.9779 27.2422 16.8547C27.0501 16.8041 26.8602 16.7491 26.6721 16.6901L26.5009 16.6347C26.3671 16.5919 26.2341 16.5457 26.1025 16.4976L25.9225 16.4306C25.778 16.3748 25.6351 16.3173 25.4932 16.2572L25.3777 16.2084C25.1999 16.1311 25.0251 16.0493 24.8528 15.9643L24.5896 15.8305L24.4378 15.7524C24.3256 15.6915 24.2142 15.6285 24.1046 15.564L24.025 15.5189C23.8887 15.4393 23.7545 15.3576 23.6218 15.2725L23.5001 15.1915L23.2391 15.0185C23.0536 14.8905 22.8729 14.7567 22.6951 14.6207L22.5726 14.524C20.6785 13.0287 19.177 10.9846 18.4633 8.66709C17.7151 6.26341 17.8764 3.56537 19.1726 1.37541M24.6152 1.18553C23.4664 2.8762 23.3535 4.97635 24.1508 6.84371C24.9913 8.82582 26.7139 10.3805 28.7246 11.1181L28.9746 11.2042L29.0846 11.2394C29.203 11.2768 29.3207 11.32 29.4431 11.3428C34.9994 12.4165 36.5064 8.49187 36.9074 7.91377C35.5874 9.81449 33.3688 10.2709 30.6466 9.60994C30.4318 9.55788 30.1953 9.48017 29.9882 9.40649C29.7224 9.31154 29.4607 9.20377 29.2059 9.0817C28.7228 8.84928 28.262 8.56775 27.8345 8.24516C25.3986 6.39685 23.8857 2.87143 25.4752 0"
+                                            fill="#0868AC"></path>
+                                        <path
+                                            d="M23.3644 34.9908H21.8153C21.7295 34.9908 21.6441 35.0597 21.6257 35.1437L21.0759 37.6878L20.526 40.2318C20.508 40.3158 20.4226 40.3847 20.3368 40.3847H19.2404C18.1557 40.3847 18.281 39.6343 18.5032 38.6064L18.5098 38.5753L18.534 38.4455L18.5384 38.4213L18.5879 38.1574L18.641 37.8747L18.6975 37.587L18.9475 36.3655L19.1979 35.1441C19.2151 35.0597 19.1586 34.9905 19.0729 34.9905H17.483C17.3972 34.9905 17.3122 35.0594 17.2946 35.1437L16.9526 36.7655L16.6109 38.3876L16.6102 38.3898L16.5786 38.5408C16.1849 40.3382 16.289 42.0527 18.4291 42.1065L18.4915 42.1076H21.8505C21.9362 42.1076 22.0216 42.0387 22.0396 41.9548L22.764 38.5496L23.4883 35.1441C23.5063 35.0597 23.4506 34.9912 23.3644 34.9908ZM6.77441 34.9729H5.07347C4.98733 34.9729 4.90155 35.0418 4.88249 35.1254L4.72119 35.8373L4.55989 36.5492C4.5412 36.6331 4.59582 36.7017 4.68197 36.7017H6.3961C6.48225 36.7017 6.56766 36.6327 6.58599 36.5488L6.74179 35.8373L6.89759 35.1257C6.91555 35.0418 6.86056 34.9729 6.77441 34.9729ZM6.281 37.1885H4.56649C4.48071 37.1885 4.39457 37.2574 4.3755 37.341L4.13466 38.4077L3.89418 39.4741L3.8271 39.7799L3.59578 40.8686L3.36484 41.9577C3.34688 42.0417 3.30985 42.1773 3.28236 42.2587C3.28236 42.2587 2.96197 43.2118 2.42346 43.2008L2.35601 43.1993L1.89008 43.1909C1.8043 43.1898 1.71779 43.2569 1.69762 43.3401L1.51983 44.0876L1.34241 44.8346C1.32225 44.9182 1.3765 44.9871 1.46191 44.9886C1.76728 44.9923 2.45132 45 2.86519 45C4.21018 45 4.91951 44.2547 5.37371 42.1102L5.90562 39.649L6.40453 37.3406C6.4225 37.2574 6.36678 37.1885 6.281 37.1885ZM37.8499 36.6115L37.7788 36.3179L37.7088 36.0173L37.6732 35.8655C37.5339 35.3241 37.1252 35.0121 36.2373 35.0121L34.8553 35.0106L33.5825 35.0088H32.1503C32.0645 35.0088 31.9795 35.0777 31.9615 35.1617L31.8981 35.4608L31.8233 35.8142L31.8024 35.9135L31.1576 38.9341L30.5454 41.8015C30.5271 41.8859 30.5212 41.9892 30.5315 42.031C30.5417 42.0732 30.7071 42.1076 30.7928 42.1076H32.0847C32.1708 42.1076 32.2797 42.0922 32.3266 42.0732C32.3735 42.0541 32.4428 41.8851 32.4601 41.8012L32.6895 40.6651L32.9194 39.5287L32.9198 39.5269L32.9505 39.3755L33.2291 38.0705L33.4751 36.9179C33.4935 36.834 33.5781 36.7655 33.6639 36.7651L37.7289 36.7632C37.8151 36.764 37.8693 36.6954 37.8499 36.6115ZM43.0829 33.9574L42.7698 33.9585H41.4688C41.3827 33.9585 41.2723 34.0168 41.2243 34.0879L38.347 38.3029C38.2986 38.374 38.2432 38.3637 38.2242 38.2802L38.0123 37.3516C37.9932 37.2677 37.9071 37.1991 37.8209 37.1991H35.9715C35.8854 37.1991 35.8344 37.2666 35.8579 37.349L36.6867 40.2527C36.7102 40.3356 36.712 40.4712 36.6908 40.5548L36.3297 41.9599C36.3081 42.0435 36.3609 42.1113 36.447 42.1113H38.2751C38.3609 42.1113 38.4489 42.0431 38.4702 41.9599L38.8316 40.5548C38.8529 40.4709 38.9126 40.347 38.9647 40.278L43.6357 34.0788C43.6877 34.0099 43.6595 33.9538 43.5737 33.9545L43.0829 33.9574ZM28.3881 37.5936V37.5921C28.3774 37.6852 28.2913 37.7538 28.2051 37.7538H25.8601C25.7787 37.7538 25.7377 37.6988 25.7498 37.6306L25.752 37.6251L25.7505 37.6258L25.7516 37.6181L25.7622 37.5782C25.9862 36.9828 26.4423 36.5921 27.2997 36.5921C28.2653 36.5917 28.4537 37.0631 28.3881 37.5936ZM27.7 34.8867C24.69 34.8867 23.9766 36.7138 23.5763 38.558C23.1764 40.4379 23.2105 42.1949 26.3257 42.1949H26.7033L26.7971 42.1945H26.8191L27.193 42.1934H27.1996C28.0222 42.1901 28.8474 42.1839 29.1813 42.1813C29.2668 42.1799 29.3503 42.1113 29.3679 42.0274L29.494 41.4111L29.5186 41.2913L29.6689 40.5559C29.6861 40.472 29.63 40.4027 29.5439 40.4027H26.7436C25.6295 40.4027 25.2989 40.1068 25.421 39.2366H29.8973L29.8969 39.2369L29.8998 39.2366C29.971 39.2355 30.037 39.1864 30.063 39.1211L30.0736 39.0822L30.0732 39.0826C30.7379 36.5756 30.5472 34.8871 27.7 34.8867ZM13.473 37.584L13.4304 37.734L13.0924 38.9323L12.7545 40.1299C12.7314 40.2132 12.6416 40.2806 12.5554 40.2806H10.7665C9.4094 40.2806 9.07875 39.219 9.4094 37.6537C9.73969 36.0524 10.3874 35.0572 11.7233 34.9564C13.5488 34.8185 13.914 36.1023 13.473 37.584ZM14.7003 40.1886C14.7003 40.1886 15.5438 38.1401 15.7351 36.9575C15.9965 35.3743 15.2036 33.0773 12.1412 33.0773C9.09634 33.0773 7.77372 35.2698 7.2693 37.6537C6.76488 40.0548 7.42583 42.1601 10.4534 42.1428L12.8421 42.134L15.0742 42.126C15.16 42.1252 15.2479 42.0571 15.2699 41.9742L15.6589 40.491C15.6805 40.4074 15.6281 40.3393 15.5419 40.3385L15.1691 40.3363L14.7963 40.3341C14.7234 40.3338 14.6816 40.2861 14.6904 40.2234L14.7003 40.1886ZM29.7741 38.8172C29.7741 38.874 29.7283 38.9202 29.6715 38.9202C29.615 38.9202 29.5688 38.874 29.5688 38.8172C29.5688 38.7608 29.6147 38.7149 29.6715 38.7149C29.7283 38.7149 29.7741 38.7608 29.7741 38.8172Z"
+                                            fill="white"></path>
+                                    </svg>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -771,7 +1801,7 @@
 
             <!-- Back to Works -->
             <div class="case-cta__back">
-                <a href="../index.html#selected-works" class="case-cta__back-link">
+                <a href="../index.html#works" class="case-cta__back-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -787,18 +1817,18 @@
                 <p class="footer__copyright">© 2026 <span class="footer__copyright-highlight">Fullyoo </span>Portfolio.
                     All rights reserved.</p>
                 <div class="footer__links">
-                    <a href="/index.html#hero" class="footer__link">Home</a>
+                    <!-- <a href="#" class="footer__link">Resume</a> -->
+                    <!-- <a href="#" class="footer__link">notion</a> -->
+                    <!-- <a href="#" class="footer__link">figma</a> -->
+                    <a class="footer__link" href="mailto:fullyoo19@gmail.com" target="_blank"
+                        rel="noopener noreferrer"><b>E.</b> fullyoo19@gmail.com</a>
+                    <a href="tel:010-1234-5678" class="footer__link"><b>T.</b> 010.1234.5678</a>
+
+                    <!-- <a href="/index.html#hero" class="footer__link">Home</a>
                     <a href="/index.html#about" class="footer__link">About</a>
                     <a href="/index.html#works" class="footer__link">Work</a>
-                    <a href="/index.html#contact" class="footer__link">Contact</a>
+                    <a href="/index.html#contact" class="footer__link">Contact</a> -->
                 </div>
-                <!-- <div class="footer__links">
-                    <a href="mailto:fullyoo19@gmail.com" target="_blank" rel="noopener noreferrer"
-                        class="footer__link">Email</a>
-                    <a href="#" class="footer__link">Resume</a>
-                    <a href="#" class="footer__link">notion</a>
-                    <a href="#" class="footer__link">figma</a>
-                </div> -->
             </div>
         </footer>
     </main>
@@ -815,7 +1845,7 @@
         <div class="floating-menu__item-wrap">
             <a href="https://notion.so" target="_blank" rel="noopener noreferrer" class="floating-menu__item"
                 aria-label="노션 포트폴리오">
-                <svg class="icon-notion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
                     <path
                         d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096ZM23.816 4.43331C23.2877 4.02552 22.5835 3.55846 21.2343 3.67528L5.15507 4.84121C4.56875 4.89903 4.45158 5.19046 4.68509 5.42409L6.97519 7.23083C7.91323 7.98837 8.26511 7.93069 10.0265 7.81388L26.632 6.82259C26.9842 6.82259 26.6915 6.47348 26.5739 6.41536L23.816 4.43331Z"
                         fill="var(--notion-logo-fill, var(--color-black))">
@@ -824,7 +1854,21 @@
             </a>
             <a href="https://notion.so" class="floating-menu__tooltip" target="_blank" rel="noopener noreferrer"
                 role="tooltip">
-                More Works
+                Project
+            </a>
+        </div>
+        <div class="floating-menu__item-wrap">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="floating-menu__item" aria-label="이력서 보기">
+                <svg class="icon" width="20" height="25" viewBox="0 0 20 25" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <path
+                        d="M11.25 8.75H18.125L11.25 1.875V8.75ZM2.5 0H12.5L20 7.5V22.5C20 23.163 19.7366 23.7989 19.2678 24.2678C18.7989 24.7366 18.163 25 17.5 25H2.5C1.83696 25 1.20107 24.7366 0.732233 24.2678C0.263392 23.7989 0 23.163 0 22.5V2.5C0 1.1125 1.1125 0 2.5 0ZM12.5 22.5V21.25C12.5 19.5875 9.1625 18.75 7.5 18.75C5.8375 18.75 2.5 19.5875 2.5 21.25V22.5H12.5ZM7.5 12.5C6.83696 12.5 6.20107 12.7634 5.73223 13.2322C5.26339 13.7011 5 14.337 5 15C5 15.663 5.26339 16.2989 5.73223 16.7678C6.20107 17.2366 6.83696 17.5 7.5 17.5C8.16304 17.5 8.79893 17.2366 9.26777 16.7678C9.73661 16.2989 10 15.663 10 15C10 14.337 9.73661 13.7011 9.26777 13.2322C8.79893 12.7634 8.16304 12.5 7.5 12.5Z"
+                        fill="currentColor"></path>
+                </svg>
+            </a>
+            <a href="#" class="floating-menu__tooltip" target="_blank" rel="noopener noreferrer" role="tooltip">
+                Resume
             </a>
         </div>
     </nav>
@@ -837,8 +1881,18 @@
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        document.addEventListener('aos:in', function (event) {
+            var target = event.detail;
+            if (!target) return;
+            if (target.classList && target.classList.contains('case-hero__title-highlight')) {
+                target.classList.add('highlight-animate');
+            }
+        });
+    </script>
 
     <!-- Custom Scripts -->
     <script src="/assets/js/common.js"></script>
@@ -855,8 +1909,9 @@
     <script src="/assets/js/main.js"></script>
 
 
-    <script src="/assets/js/gsap/caseStudyAnimation.js"></script>
-    <script src="/assets/js/caseStudy.js"></script>
+    <script src="/assets/js/gsap/casestudyanimation.js"></script>
+    <script src="/assets/js/casestudy.js"></script>
+
 
 </body>
 

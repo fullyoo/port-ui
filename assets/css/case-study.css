@@ -242,7 +242,9 @@
 /* ==========================================================
    0. Case hero
    ========================================================== */
-.case-hero {}
+.case-hero {
+    position: relative;
+}
 
 .case-hero__visual {
     position: relative;

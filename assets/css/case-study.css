@@ -2797,6 +2797,11 @@
         animation: case-responsive-sub-marquee 60s linear infinite;
     }
 
+    .case-responsive__visual-sub-container.mo .case-responsive__visual-sub-track {
+        animation-name: case-responsive-sub-marquee-mo-mobile;
+        animation-duration: 40s;
+    }
+
     .case-process__timeline {
         grid-template-columns: 1fr;
         gap: var(--space-8);
@@ -2944,8 +2949,11 @@
     }
 
     .case-responsive__visual-sub-container.mo .case-responsive__visual-sub-track {
-        animation: 20s linear 0s infinite normal none running case-responsive-sub-marquee-mo;
+        animation: 40s linear 0s infinite normal none running case-responsive-sub-marquee-mo-mobile;
+        transform: translateZ(0);
+        /* 구형 기기 GPU 가속 유도 */
     }
+
 
     .case-key-screens .case-key-screens__quote {
         padding: var(--space-6);
@@ -3008,4 +3016,14 @@
     opacity: 0.03;
     z-index: 9999;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+@keyframes case-responsive-sub-marquee-mo-mobile {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(calc(-50% - var(--space-2)), 0, 0);
+    }
 }

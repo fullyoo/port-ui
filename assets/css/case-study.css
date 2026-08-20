@@ -60,7 +60,7 @@
 .case-scrollspy__list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-3);
 }
 
 .case-scrollspy__link {
@@ -263,7 +263,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/assets/images/case_01_1_1.webp);
+    background-image: url(/assets/images/case_01_hero.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -499,7 +499,7 @@
     background-color: var(--color-dark);
     background-size: cover;
     background-position: center;
-    background-image: url(/assets/images/case_01_bg.jpg);
+    background-image: url(/assets/images/case_01_bg.webp);
     /* background: linear-gradient(180deg, #007aff 0%, #0083CA 100%); */
 }
 
@@ -746,7 +746,7 @@
     background-color: var(--color-dark);
     background-size: cover;
     background-position: center;
-    /* background-image: url(/assets/images/case_01_bg.jpg); */
+    /* background-image: url(/assets/images/case_01_bg.webp); */
 
     background: radial-gradient(ellipse at 50% 100%, rgba(5, 0, 253, 0.2) 0%, transparent 60%), radial-gradient(ellipse at 20% 40%, rgba(240, 255, 54, 0.2) 0%, transparent 60%);
 }
@@ -985,7 +985,7 @@
     /* background-color: var(--color-dark); */
     /* background-size: cover; */
     /* background-position: center; */
-    /* background-image: url(/assets/images/case_01_bg.jpg); */
+    /* background-image: url(/assets/images/case_01_bg.webp); */
     background: radial-gradient(ellipse at 50% 100%, rgba(5, 0, 253, 0.2) 0%, transparent 60%), radial-gradient(ellipse at 20% 40%, rgba(240, 255, 54, 0.2) 0%, transparent 60%);
 }
 
@@ -1061,9 +1061,9 @@
 .case-before-after__preview-screenshot--after {
     /* background: linear-gradient(0deg, rgba(5, 0, 253, 0.82) 0%, transparent 60%),
         linear-gradient(0deg, rgba(0, 95, 255, 0.55) 0%, transparent 100%),
-        url('/assets/images/case_01_tobe.jpg'); */
+        url('/assets/images/case_01_tobe.webp'); */
 
-    /* background-image: url(/assets/images/case_01_tobe.jpg); */
+    /* background-image: url(/assets/images/case_01_tobe.webp); */
 
     background-size: cover;
     background-position: top;
@@ -1276,7 +1276,7 @@
     /* background: linear-gradient(180deg, rgba(10, 10, 10, 0.96) 0%, rgba(10, 10, 10, 0.9) 100%); */
     /* background-size: cover; */
     /* background-position: center; */
-    /* background-image: url(/assets/images/case_01_bg.jpg); */
+    /* background-image: url(/assets/images/case_01_bg.webp); */
     /* background: radial-gradient(ellipse at 50% 100%,  rgba(5, 0, 253, 0.2)0%, transparent 60%), radial-gradient(ellipse at 20% 40%, rgba(240, 255, 54, 0.2) 0%, transparent 60%); */
 }
 
@@ -1461,9 +1461,9 @@
 
 /* 모바일 */
 .case-responsive.mo {
-    background: url(/assets/images/case_01_bg.jpg) center center / cover no-repeat;
+    /* background: url(/assets/images/case_01_bg.webp) center center / cover no-repeat; */
 
-    /* background: radial-gradient(ellipse at 50% 100%, rgba(5, 0, 253, 0.2) 0%, transparent 60%), radial-gradient(ellipse at 20% 40%, rgba(240, 255, 54, 0.2) 0%, transparent 60%); */
+    background: radial-gradient(ellipse at 50% 100%, rgba(5, 0, 253, 0.2) 0%, transparent 60%), radial-gradient(ellipse at 20% 40%, rgba(240, 255, 54, 0.2) 0%, transparent 60%);
 }
 
 .case-responsive.mo .case-section__title-sub-highlight {
@@ -1523,6 +1523,7 @@
 .case-responsive__visual-item.item-top {
     /* grid-column: 1 / 3; */
     /* grid-row: 2; */
+    background: var(--color-primary);
 }
 
 .case-responsive__visual-item.item-top img {
@@ -1569,6 +1570,7 @@
     overflow: hidden;
     background: rgba(255, 255, 255, 0.05);
     background: var(--color-primary);
+    background: var(--color-accent);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-lg);
     transition: all var(--duration-normal) ease-out;
@@ -1658,9 +1660,62 @@
 }
 
 
+/* ==========================================================
+   5. Mockup - Key Screens
+   ========================================================== */
+.case-key-screens {}
+
+.case-key-screens .case-key-screens__quote {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 8px solid var(--color-primary);
+}
+
+.case-key-screens .case-key-screens__quote p {
+    color: var(--color-light);
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+    margin-bottom: 0;
+}
+
+.case-key-screens .case-key-screens__quote cite {
+    display: block;
+    color: var(--color-gray-100);
+    margin: var(--space-3) 0 var(--space-10);
+}
+
+.case-key-screens .case-key-screens__quote .footer__links {
+    gap: var(--space-4);
+    align-items: center;
+}
+
+.case-key-screens .case-key-screens__quote .footer__links .footer__icon {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.case-key-screens .case-key-screens__quote .footer__link {
+    font-size: var(--text-xs);
+}
+
+.case-key-screens .case-key-screens__quote .footer__link:hover svg {
+    /* color: var(--color-light); */
+    color: var(--color-accent);
+    transform: scale(1.05) !important;
+}
+
+.case-key-screens .case-key-screens__quote .footer__link .contact__link-icon {
+    width: 16px;
+    height: 16px;
+}
+
+
+
+
 
 /* ==========================================================
-   5. Problem Definition
+   Problem Definition
    ========================================================== */
 .case-problem {
     background: linear-gradient(180deg, var(--color-dark) 0%, rgba(5, 0, 253, 0.02) 50%, var(--color-dark) 100%);
@@ -2365,6 +2420,7 @@
     height: auto;
     display: block;
     transition: transform var(--duration-slow) var(--ease-out-expo);
+    opacity: 1 !important;
 }
 
 .case-cta__visual:hover img {
@@ -2805,6 +2861,12 @@
         grid-row: 1 / 4;
         border-radius: var(--radius-lg);
     }
+
+    .case-key-screens .case-key-screens__quote {
+        max-width: 100%;
+        width: 100%;
+        padding: var(--space-8);
+    }
 }
 
 
@@ -2878,6 +2940,25 @@
         aspect-ratio: 1;
         height: auto;
     }
+
+    .case-key-screens .case-key-screens__quote {
+        padding: var(--space-6);
+    }
+
+    .case-key-screens .case-key-screens__quote p {
+        font-size: var(--text-2xl);
+    }
+
+    .case-key-screens .case-key-screens__quote .footer__links {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--space-3);
+        flex-wrap: wrap;
+    }
+
+    .case-key-screens .case-key-screens__quote .footer__links .footer__icon {}
+
 }
 
 

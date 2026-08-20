@@ -111,6 +111,8 @@ class CaseStudyApp {
         if (this.animation) {
             this.animation.refresh();
         }
+
+        this.updateSubPageMarqueeDistance();
     }
 
     /**
@@ -158,11 +160,34 @@ class CaseStudyApp {
             const items = Array.from(track.children);
             if (items.length === 0) return;
 
+            if (track.dataset.marqueeReady === 'true') return;
+
             items.forEach((item) => {
                 const clone = item.cloneNode(true);
                 clone.setAttribute('aria-hidden', 'true');
                 track.appendChild(clone);
             });
+
+            track.dataset.marqueeReady = 'true';
+
+            track.querySelectorAll('img').forEach((image) => {
+                image.addEventListener('load', () => this.updateSubPageMarqueeDistance(), { once: true });
+            });
+        });
+
+        requestAnimationFrame(() => this.updateSubPageMarqueeDistance());
+    }
+
+    updateSubPageMarqueeDistance() {
+        document.querySelectorAll('.case-responsive__visual-sub-track').forEach((track) => {
+            const firstClone = track.children[Math.floor(track.children.length / 2)];
+            if (!firstClone) return;
+
+            const trackLeft = track.getBoundingClientRect().left;
+            const cloneLeft = firstClone.getBoundingClientRect().left;
+            const distance = cloneLeft - trackLeft;
+
+            track.style.setProperty('--case-responsive-marquee-distance', `${distance}px`);
         });
     }
 

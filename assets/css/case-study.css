@@ -1358,7 +1358,7 @@
     }
 
     100% {
-        transform: translate3d(calc(-50% - var(--space-4)), 0, 0);
+        transform: translate3d(calc(0px - var(--case-responsive-marquee-distance, 50%)), 0, 0);
     }
 }
 
@@ -1635,6 +1635,11 @@
     display: block;
 }
 
+.case-responsive__visual-sub-container.mo .case-responsive__visual-sub {
+    mask-image: none;
+    -webkit-mask-image: none;
+}
+
 .case-responsive__visual-sub-container.mo .case-responsive__visual-sub-track {
     align-items: flex-start;
 }
@@ -1655,7 +1660,7 @@
     }
 
     100% {
-        transform: translate3d(calc(-50% + var(--space-2)), 0, 0);
+        transform: translate3d(calc(0px - var(--case-responsive-marquee-distance, 50%)), 0, 0);
     }
 }
 

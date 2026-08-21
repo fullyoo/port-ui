@@ -4783,10 +4783,47 @@ Made changes.
 
 **User**
 
+.case-scrollspy__link.is-active 일때 원에 효과나 모션을 줘서 더강조해주세요
 
 ---
 
 **VS-CODE**
+
+현재 열려 있는 `footer.css`에서 해당 상태 스타일과 원형 요소 구조를 확인한 뒤, 기존 디자인 톤을 유지하는 가장 작은 CSS 변경으로 강조 효과를 넣겠습니다. 먼저 스타일 정의와 연결된 마크업을 함께 살펴보겠습니다.
+
+Read 
+
+Searched for text `case-scrollspy__link|scrollspy` (`**/*.{html,css,js}`), 62 results
+
+`footer.css`에는 대상 선택자가 없고, 실제 스크롤스파이 상태는 `case-study.css`가 소유하고 있습니다. 현재 `::after`가 원을 그리는 구조인지 확인했으며, 기존 활성 상태 규칙에 펄스와 링 효과를 추가하는 방향이 가장 직접적입니다.
+
+Read , lines 1 to 130
+
+Read , lines 2550 to 2615
+
+Read , lines 205 to 285
+
+원은 링크 본체(`10px` 원)이고 `::after`는 라벨 용도라서, 라벨을 건드리지 않고 `::before`에 바깥 링을 만들겠습니다. 활성 원은 살짝 커진 상태를 유지하면서 링이 반복 확장되도록 하고, 접근성을 위해 모션 감소 설정도 함께 넣겠습니다.
+
+Generating patch (58 lines) in 
+
+Checked , 20 problems found
+
+변경 후 CSS 진단을 실행했고, 새로 추가한 활성 원 효과에는 오류가 없습니다. 진단 결과는 파일에 원래 있던 여러 빈 규칙셋 경고만 남아 있으므로, 그 unrelated 경고는 건드리지 않고 변경 diff만 최종 확인하겠습니다.
+
+Ran terminal command: git diff -- assets/css/case-study.css
+
+`.case-scrollspy__link.is-active` 상태에 강조 효과를 추가했습니다.
+
+- 활성 원 바깥에 확장 링 펄스 애니메이션 적용
+- 활성 원의 색상과 링이 자연스럽게 반복 강조
+- `prefers-reduced-motion` 환경에서는 정적 링으로 표시
+
+변경 파일: `case-study.css`
+
+CSS 진단은 새 코드에 오류가 없으며, 기존 빈 규칙셋 경고만 남아 있습니다.
+
+Made changes.
 
 
 **User**

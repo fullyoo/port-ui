@@ -74,6 +74,17 @@
     transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 }
 
+.case-scrollspy__link::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border: 1px solid var(--color-accent);
+    border-radius: inherit;
+    opacity: 0;
+    transform: scale(0.65);
+    pointer-events: none;
+}
+
 .case-scrollspy__link::after {
     content: attr(data-label);
     position: absolute;
@@ -90,14 +101,32 @@
 
 .case-scrollspy__link:hover {
     transform: scale(1.2);
-    background: var(--color-primary);
-    /* border-color: rgba(255, 255, 255, 0.3); */
+    /* background: var(--color-primary); */
+    border-color: var(--color-accent);
 }
 
 .case-scrollspy__link.is-active {
     transform: scale(1.2);
+    background: var(--color-primary);
     background: var(--color-accent);
     border-color: rgba(255, 255, 255, 0.3);
+}
+
+.case-scrollspy__link.is-active::before {
+    animation: case-scrollspy-pulse 1.8s ease-out infinite;
+}
+
+@keyframes case-scrollspy-pulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.65);
+    }
+
+    70%,
+    100% {
+        opacity: 0;
+        transform: scale(1.55);
+    }
 }
 
 .case-scrollspy__link:hover::after {
@@ -109,6 +138,14 @@
     opacity: 1;
     /* color: var(--color-light); */
     color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .case-scrollspy__link.is-active::before {
+        animation: none;
+        opacity: 0.55;
+        transform: scale(1.25);
+    }
 }
 
 /* ===== Back Navigation ===== */

@@ -1,41 +1,80 @@
 /**
  * floatingMenu.css
- * 우측 플로팅 메뉴 (탑 버튼, 노션 아이콘)
+ * 우측 플로팅 메뉴
+ * - Top 버튼
+ * - Project
+ * - Resume
  */
+
+/* =========================================================
+   Floating Menu
+   ========================================================= */
 
 .floating-menu {
     position: fixed;
     right: var(--space-6);
     bottom: var(--space-16);
     z-index: var(--z-tooltip);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--space-1);
+
     pointer-events: none;
 }
 
+
+/* =========================================================
+   Item Wrap
+   ========================================================= */
+
 .floating-menu__item-wrap {
     position: relative;
+
     display: flex;
     align-items: center;
+    overflow: visible;
+
+    pointer-events: auto;
 }
 
+.floating-menu__item-wrap>svg {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   Item
+   ========================================================= */
+
 .floating-menu__item {
-    pointer-events: auto;
     width: 48px;
     height: 48px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    padding: 0;
+
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    border-radius: var(--radius-full);
+
     color: var(--color-light);
     text-decoration: none;
-    transition: all var(--duration-normal) var(--ease-out-expo);
+
+    transition:
+        background var(--duration-normal) var(--ease-out-expo),
+        border-color var(--duration-normal) var(--ease-out-expo),
+        color var(--duration-normal) var(--ease-out-expo),
+        transform var(--duration-normal) var(--ease-out-expo);
+
     backdrop-filter: blur(12px);
+
     cursor: pointer;
+    pointer-events: auto;
 }
 
 button.floating-menu__item {
@@ -43,22 +82,18 @@ button.floating-menu__item {
     font: inherit;
 }
 
-.floating-menu__item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    background: rgba(5, 0, 253, 0.4);
-    border-color: var(--color-accent);
-    border-color: var(--color-primary);
-    color: var(--color-accent);
-    transform: scale(1.08);
-}
 
+/* =========================================================
+   Item Hover / Focus
+   ========================================================= */
+
+.floating-menu__item:hover,
 .floating-menu__item-wrap:hover .floating-menu__item,
 .floating-menu__item-wrap:focus-within .floating-menu__item {
-    background: rgba(255, 255, 255, 0.2);
     background: rgba(5, 0, 253, 0.4);
-    border-color: var(--color-accent);
     border-color: var(--color-primary);
     color: var(--color-accent);
+
     transform: scale(1.08);
 }
 
@@ -66,11 +101,18 @@ button.floating-menu__item {
     transform: scale(0.96);
 }
 
+
+/* =========================================================
+   Top Button
+   ========================================================= */
+
 .floating-menu__item--top {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity var(--duration-normal) var(--ease-out-expo),
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+
+    transition:
+        opacity var(--duration-normal) var(--ease-out-expo),
         visibility var(--duration-normal),
         transform var(--duration-normal) var(--ease-out-expo),
         background var(--duration-normal),
@@ -84,10 +126,17 @@ button.floating-menu__item {
     transform: translateY(0);
 }
 
+
+/* =========================================================
+   Icon
+   ========================================================= */
+
 .floating-menu__item svg {
     width: 26px;
     height: 26px;
+
     flex-shrink: 0;
+    pointer-events: none;
 }
 
 .floating-menu__item .icon {
@@ -95,15 +144,20 @@ button.floating-menu__item {
     height: 24px;
 }
 
+
+/* =========================================================
+   Tooltip
+   ========================================================= */
+
 .floating-menu__tooltip {
     position: absolute;
-    right: calc(100% + 10px);
+
     top: 50%;
-    transform: translateY(-50%) translateX(6px);
-    /* min-width: 180px; */
+    right: calc(100% + 10px);
+    display: block;
     padding: 0.65rem 0.8rem;
     border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     background: rgba(15, 15, 18, 0.92);
     color: var(--color-light);
     font-family: var(--font-secondary);
@@ -112,34 +166,56 @@ button.floating-menu__item {
     letter-spacing: var(--tracking-wide);
     text-decoration: none;
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
-    opacity: 0;
+    z-index: 2;
+    /* opacity: 0; */
     visibility: hidden;
-    pointer-events: auto;
-    transition: all var(--duration-normal) var(--ease-out-expo);
+    pointer-events: none;
+    transform: translateY(-50%) translateX(6px);
+    transition:
+        opacity var(--duration-normal) var(--ease-out-expo),
+        visibility var(--duration-normal),
+        transform var(--duration-normal) var(--ease-out-expo);
 }
+
+
+/* =========================================================
+   Tooltip Visible
+   ========================================================= */
 
 .floating-menu__item-wrap:hover .floating-menu__tooltip,
 .floating-menu__item-wrap:focus-within .floating-menu__tooltip,
+.floating-menu__item-wrap.is-tooltip-visible .floating-menu__tooltip,
+.floating-menu__item:hover+.floating-menu__tooltip,
+.floating-menu__item:focus+.floating-menu__tooltip,
 .floating-menu__tooltip:hover {
     opacity: 1;
     visibility: visible;
+
     pointer-events: auto;
+
     transform: translateY(-50%) translateX(0);
 }
 
+
+/* =========================================================
+   Tooltip Hover
+   ========================================================= */
+
 .floating-menu__item-wrap:hover .floating-menu__tooltip:hover {
     padding: 0.55rem 0.9rem;
-    border-radius: 999px;
+    border-radius: var(--radius-full);
     border-color: var(--color-primary);
     color: var(--color-accent);
 }
 
 
-
-/* ===== Responsive Styles ===== */
+/* =========================================================
+   Responsive
+   ========================================================= */
 
 /* Mobile */
 @media (max-width: 768px) {
+
     .floating-menu {
         right: var(--space-4);
         bottom: var(--space-24);
@@ -153,5 +229,18 @@ button.floating-menu__item {
     .floating-menu__item svg {
         width: 20px;
         height: 20px;
+    }
+
+    .floating-menu__item .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .floating-menu__tooltip {
+        right: calc(100% + 8px);
+
+        padding: 0.55rem 0.7rem;
+
+        font-size: var(--text-xs);
     }
 }

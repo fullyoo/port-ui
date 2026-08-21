@@ -59,74 +59,10 @@
     <!-- Noise Overlay -->
     <div class="noise-overlay" aria-hidden="true"></div>
 
-    <!-- Header / Navigation -->
-    <header class="header" id="header">
-        <div class="header__container">
-            <!-- Logo / Brand -->
-            <h1 class="header__logo">
-                <a href="/" class="header__logo-link" data-scroll-to="hero">
-                    <span class="header__logo-text">Fullyoo</span>
-                </a>
-            </h1>
-
-            <!-- Navigation Menu -->
-            <nav class="header__nav" aria-label="메인 네비게이션">
-                <ul class="header__nav-list">
-                    <li class="header__nav-item">
-                        <a href="/index.html" class="header__nav-link" data-scroll-to="hero">
-                            <span class="header__nav-text">Home</span>
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="/index.html#about" class="header__nav-link" data-scroll-to="about">
-                            <span class="header__nav-text">About</span>
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="/index.html#works" class="header__nav-link" data-scroll-to="works">
-                            <span class="header__nav-text">Work</span>
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="/index.html#contact" class="header__nav-link" data-scroll-to="contact">
-                            <span class="header__nav-text">Contact</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="header__actions" aria-label="빠른 링크">
-                <div class="header__action-group">
-                    <a href="https://notion.so" class="header__action-link header__action-link--icon" target="_blank"
-                        rel="noopener noreferrer" aria-label="Notion 바로가기">
-                        <span class="header__action-icon">
-                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                                fill="currentColor">
-                                <path
-                                    d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096ZM23.816 4.43331C23.2877 4.02552 22.5835 3.55846 21.2343 3.67528L5.15507 4.84121C4.56875 4.89903 4.45158 5.19046 4.68509 5.42409L6.97519 7.23083C7.91323 7.98837 8.26511 7.93069 10.0265 7.81388L26.632 6.82259C26.9842 6.82259 26.6915 6.47348 26.5739 6.41536L23.816 4.43331Z"
-                                    fill="var(--notion-logo-fill, var(--color-black))">
-                                </path>
-                            </svg>
-                        </span>
-                    </a>
-                    <a href="https://notion.so" class="header__action-popover" target="_blank" rel="noopener noreferrer"
-                        role="tooltip">
-                        Project
-                    </a>
-                </div>
-                <a href="#contact" class="header__action-link header__action-link--support" data-scroll-to="contact">
-                    <span class="header__action-text">Resume</span>
-                </a>
-            </div>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="header__menu-toggle" aria-label="메뉴 열기/닫기" aria-expanded="false">
-                <span class="header__menu-toggle-line"></span>
-                <span class="header__menu-toggle-line"></span>
-                <span class="header__menu-toggle-line"></span>
-            </button>
-        </div>
-    </header>
+    <template id="legacy-inline-header" hidden>
+        <!-- 공통 헤더는 components/header.html에서 관리하며 common.js가 이 위치에 주입합니다. -->
+        <!-- 페이지별 헤더 중복을 방지하기 위해 인라인 헤더는 비활성화했습니다. -->
+    </template>
 
     <!-- Back Navigation -->
     <!-- <nav class="case-nav">
@@ -1237,67 +1173,11 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer__container">
-                <p class="footer__copyright">© 2026 <span class="footer__copyright-highlight">Fullyoo </span>Portfolio.
-                    All rights reserved.</p>
-                <div class="footer__links">
-                    <!-- <a href="#" class="footer__link">Resume</a> -->
-                    <!-- <a href="#" class="footer__link">notion</a> -->
-                    <!-- <a href="#" class="footer__link">figma</a> -->
-                    <a class="footer__link" href="mailto:fullyoo19@gmail.com" target="_blank"
-                        rel="noopener noreferrer"><b>E.</b> fullyoo19@gmail.com</a>
-                    <a href="tel:010-1234-5678" class="footer__link"><b>T.</b> 010.1234.5678</a>
-
-                    <!-- <a href="/index.html#hero" class="footer__link">Home</a>
-                    <a href="/index.html#about" class="footer__link">About</a>
-                    <a href="/index.html#works" class="footer__link">Work</a>
-                    <a href="/index.html#contact" class="footer__link">Contact</a> -->
-                </div>
-            </div>
-        </footer>
+        <!-- 푸터는 components/footer.html을 통해 공유되며 common.js에 의해 삽입됩니다. -->
     </main>
 
     <!-- Floating Menu (탑 버튼, 노션) -->
-    <nav class="floating-menu" aria-label="플로팅 메뉴">
-        <button type="button" class="floating-menu__item floating-menu__item--top" id="floating-menu-top"
-            aria-label="맨 위로">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 15l-6-6-6 6" />
-            </svg>
-        </button>
-        <div class="floating-menu__item-wrap">
-            <a href="https://notion.so" target="_blank" rel="noopener noreferrer" class="floating-menu__item"
-                aria-label="노션 포트폴리오">
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
-                    <path
-                        d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096ZM23.816 4.43331C23.2877 4.02552 22.5835 3.55846 21.2343 3.67528L5.15507 4.84121C4.56875 4.89903 4.45158 5.19046 4.68509 5.42409L6.97519 7.23083C7.91323 7.98837 8.26511 7.93069 10.0265 7.81388L26.632 6.82259C26.9842 6.82259 26.6915 6.47348 26.5739 6.41536L23.816 4.43331Z"
-                        fill="var(--notion-logo-fill, var(--color-black))">
-                    </path>
-                </svg>
-            </a>
-            <a href="https://notion.so" class="floating-menu__tooltip" target="_blank" rel="noopener noreferrer"
-                role="tooltip">
-                Project
-            </a>
-        </div>
-        <div class="floating-menu__item-wrap">
-            <a href="#" target="_blank" rel="noopener noreferrer" class="floating-menu__item" aria-label="이력서 보기">
-                <svg class="icon" width="20" height="25" viewBox="0 0 20 25" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-                    <path
-                        d="M11.25 8.75H18.125L11.25 1.875V8.75ZM2.5 0H12.5L20 7.5V22.5C20 23.163 19.7366 23.7989 19.2678 24.2678C18.7989 24.7366 18.163 25 17.5 25H2.5C1.83696 25 1.20107 24.7366 0.732233 24.2678C0.263392 23.7989 0 23.163 0 22.5V2.5C0 1.1125 1.1125 0 2.5 0ZM12.5 22.5V21.25C12.5 19.5875 9.1625 18.75 7.5 18.75C5.8375 18.75 2.5 19.5875 2.5 21.25V22.5H12.5ZM7.5 12.5C6.83696 12.5 6.20107 12.7634 5.73223 13.2322C5.26339 13.7011 5 14.337 5 15C5 15.663 5.26339 16.2989 5.73223 16.7678C6.20107 17.2366 6.83696 17.5 7.5 17.5C8.16304 17.5 8.79893 17.2366 9.26777 16.7678C9.73661 16.2989 10 15.663 10 15C10 14.337 9.73661 13.7011 9.26777 13.2322C8.79893 12.7634 8.16304 12.5 7.5 12.5Z"
-                        fill="currentColor"></path>
-                </svg>
-            </a>
-            <a href="#" class="floating-menu__tooltip" target="_blank" rel="noopener noreferrer" role="tooltip">
-                Resume
-            </a>
-        </div>
-    </nav>
+    <!-- 플로팅메뉴는 components/floating-menu.html을 통해 공유되며 common.js에 의해 삽입됩니다. -->
 
     <!-- Scripts -->
     <!-- GSAP Core + Plugins -->
@@ -1331,8 +1211,8 @@
     <script src="/assets/js/swiper/heroSwiper.js"></script>
     <script src="/assets/js/swiper/worksSwiper.js"></script>
     <script src="/assets/js/swiper/selectedWorksSwiper.js"></script>
-    <script src="/assets/js/floatingMenu.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/floatingmenu.js"></script>
 
 
     <script src="/assets/js/gsap/casestudyanimation.js"></script>

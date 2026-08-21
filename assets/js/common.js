@@ -5,6 +5,45 @@
  */
 
 /**
+ * Load shared page components before page modules initialize.
+ * Existing copies are replaced so legacy pages can adopt one source of truth.
+ */
+function loadSharedComponents() {
+    const scriptUrl = document.currentScript && document.currentScript.src;
+    if (!scriptUrl) return Promise.resolve();
+
+    const componentBase = new URL('../../components/', scriptUrl);
+    const components = [
+        { selector: '.header', file: 'header.html', position: 'afterbegin' },
+        { selector: '.footer, .case-footer', file: 'footer.html', position: 'beforeend' },
+        { selector: '.floating-menu', file: 'floating-menu.html', position: 'beforeend' }
+    ];
+
+    return Promise.all(components.map(async ({ selector, file, position }) => {
+        try {
+            const response = await fetch(new URL(file, componentBase));
+            if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+            const template = document.createRange().createContextualFragment(await response.text());
+            const currentElements = document.querySelectorAll(selector);
+            const current = currentElements[0];
+
+            if (current) {
+                current.replaceWith(template);
+                currentElements.forEach(element => element.remove());
+            } else if (position === 'afterbegin') {
+                document.body.prepend(template);
+            } else {
+                document.body.append(template);
+            }
+        } catch (error) {
+            console.warn(`Shared component skipped: ${file}`, error);
+        }
+    }));
+}
+
+window.sharedComponentsReady = loadSharedComponents();
+
+/**
  * Custom Cursor Class
  * Desktop only - creates a custom cursor that follows mouse
  */

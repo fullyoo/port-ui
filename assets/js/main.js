@@ -490,11 +490,19 @@ class App {
 document.addEventListener('DOMContentLoaded', () => {
     // Small delay to ensure all scripts are loaded
     setTimeout(() => {
-        const app = new App();
-        app.init();
+        const startApp = () => {
+            const app = new App();
+            app.init();
 
-        // Expose app instance globally for debugging
-        window.app = app;
+            // Expose app instance globally for debugging
+            window.app = app;
+        };
+
+        if (window.sharedComponentsReady) {
+            window.sharedComponentsReady.then(startApp);
+        } else {
+            startApp();
+        }
     }, 50);
 });
 

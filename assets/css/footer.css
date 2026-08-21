@@ -48,8 +48,8 @@
 .footer__brand-name {
     color: var(--color-gray-300);
     font-family: var(--font-primary);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    font-size: clamp(3.6rem, 8vw, 4.8rem);
     font-weight: var(--weight-medium);
     line-height: 1;
 }
@@ -57,7 +57,7 @@
 .footer__brand-title {
     color: var(--color-light);
     font-family: var(--font-primary);
-    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-size: clamp(3.6rem, 8vw, 6rem);
     font-weight: var(--weight-medium);
     letter-spacing: -0.04em;
     line-height: 1;

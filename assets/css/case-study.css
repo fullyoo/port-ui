@@ -1646,7 +1646,7 @@
 
 .case-responsive__visual-sub-container.mo .case-responsive__visual-sub-track {
     width: max-content;
-    animation: case-responsive-sub-marquee-mo 40s linear infinite;
+    animation: case-responsive-sub-marquee-mo 50s linear infinite;
     will-change: transform;
 }
 
@@ -2356,10 +2356,13 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 0 var(--container-padding);
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 1fr 1fr;
     gap: var(--space-12);
     align-items: center;
+
+    display: flex;
+    justify-content: center;
 }
 
 .case-cta__content {}
@@ -2368,6 +2371,7 @@
     display: inline-block;
     font-family: var(--font-mono);
     font-size: var(--text-sm);
+    color: var(--color-accent);
     color: var(--color-primary);
     margin-bottom: var(--space-4);
     letter-spacing: var(--tracking-wider);
@@ -2382,7 +2386,8 @@
 }
 
 .case-cta__description {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
     color: var(--color-gray-400);
     margin-bottom: var(--space-8);
 }
@@ -2391,10 +2396,10 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-3);
-    padding: var(--space-4) var(--space-8);
+    padding: var(--space-2) var(--space-8);
     background: var(--color-primary);
     color: var(--color-light);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     font-weight: var(--weight-medium);
     text-decoration: none;
     border-radius: var(--radius-full);
@@ -2418,6 +2423,7 @@
 .case-cta__visual {
     border-radius: var(--radius-xl);
     overflow: hidden;
+    flex: 0.3;
 }
 
 .case-cta__visual img {
@@ -2433,11 +2439,22 @@
 }
 
 .case-cta__back {
+    position: relative;
     width: var(--container-2xl);
     max-width: 100%;
     margin: var(--space-16) auto 0;
-    padding: 0 var(--container-padding);
+    padding: var(--space-16) var(--container-padding) 0;
     text-align: center;
+}
+
+.case-cta__back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gray-800), transparent);
 }
 
 .case-cta__back-link {
@@ -2649,6 +2666,8 @@
 
     .case-cta__container {
         grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
         gap: var(--space-8);
         text-align: center;
     }
@@ -2949,7 +2968,7 @@
     }
 
     .case-responsive__visual-sub-container.mo .case-responsive__visual-sub-track {
-        animation: 20s linear 0s infinite normal none running case-responsive-sub-marquee-mo;
+        animation: 40s linear 0s infinite normal none running case-responsive-sub-marquee-mo;
         transform: translateZ(0);
         /* 구형 기기 GPU 가속 유도 */
     }
